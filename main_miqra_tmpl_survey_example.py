@@ -48,7 +48,7 @@ def _record(r, wtel, psv_psn, column_letter):
 def main():
     r = collections.defaultdict(int)
     sec_name = 'Torah'
-    inpath = f'out/miqra-json/MAM-{sec_name}.json'
+    inpath = f'miqra-json/MAM-{sec_name}.json'
     with open(inpath, encoding='utf-8') as fpi:
         sec = json.load(fpi)
     # chapent: chaptered entity (book or sub-book)
