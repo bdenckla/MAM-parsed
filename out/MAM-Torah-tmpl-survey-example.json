@@ -8,10 +8,10 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "תבנית:טעמי המקרא באינטרנט (עליון)",
+"wtel_subtype": "תבנית:טעמי המקרא באינטרנט",
 "pseudoverse_category": "0 (pre-chapter)",
 "column_letter": "C",
-"count": 185
+"count": 187
 },
 {
 "wtel_type": "tmpl",
@@ -141,14 +141,7 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "גודל גופן",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 22
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "הערה",
+"wtel_subtype": "מ:הערה",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
 "count": 22
@@ -267,13 +260,6 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "תבנית:טעמי המקרא באינטרנט",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 2
-},
-{
-"wtel_type": "tmpl",
 "wtel_subtype": "#קטע:משתמש:Dovi/תורה על פי המסורה/ספר שמות/טו/צורת-השיר",
 "pseudoverse_category": "0 (pre-chapter)",
 "column_letter": "C",
@@ -351,14 +337,7 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "גודל גופן",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 4
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "הערה",
+"wtel_subtype": "מ:הערה",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "C",
 "count": 4
