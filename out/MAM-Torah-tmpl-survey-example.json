@@ -1,52 +1,17 @@
 [
 {
-"wtel_type": "custom_tag",
-"wtel_subtype": "noinclude",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 187
-},
-{
 "wtel_type": "tmpl",
-"wtel_subtype": "תבנית:טעמי המקרא באינטרנט",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 187
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:שוליים",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 189
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "תבנית:משתמש:Dovi/טעמי המקרא",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 191
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "/noinclude",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 187
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:ספר חדש",
+"wtel_subtype": "מ:פסוק",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "C",
-"count": 5
+"count": 5844
 },
 {
 "wtel_type": "tmpl",
 "wtel_subtype": "נוסח",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 1239
+"count": 1240
 },
 {
 "wtel_type": "tmpl",
@@ -64,59 +29,10 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "פפ",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 289
-},
-{
-"wtel_type": "tmpl",
 "wtel_subtype": "מ:לגרמיה",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
 "count": 296
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "noinclude",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 186
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "תבנית:משתמש:Dovi/טעמי המקרא-סוף",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 393
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:שוליים-סוף",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 186
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "תבנית:משתמש:Dovi/טעמי המקרא",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 207
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "#בלי קטע:",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 185
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "/noinclude",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 186
 },
 {
 "wtel_type": "tmpl",
@@ -127,38 +43,10 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "מ:אין פרשה בתחילת פרק",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 43
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "סס",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 368
-},
-{
-"wtel_type": "tmpl",
 "wtel_subtype": "מ:הערה",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
 "count": 22
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "references/",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 22
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "נוסח",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 97
 },
 {
 "wtel_type": "tmpl",
@@ -204,24 +92,17 @@
 },
 {
 "wtel_type": "tmpl",
+"wtel_subtype": "נוסח",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "C",
+"count": 20
+},
+{
+"wtel_type": "tmpl",
 "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
 "count": 3
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "קק",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 3
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "עוגן בשורה",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 4
 },
 {
 "wtel_type": "tmpl",
@@ -239,13 +120,6 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "#קטע:עשרת הדברות בסיס/טעמים",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 1
-},
-{
-"wtel_type": "tmpl",
 "wtel_subtype": "קו\"כ",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
@@ -253,66 +127,10 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "מ:אין רווח של פרשה בתחילת פרשת השבוע",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 1
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "#קטע:משתמש:Dovi/תורה על פי המסורה/ספר שמות/טו/צורת-השיר",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 1
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "תבנית:משתמש:Dovi/טעמי המקרא-סוף",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 4
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:שוליים-סוף",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 2
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "#בלי קטע:משתמש:Dovi/תורה על פי המסורה/ספר שמות/טו/צורת-השיר",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 1
-},
-{
-"wtel_type": "tmpl",
 "wtel_subtype": "מ:ששש",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
 "count": 67
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:ששש",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 43
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "#בלי קטע:שמות טו/טעמים",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 1
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "#קטע:שירת הים/צורות נוספות",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 1
 },
 {
 "wtel_type": "tmpl",
@@ -327,27 +145,6 @@
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
 "count": 4
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "#קטע:עשרת הדברות/טעמים",
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 2
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:הערה",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 4
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "ססס",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 2
 },
 {
 "wtel_type": "tmpl",
@@ -463,37 +260,9 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "#קטע:משתמש:Dovi/תורה על פי המסורה/ספר דברים/לב/צורת-השיר",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 1
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "#בלי קטע:משתמש:Dovi/תורה על פי המסורה/ספר דברים/לב/צורת-השיר",
-"pseudoverse_category": "0 (pre-chapter)",
-"column_letter": "C",
-"count": 1
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "ר4",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 17
-},
-{
-"wtel_type": "tmpl",
 "wtel_subtype": "ר3",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
 "count": 49
-},
-{
-"wtel_type": "unparseable",
-"wtel_subtype": null,
-"pseudoverse_category": "2 (post-chapter)",
-"column_letter": "C",
-"count": 1
 }
 ]
