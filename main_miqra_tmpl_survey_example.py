@@ -45,6 +45,10 @@ def _record(r, wtel, psv_psn, column_letter):
     return
 
 
+def _keyfn(record):
+    return tuple(record.values())
+
+
 def main():
     r = collections.defaultdict(int)
     sec_name = 'Torah'
@@ -70,6 +74,7 @@ def main():
             column_letter=key[3],
             count=count)
         records.append(rec)
+    records = sorted(records, key=_keyfn)
     outpath = f'out/MAM-{sec_name}-tmpl-survey-example.json'
     with _openw(outpath) as fpo:
         dump_opts = dict(indent=0, ensure_ascii=False)

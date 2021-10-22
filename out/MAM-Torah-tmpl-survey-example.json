@@ -1,66 +1,108 @@
 [
 {
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:פסוק",
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע התחלה=הפסוק בלי הערה/",
 "pseudoverse_category": "1 (normal verse)",
-"column_letter": "C",
-"count": 5844
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע התחלה=שורה 1 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע התחלה=שורה 2 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע התחלה=שורה 3 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע התחלה=שורה 4 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע התחלה=שורה 5 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע התחלה=שורה 6 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע סוף=הפסוק בלי הערה/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע סוף=שורה 1 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע סוף=שורה 2 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע סוף=שורה 3 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע סוף=שורה 4 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע סוף=שורה 5 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
+},
+{
+"wtel_type": "custom_tag",
+"wtel_subtype": "קטע סוף=שורה 6 לפני השיר/",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 1
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "נוסח",
+"wtel_subtype": "ירח בן יומו",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 1240
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:אות-ג",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 42
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:פסק",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 95
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:לגרמיה",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 296
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:אות-ק",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 10
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:הערה",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 22
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:גרשיים ותלישא גדולה",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 4
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "שני טעמים באות אחת",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 21
+"count": 1
 },
 {
 "wtel_type": "tmpl",
@@ -71,6 +113,76 @@
 },
 {
 "wtel_type": "tmpl",
+"wtel_subtype": "מ:אות מנוקדת",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 10
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:אות-ג",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 42
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:אות-ק",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 10
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:גרשיים ותלישא גדולה",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 4
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:הערה",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 22
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 3
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:לגרמיה",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 296
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:נו\"ן הפוכה",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 2
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:פסוק",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "C",
+"count": 5844
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "מ:פסק",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 95
+},
+{
+"wtel_type": "tmpl",
 "wtel_subtype": "מ:קמץ",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
@@ -78,17 +190,10 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "קו\"כ-אם",
+"wtel_subtype": "מ:ששש",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 33
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:אות מנוקדת",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 10
+"count": 67
 },
 {
 "wtel_type": "tmpl",
@@ -99,10 +204,24 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+"wtel_subtype": "נוסח",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 3
+"count": 1240
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "סס",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 7
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "ססס",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 4
 },
 {
 "wtel_type": "tmpl",
@@ -127,136 +246,10 @@
 },
 {
 "wtel_type": "tmpl",
-"wtel_subtype": "מ:ששש",
+"wtel_subtype": "קו\"כ-אם",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 67
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "סס",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 7
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "ססס",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 4
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "מ:נו\"ן הפוכה",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 2
-},
-{
-"wtel_type": "tmpl",
-"wtel_subtype": "ירח בן יומו",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע התחלה=הפסוק בלי הערה/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע סוף=הפסוק בלי הערה/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע התחלה=שורה 1 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע סוף=שורה 1 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע התחלה=שורה 2 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע סוף=שורה 2 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע התחלה=שורה 3 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע סוף=שורה 3 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע התחלה=שורה 4 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע סוף=שורה 4 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע התחלה=שורה 5 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע סוף=שורה 5 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע התחלה=שורה 6 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
-},
-{
-"wtel_type": "custom_tag",
-"wtel_subtype": "קטע סוף=שורה 6 לפני השיר/",
-"pseudoverse_category": "1 (normal verse)",
-"column_letter": "E",
-"count": 1
+"count": 33
 },
 {
 "wtel_type": "tmpl",
@@ -264,5 +257,12 @@
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
 "count": 49
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "שני טעמים באות אחת",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 21
 }
 ]
