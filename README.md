@@ -1,8 +1,8 @@
 # MAM-parsed
  
-This Git repository contains MAM (Miqra According to the Masorah) in a parsed format.
+This Git repository contains [MAM (Miqra According to the Masorah)](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah) in a parsed format.
 
-It contains a JSON file for each of the 6 main tabs of the MAM Google Sheet.
+It contains a JSON file for each of the 6 main tabs of the [MAM Google Sheet.](https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit#gid=920165745)
 
 Each JSON file represents its corresponding tab in an easier-to-read format.
 
