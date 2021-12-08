@@ -148,6 +148,13 @@
 },
 {
 "wtel_type": "tmpl",
+"wtel_subtype": "מ:טעם",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 4
+},
+{
+"wtel_type": "tmpl",
 "wtel_subtype": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
@@ -263,6 +270,13 @@
 "wtel_subtype": "שני טעמים באות אחת",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 21
+"count": 19
+},
+{
+"wtel_type": "tmpl",
+"wtel_subtype": "שני טעמים באות אחת קמץ-תחתון-פתח-עליון",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 4
 }
 ]
