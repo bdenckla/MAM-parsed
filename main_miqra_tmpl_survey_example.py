@@ -8,7 +8,7 @@ _MINIROW = collections.namedtuple('Minirow', 'D, CP, EP')
 _SUBTYPE_FNS = {  # wte: Wikitext element (str or single-item dict)
     'tmpl': lambda wte: wte[0][0],
     'custom_tag': lambda wte: wte,
-    'unparseable': lambda wte: None,
+    # 'unparseable': lambda wte: None,
 }
 _PSV_PSN_CATEGORIES = {
     '0': '0 (pre-chapter)',
