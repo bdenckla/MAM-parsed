@@ -99,6 +99,13 @@
 },
 {
 "wtel_type": "tmpl",
+"wtel_subtype": "{טעמים",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 27
+},
+{
+"wtel_type": "tmpl",
 "wtel_subtype": "ירח בן יומו",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
@@ -109,7 +116,7 @@
 "wtel_subtype": "כו\"ק",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 25
+"count": 27
 },
 {
 "wtel_type": "tmpl",
@@ -169,10 +176,17 @@
 },
 {
 "wtel_type": "tmpl",
+"wtel_subtype": "מ:כפול",
+"pseudoverse_category": "1 (normal verse)",
+"column_letter": "E",
+"count": 27
+},
+{
+"wtel_type": "tmpl",
 "wtel_subtype": "מ:לגרמיה",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 296
+"count": 303
 },
 {
 "wtel_type": "tmpl",
@@ -193,14 +207,14 @@
 "wtel_subtype": "מ:פסק",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 95
+"count": 99
 },
 {
 "wtel_type": "tmpl",
 "wtel_subtype": "מ:קמץ",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 89
+"count": 94
 },
 {
 "wtel_type": "tmpl",
@@ -221,7 +235,7 @@
 "wtel_subtype": "נוסח",
 "pseudoverse_category": "1 (normal verse)",
 "column_letter": "E",
-"count": 1244
+"count": 1251
 },
 {
 "wtel_type": "tmpl",
