@@ -47,6 +47,7 @@
     {
       "book_name": "ספר דניאל",
       "sub_book_name": null,
+      "good_ending": null,
       "chapters": {
         "א": {
           "0": [
@@ -18710,6 +18711,7 @@
     {
       "book_name": "ספר עזרא",
       "sub_book_name": "עזרא",
+      "good_ending": null,
       "chapters": {
         "א": {
           "0": [
@@ -33370,6 +33372,7 @@
     {
       "book_name": "ספר עזרא",
       "sub_book_name": "נחמיה",
+      "good_ending": null,
       "chapters": {
         "א": {
           "0": [
@@ -51640,6 +51643,7 @@
     {
       "book_name": "ספר דברי הימים",
       "sub_book_name": "דה\"א",
+      "good_ending": null,
       "chapters": {
         "א": {
           "0": [
@@ -89906,6 +89910,7 @@
     {
       "book_name": "ספר דברי הימים",
       "sub_book_name": "דה\"ב",
+      "good_ending": null,
       "chapters": {
         "א": {
           "0": [
