@@ -30,7 +30,8 @@ from the Google Sheet in the following ways:
     * custom XML tags
     * 0 (zero) and תתת (triple-tav) pseudo-verses
 
-This Git repository also contains a toy sample application giving some sense of how
+This Git repository also contains a toy sample application,
+`template-survey-example.py`, giving some sense of how
 the JSON files might be used.
 
 The format of these JSON files is not yet stable. I.e. if you write an application

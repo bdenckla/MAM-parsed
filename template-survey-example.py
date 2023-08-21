@@ -87,7 +87,7 @@ def main():
         sec = json.load(fpi)
     survey = _do_survey(sec['body'])
     records = _reformat_survey(survey)
-    with _openw('out/MAM-Torah-tmpl-survey-example.json') as fpo:
+    with _openw('out/template-survey-example-out.json') as fpo:
         dump_opts = {'indent': 0, 'ensure_ascii': False}
         json.dump(records, fpo, **dump_opts)
 
