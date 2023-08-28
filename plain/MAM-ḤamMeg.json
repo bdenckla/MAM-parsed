@@ -1,6 +1,6 @@
 {
   "header": {
-    "book_names": [
+    "book24_names": [
       "מגילת שיר השירים",
       "מגילת רות",
       "מגילת איכה",
@@ -10,35 +10,35 @@
     "sub_book_names": {},
     "chapter_counts": [
       {
-        "book_name": "מגילת שיר השירים",
+        "book24_name": "מגילת שיר השירים",
         "sub_book_name": null,
         "chapter_count": 8
       },
       {
-        "book_name": "מגילת רות",
+        "book24_name": "מגילת רות",
         "sub_book_name": null,
         "chapter_count": 4
       },
       {
-        "book_name": "מגילת איכה",
+        "book24_name": "מגילת איכה",
         "sub_book_name": null,
         "chapter_count": 5
       },
       {
-        "book_name": "מגילת קהלת",
+        "book24_name": "מגילת קהלת",
         "sub_book_name": null,
         "chapter_count": 12
       },
       {
-        "book_name": "מגילת אסתר",
+        "book24_name": "מגילת אסתר",
         "sub_book_name": null,
         "chapter_count": 10
       }
     ]
   },
-  "body": [
+  "book39s": [
     {
-      "book_name": "מגילת שיר השירים",
+      "book24_name": "מגילת שיר השירים",
       "sub_book_name": null,
       "chapters": {
         "א": {
@@ -5478,7 +5478,7 @@
       }
     },
     {
-      "book_name": "מגילת רות",
+      "book24_name": "מגילת רות",
       "sub_book_name": null,
       "chapters": {
         "א": {
@@ -9621,7 +9621,7 @@
       }
     },
     {
-      "book_name": "מגילת איכה",
+      "book24_name": "מגילת איכה",
       "sub_book_name": null,
       "chapters": {
         "א": {
@@ -16308,7 +16308,7 @@
       }
     },
     {
-      "book_name": "מגילת קהלת",
+      "book24_name": "מגילת קהלת",
       "sub_book_name": null,
       "chapters": {
         "א": {
@@ -25328,7 +25328,7 @@
       }
     },
     {
-      "book_name": "מגילת אסתר",
+      "book24_name": "מגילת אסתר",
       "sub_book_name": null,
       "chapters": {
         "א": {

@@ -1,6 +1,6 @@
 {
   "header": {
-    "book_names": [
+    "book24_names": [
       "ספר ישעיהו",
       "ספר ירמיהו",
       "ספר יחזקאל",
@@ -24,85 +24,85 @@
     },
     "chapter_counts": [
       {
-        "book_name": "ספר ישעיהו",
+        "book24_name": "ספר ישעיהו",
         "sub_book_name": null,
         "chapter_count": 66
       },
       {
-        "book_name": "ספר ירמיהו",
+        "book24_name": "ספר ירמיהו",
         "sub_book_name": null,
         "chapter_count": 52
       },
       {
-        "book_name": "ספר יחזקאל",
+        "book24_name": "ספר יחזקאל",
         "sub_book_name": null,
         "chapter_count": 48
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "הושע",
         "chapter_count": 14
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "יואל",
         "chapter_count": 4
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "עמוס",
         "chapter_count": 9
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "עבדיה",
         "chapter_count": 1
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "יונה",
         "chapter_count": 4
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "מיכה",
         "chapter_count": 7
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "נחום",
         "chapter_count": 3
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "חבקוק",
         "chapter_count": 3
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "צפניה",
         "chapter_count": 3
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "חגי",
         "chapter_count": 2
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "זכריה",
         "chapter_count": 14
       },
       {
-        "book_name": "ספר תרי עשר",
+        "book24_name": "ספר תרי עשר",
         "sub_book_name": "מלאכי",
         "chapter_count": 3
       }
     ]
   },
-  "body": [
+  "book39s": [
     {
-      "book_name": "ספר ישעיהו",
+      "book24_name": "ספר ישעיהו",
       "sub_book_name": null,
       "good_ending": {
         "last_chapnver": [
@@ -20697,7 +20697,7 @@
       }
     },
     {
-      "book_name": "ספר ירמיהו",
+      "book24_name": "ספר ירמיהו",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -45124,7 +45124,7 @@
       }
     },
     {
-      "book_name": "ספר יחזקאל",
+      "book24_name": "ספר יחזקאל",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -65863,7 +65863,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "הושע",
       "good_ending": null,
       "chapters": {
@@ -68733,7 +68733,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "יואל",
       "good_ending": null,
       "chapters": {
@@ -69783,7 +69783,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "עמוס",
       "good_ending": null,
       "chapters": {
@@ -72183,7 +72183,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "עבדיה",
       "good_ending": null,
       "chapters": {
@@ -72659,7 +72659,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "יונה",
       "good_ending": null,
       "chapters": {
@@ -73438,7 +73438,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "מיכה",
       "good_ending": null,
       "chapters": {
@@ -75479,7 +75479,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "נחום",
       "good_ending": null,
       "chapters": {
@@ -76263,7 +76263,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "חבקוק",
       "good_ending": null,
       "chapters": {
@@ -77094,7 +77094,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "צפניה",
       "good_ending": null,
       "chapters": {
@@ -78193,7 +78193,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "חגי",
       "good_ending": null,
       "chapters": {
@@ -78875,7 +78875,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "זכריה",
       "good_ending": null,
       "chapters": {
@@ -83203,7 +83203,7 @@
       }
     },
     {
-      "book_name": "ספר תרי עשר",
+      "book24_name": "ספר תרי עשר",
       "sub_book_name": "מלאכי",
       "good_ending": {
         "last_chapnver": [

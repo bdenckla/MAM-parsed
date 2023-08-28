@@ -1,6 +1,6 @@
 {
   "header": {
-    "book_names": [
+    "book24_names": [
       "ספר דניאל",
       "ספר עזרא",
       "ספר דברי הימים"
@@ -17,35 +17,35 @@
     },
     "chapter_counts": [
       {
-        "book_name": "ספר דניאל",
+        "book24_name": "ספר דניאל",
         "sub_book_name": null,
         "chapter_count": 12
       },
       {
-        "book_name": "ספר עזרא",
+        "book24_name": "ספר עזרא",
         "sub_book_name": "עזרא",
         "chapter_count": 10
       },
       {
-        "book_name": "ספר עזרא",
+        "book24_name": "ספר עזרא",
         "sub_book_name": "נחמיה",
         "chapter_count": 13
       },
       {
-        "book_name": "ספר דברי הימים",
+        "book24_name": "ספר דברי הימים",
         "sub_book_name": "דה\"א",
         "chapter_count": 29
       },
       {
-        "book_name": "ספר דברי הימים",
+        "book24_name": "ספר דברי הימים",
         "sub_book_name": "דה\"ב",
         "chapter_count": 36
       }
     ]
   },
-  "body": [
+  "book39s": [
     {
-      "book_name": "ספר דניאל",
+      "book24_name": "ספר דניאל",
       "sub_book_name": null,
       "chapters": {
         "א": {
@@ -17236,7 +17236,7 @@
       }
     },
     {
-      "book_name": "ספר עזרא",
+      "book24_name": "ספר עזרא",
       "sub_book_name": "עזרא",
       "chapters": {
         "א": {
@@ -29545,7 +29545,7 @@
       }
     },
     {
-      "book_name": "ספר עזרא",
+      "book24_name": "ספר עזרא",
       "sub_book_name": "נחמיה",
       "chapters": {
         "א": {
@@ -45465,7 +45465,7 @@
       }
     },
     {
-      "book_name": "ספר דברי הימים",
+      "book24_name": "ספר דברי הימים",
       "sub_book_name": "דה\"א",
       "chapters": {
         "א": {
@@ -78576,7 +78576,7 @@
       }
     },
     {
-      "book_name": "ספר דברי הימים",
+      "book24_name": "ספר דברי הימים",
       "sub_book_name": "דה\"ב",
       "chapters": {
         "א": {

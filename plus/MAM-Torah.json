@@ -1,6 +1,6 @@
 {
   "header": {
-    "book_names": [
+    "book24_names": [
       "ספר בראשית",
       "ספר שמות",
       "ספר ויקרא",
@@ -10,35 +10,35 @@
     "sub_book_names": {},
     "chapter_counts": [
       {
-        "book_name": "ספר בראשית",
+        "book24_name": "ספר בראשית",
         "sub_book_name": null,
         "chapter_count": 50
       },
       {
-        "book_name": "ספר שמות",
+        "book24_name": "ספר שמות",
         "sub_book_name": null,
         "chapter_count": 40
       },
       {
-        "book_name": "ספר ויקרא",
+        "book24_name": "ספר ויקרא",
         "sub_book_name": null,
         "chapter_count": 27
       },
       {
-        "book_name": "ספר במדבר",
+        "book24_name": "ספר במדבר",
         "sub_book_name": null,
         "chapter_count": 36
       },
       {
-        "book_name": "ספר דברים",
+        "book24_name": "ספר דברים",
         "sub_book_name": null,
         "chapter_count": 34
       }
     ]
   },
-  "body": [
+  "book39s": [
     {
-      "book_name": "ספר בראשית",
+      "book24_name": "ספר בראשית",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -29680,7 +29680,7 @@
       }
     },
     {
-      "book_name": "ספר שמות",
+      "book24_name": "ספר שמות",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -52734,7 +52734,7 @@
       }
     },
     {
-      "book_name": "ספר ויקרא",
+      "book24_name": "ספר ויקרא",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -69010,7 +69010,7 @@
       }
     },
     {
-      "book_name": "ספר במדבר",
+      "book24_name": "ספר במדבר",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -92426,7 +92426,7 @@
       }
     },
     {
-      "book_name": "ספר דברים",
+      "book24_name": "ספר דברים",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {

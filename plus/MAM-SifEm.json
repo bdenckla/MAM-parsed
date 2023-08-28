@@ -1,6 +1,6 @@
 {
   "header": {
-    "book_names": [
+    "book24_names": [
       "ספר תהלים",
       "ספר משלי",
       "ספר איוב"
@@ -8,25 +8,25 @@
     "sub_book_names": {},
     "chapter_counts": [
       {
-        "book_name": "ספר תהלים",
+        "book24_name": "ספר תהלים",
         "sub_book_name": null,
         "chapter_count": 150
       },
       {
-        "book_name": "ספר משלי",
+        "book24_name": "ספר משלי",
         "sub_book_name": null,
         "chapter_count": 31
       },
       {
-        "book_name": "ספר איוב",
+        "book24_name": "ספר איוב",
         "sub_book_name": null,
         "chapter_count": 42
       }
     ]
   },
-  "body": [
+  "book39s": [
     {
-      "book_name": "ספר תהלים",
+      "book24_name": "ספר תהלים",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -67713,7 +67713,7 @@
       }
     },
     {
-      "book_name": "ספר משלי",
+      "book24_name": "ספר משלי",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -88984,7 +88984,7 @@
       }
     },
     {
-      "book_name": "ספר איוב",
+      "book24_name": "ספר איוב",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {

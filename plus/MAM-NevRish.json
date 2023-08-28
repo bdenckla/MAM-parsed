@@ -1,6 +1,6 @@
 {
   "header": {
-    "book_names": [
+    "book24_names": [
       "ספר יהושע",
       "ספר שופטים",
       "ספר שמואל",
@@ -18,40 +18,40 @@
     },
     "chapter_counts": [
       {
-        "book_name": "ספר יהושע",
+        "book24_name": "ספר יהושע",
         "sub_book_name": null,
         "chapter_count": 24
       },
       {
-        "book_name": "ספר שופטים",
+        "book24_name": "ספר שופטים",
         "sub_book_name": null,
         "chapter_count": 21
       },
       {
-        "book_name": "ספר שמואל",
+        "book24_name": "ספר שמואל",
         "sub_book_name": "שמ\"א",
         "chapter_count": 31
       },
       {
-        "book_name": "ספר שמואל",
+        "book24_name": "ספר שמואל",
         "sub_book_name": "שמ\"ב",
         "chapter_count": 24
       },
       {
-        "book_name": "ספר מלכים",
+        "book24_name": "ספר מלכים",
         "sub_book_name": "מל\"א",
         "chapter_count": 22
       },
       {
-        "book_name": "ספר מלכים",
+        "book24_name": "ספר מלכים",
         "sub_book_name": "מל\"ב",
         "chapter_count": 25
       }
     ]
   },
-  "body": [
+  "book39s": [
     {
-      "book_name": "ספר יהושע",
+      "book24_name": "ספר יהושע",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -10649,7 +10649,7 @@
       }
     },
     {
-      "book_name": "ספר שופטים",
+      "book24_name": "ספר שופטים",
       "sub_book_name": null,
       "good_ending": null,
       "chapters": {
@@ -20513,7 +20513,7 @@
       }
     },
     {
-      "book_name": "ספר שמואל",
+      "book24_name": "ספר שמואל",
       "sub_book_name": "שמ\"א",
       "good_ending": null,
       "chapters": {
@@ -34046,7 +34046,7 @@
       }
     },
     {
-      "book_name": "ספר שמואל",
+      "book24_name": "ספר שמואל",
       "sub_book_name": "שמ\"ב",
       "good_ending": null,
       "chapters": {
@@ -46473,7 +46473,7 @@
       }
     },
     {
-      "book_name": "ספר מלכים",
+      "book24_name": "ספר מלכים",
       "sub_book_name": "מל\"א",
       "good_ending": null,
       "chapters": {
@@ -59395,7 +59395,7 @@
       }
     },
     {
-      "book_name": "ספר מלכים",
+      "book24_name": "ספר מלכים",
       "sub_book_name": "מל\"ב",
       "good_ending": null,
       "chapters": {
