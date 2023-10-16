@@ -137,12 +137,7 @@
                 "tmpl_name": "נוסח",
                 "tmpl_args": [
                   {
-                    "tmpl_name": "פסקא באמצע פסוק",
-                    "tmpl_args": [
-                      {
-                        "tmpl_name": "פפ"
-                      }
-                    ]
+                    "tmpl_name": "פפ"
                   },
                   "א=רווח של שורה ריקה"
                 ]
