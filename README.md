@@ -4,10 +4,12 @@ This Git repository contains
 [Miqra According to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah)
 in two parsed formats: "plain" and "plus."
 
-Each format contains a JSON file for each of the 6 main tabs of the
+Each format contains a JSON file for each of the 24 books of the Miqra.
+
+The source of this data is the
 [MAM Google Sheet](https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit#gid=920165745).
 
-Each JSON file represents its corresponding tab in an easier-to-read format.
+Each JSON file represents its corresponding book in a format that is easier to read than the format of the Google Sheet.
 (It is easier for a *program* to read, that is. It is not very human-readable.)
 
 The format of the JSON files is easier to read because it is a *parsed* format.
@@ -36,3 +38,8 @@ the JSON files might be used.
 
 The format of these JSON files is not yet stable. I.e. if you write an application
 based on their format, be aware that their format is still subject to change at this time.
+
+Other versions/formats of MAM (each with their tradeoffs) include:
+
+* [MAM-XML](https://github.com/bdenckla/MAM-XML)
+* [MAM for Sefaria](https://github.com/bdenckla/MAM-for-Sefaria)
