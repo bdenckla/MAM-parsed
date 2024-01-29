@@ -17,6 +17,38 @@
       "book24_name": "ספר תהלים",
       "sub_book_name": null,
       "good_ending_plus": null,
+      "psalm_division_tmpls": {
+        "א": {
+          "tmpl_name": "מ:רווח לספר בתהלים",
+          "tmpl_args": [
+            "ספר ראשון"
+          ]
+        },
+        "מב": {
+          "tmpl_name": "מ:רווח לספר בתהלים",
+          "tmpl_args": [
+            "ספר שני"
+          ]
+        },
+        "עג": {
+          "tmpl_name": "מ:רווח לספר בתהלים",
+          "tmpl_args": [
+            "ספר שלישי"
+          ]
+        },
+        "צ": {
+          "tmpl_name": "מ:רווח לספר בתהלים",
+          "tmpl_args": [
+            "ספר רביעי"
+          ]
+        },
+        "קז": {
+          "tmpl_name": "מ:רווח לספר בתהלים",
+          "tmpl_args": [
+            "ספר חמישי"
+          ]
+        }
+      },
       "chapters": {
         "א": {
           "א": [
