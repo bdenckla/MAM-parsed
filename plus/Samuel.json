@@ -26,7 +26,7 @@
     {
       "book24_name": "ספר שמואל",
       "sub_book_name": "שמ\"א",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -12303,7 +12303,7 @@
     {
       "book24_name": "ספר שמואל",
       "sub_book_name": "שמ\"ב",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [

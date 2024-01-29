@@ -86,7 +86,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "הושע",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -2803,7 +2803,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "יואל",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -3744,7 +3744,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "עמוס",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -5881,7 +5881,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "עבדיה",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -6250,7 +6250,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "יונה",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -6954,7 +6954,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "מיכה",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -8638,7 +8638,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "נחום",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -9345,7 +9345,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "חבקוק",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -10117,7 +10117,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "צפניה",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -11007,7 +11007,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "חגי",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -11600,7 +11600,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "זכריה",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -14941,7 +14941,7 @@
     {
       "book24_name": "ספר תרי עשר",
       "sub_book_name": "מלאכי",
-      "good_ending": {
+      "good_ending_plus": {
         "last_chapnver": [
           "ג",
           "כד"

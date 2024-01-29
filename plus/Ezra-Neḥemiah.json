@@ -26,7 +26,7 @@
     {
       "book24_name": "ספר עזרא",
       "sub_book_name": "עזרא",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -5582,7 +5582,7 @@
     {
       "book24_name": "ספר עזרא",
       "sub_book_name": "נחמיה",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [

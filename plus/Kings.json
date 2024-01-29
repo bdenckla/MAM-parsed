@@ -26,7 +26,7 @@
     {
       "book24_name": "ספר מלכים",
       "sub_book_name": "מל\"א",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -11713,7 +11713,7 @@
     {
       "book24_name": "ספר מלכים",
       "sub_book_name": "מל\"ב",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [

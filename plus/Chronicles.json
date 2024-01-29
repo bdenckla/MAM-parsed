@@ -26,7 +26,7 @@
     {
       "book24_name": "ספר דברי הימים",
       "sub_book_name": "דה\"א",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
@@ -14337,7 +14337,7 @@
     {
       "book24_name": "ספר דברי הימים",
       "sub_book_name": "דה\"ב",
-      "good_ending": null,
+      "good_ending_plus": null,
       "chapters": {
         "א": {
           "א": [
