@@ -25,7 +25,6 @@ from the Google Sheet in the following ways:
 
 * Compared to the Google Sheet, the "plus" format adds:
     * A `good_ending` key to the `book39` header.
-    * A 4th column (a "next C" column) in addition to the original C, D, &amp; E columns.
     * A targeted version of each מ:הערה template call.
     * A template marking each word with special letters.
 * Compared to the Google Sheet, the "plus" format removes:
