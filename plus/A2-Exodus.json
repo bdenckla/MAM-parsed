@@ -9113,6 +9113,12 @@
             [
               {
                 "tmpl_name": "סס"
+              },
+              {
+                "tmpl_name": "bold",
+                "tmpl_args": [
+                  []
+                ]
               }
             ],
             [],
