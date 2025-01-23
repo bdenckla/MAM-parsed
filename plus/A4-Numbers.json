@@ -39,7 +39,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "במדבר"
                       ]
@@ -53,7 +53,7 @@
                   "3": "א",
                   "סדר": "א",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "במדבר"
                     ]
@@ -2454,7 +2454,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "נשֹא"
                       ]
@@ -2467,7 +2467,7 @@
                   "2": "ד",
                   "3": "כא",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "נשֹא"
                     ]
@@ -5195,7 +5195,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "בהעלֹתך"
                       ]
@@ -5209,7 +5209,7 @@
                   "3": "א",
                   "סדר": "ח",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "בהעלֹתך"
                     ]
@@ -7909,7 +7909,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "שלח"
                       ]
@@ -7923,7 +7923,7 @@
                   "3": "א",
                   "סדר": "יב",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "שלח"
                     ]
@@ -9686,7 +9686,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "קֹרח"
                       ]
@@ -9700,7 +9700,7 @@
                   "3": "א",
                   "סדר": "טו",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "קֹרח"
                     ]
@@ -11453,7 +11453,7 @@
                       [
                         "עלייה=",
                         {
-                          "tmpl_name": "bold",
+                          "tmpl_name": "tapos-bold",
                           "tmpl_args": [
                             "חֻקת"
                           ]
@@ -11467,7 +11467,7 @@
                       "3": "א",
                       "סדר": "[יז]",
                       "עלייה": {
-                        "tmpl_name": "bold",
+                        "tmpl_name": "tapos-bold",
                         "tmpl_args": [
                           "חֻקת"
                         ]
@@ -11488,7 +11488,7 @@
                       [
                         "עלייה=",
                         {
-                          "tmpl_name": "bold",
+                          "tmpl_name": "tapos-bold",
                           "tmpl_args": [
                             "חֻקת"
                           ]
@@ -11502,7 +11502,7 @@
                       "3": "א",
                       "סדר": "[יז]",
                       "עלייה": {
-                        "tmpl_name": "bold",
+                        "tmpl_name": "tapos-bold",
                         "tmpl_args": [
                           "חֻקת"
                         ]
@@ -12753,7 +12753,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "בלק"
                       ]
@@ -12767,7 +12767,7 @@
                   "3": "ב",
                   "סדר": "יט",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "בלק"
                     ]
@@ -14571,7 +14571,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "פינחס"
                       ]
@@ -14585,7 +14585,7 @@
                   "3": "י",
                   "סדר": "כב",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "פינחס"
                     ]
@@ -17159,7 +17159,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "מטות"
                       ]
@@ -17173,7 +17173,7 @@
                   "3": "ב",
                   "סדר": "כו",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "מטות"
                     ]
@@ -18809,7 +18809,7 @@
                   [
                     "עלייה=",
                     {
-                      "tmpl_name": "bold",
+                      "tmpl_name": "tapos-bold",
                       "tmpl_args": [
                         "מסעי"
                       ]
@@ -18823,7 +18823,7 @@
                   "3": "א",
                   "סדר": "ל",
                   "עלייה": {
-                    "tmpl_name": "bold",
+                    "tmpl_name": "tapos-bold",
                     "tmpl_args": [
                       "מסעי"
                     ]
