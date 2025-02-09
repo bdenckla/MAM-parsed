@@ -8227,9 +8227,13 @@
                     {
                       "tmpl_name": "מ:קישור בהערה",
                       "tmpl_args": [
-                        "http://www.daat.ac.il/daat/vl/meorotnatan/meorotnatan01.pdf",
-                        "מאורות נתן"
-                      ]
+                        "1=http://www.daat.ac.il/daat/vl/meorotnatan/meorotnatan01.pdf",
+                        "2=מאורות נתן"
+                      ],
+                      "tmpl_params": {
+                        "1": "1=http://www.daat.ac.il/daat/vl/meorotnatan/meorotnatan01.pdf",
+                        "2": "מאורות נתן"
+                      }
                     },
                     ", עמ' 15; נוסח ההערה שם: <שתי מלות? לא כן אלא חדא מלה וסמך בשוא ומפיק בהא כרד\"ק>. וראו הרחבות בעניין בהערותיו של ברויאר, \"נוסח המקרא בכתר ירושלים\", עמ' 13 בערות 14-16."
                   ]
@@ -8252,9 +8256,13 @@
                     {
                       "tmpl_name": "מ:קישור בהערה",
                       "tmpl_args": [
-                        "http://www.daat.ac.il/daat/vl/meorotnatan/meorotnatan01.pdf",
-                        "מאורות נתן"
-                      ]
+                        "1=http://www.daat.ac.il/daat/vl/meorotnatan/meorotnatan01.pdf",
+                        "2=מאורות נתן"
+                      ],
+                      "tmpl_params": {
+                        "1": "1=http://www.daat.ac.il/daat/vl/meorotnatan/meorotnatan01.pdf",
+                        "2": "מאורות נתן"
+                      }
                     },
                     ", עמ' 15; נוסח ההערה שם: <שתי מלות? לא כן אלא חדא מלה וסמך בשוא ומפיק בהא כרד\"ק>. וראו הרחבות בעניין בהערותיו של ברויאר, \"נוסח המקרא בכתר ירושלים\", עמ' 13 בערות 14-16."
                   ]
