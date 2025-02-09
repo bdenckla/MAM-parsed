@@ -2370,7 +2370,7 @@
                         "2=תולדו"
                       ],
                       "tmpl_params": {
-                        "1": "1=https://gallica.bnf.fr/ark:/12148/btv1b10539330f/f769.item.r=h%C3%A9breu%2025",
+                        "1": "https://gallica.bnf.fr/ark:/12148/btv1b10539330f/f769.item.r=h%C3%A9breu%2025",
                         "2": "תולדו"
                       }
                     },
@@ -2382,7 +2382,7 @@
                         "2=קטלוניה"
                       ],
                       "tmpl_params": {
-                        "1": "1=https://www.bl.uk/manuscripts/Viewer.aspx?ref=harley_ms_1528_fs001r",
+                        "1": "https://www.bl.uk/manuscripts/Viewer.aspx?ref=harley_ms_1528_fs001r",
                         "2": "קטלוניה"
                       }
                     },
@@ -2394,7 +2394,7 @@
                         "2=ליסבון"
                       ],
                       "tmpl_params": {
-                        "1": "1=https://archive.org/details/lisbon-bible-images/page/n1221/mode/1up?view=theater",
+                        "1": "https://archive.org/details/lisbon-bible-images/page/n1221/mode/1up?view=theater",
                         "2": "ליסבון"
                       }
                     },
@@ -2458,7 +2458,7 @@
                         "2=תולדו"
                       ],
                       "tmpl_params": {
-                        "1": "1=https://gallica.bnf.fr/ark:/12148/btv1b10539330f/f769.item.r=h%C3%A9breu%2025",
+                        "1": "https://gallica.bnf.fr/ark:/12148/btv1b10539330f/f769.item.r=h%C3%A9breu%2025",
                         "2": "תולדו"
                       }
                     },
@@ -2470,7 +2470,7 @@
                         "2=קטלוניה"
                       ],
                       "tmpl_params": {
-                        "1": "1=https://www.bl.uk/manuscripts/Viewer.aspx?ref=harley_ms_1528_fs001r",
+                        "1": "https://www.bl.uk/manuscripts/Viewer.aspx?ref=harley_ms_1528_fs001r",
                         "2": "קטלוניה"
                       }
                     },
@@ -2482,7 +2482,7 @@
                         "2=ליסבון"
                       ],
                       "tmpl_params": {
-                        "1": "1=https://archive.org/details/lisbon-bible-images/page/n1221/mode/1up?view=theater",
+                        "1": "https://archive.org/details/lisbon-bible-images/page/n1221/mode/1up?view=theater",
                         "2": "ליסבון"
                       }
                     },
@@ -8265,7 +8265,7 @@
                         "2=\"תורת אמת\""
                       ],
                       "tmpl_params": {
-                        "1": "1=https://archive.org/details/baer-torat-emet-1852-color-images/page/n79/mode/2up?view=theater",
+                        "1": "https://archive.org/details/baer-torat-emet-1852-color-images/page/n79/mode/2up?view=theater",
                         "2": "\"תורת אמת\""
                       }
                     },
@@ -8291,7 +8291,7 @@
                         "2=\"תורת אמת\""
                       ],
                       "tmpl_params": {
-                        "1": "1=https://archive.org/details/baer-torat-emet-1852-color-images/page/n79/mode/2up?view=theater",
+                        "1": "https://archive.org/details/baer-torat-emet-1852-color-images/page/n79/mode/2up?view=theater",
                         "2": "\"תורת אמת\""
                       }
                     },
