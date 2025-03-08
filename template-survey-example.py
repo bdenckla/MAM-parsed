@@ -83,11 +83,11 @@ def _reformat_survey(survey):
 
 def main():
     """ Surveys the templates used in Torah. """
-    with open('plain/MAM-Torah.json', encoding='utf-8') as fpi:
-        sec = json.load(fpi)
-    survey = _do_survey(sec['body'])
+    with open('plain/BA-Samuel.json', encoding='utf-8') as fpi:
+        book24 = json.load(fpi)
+    survey = _do_survey(book24['book39s'])
     records = _reformat_survey(survey)
-    with _openw('out/template-survey-example-out.json') as fpo:
+    with _openw('./template-survey-example-out.json') as fpo:
         dump_opts = {'indent': 0, 'ensure_ascii': False}
         json.dump(records, fpo, **dump_opts)
 
