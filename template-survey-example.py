@@ -1,4 +1,4 @@
-""" Exports main. """
+""" Exports main """
 
 import collections
 import json
