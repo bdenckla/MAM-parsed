@@ -31,6 +31,11 @@ from the Google Sheet in the following ways:
     * custom XML tags
     * 0 (zero) and תתת (triple-tav) pseudo-verses
 
+For detailed documentation of the JSON file structures, see:
+
+* [Reading MAM-parsed plain JSON](doc/reading-mam-parsed-plain.md) — structure reference for the "plain" format
+* [Reading MAM-parsed plus JSON](doc/reading-mam-parsed-plus.md) — structure reference for the "plus" format (differences from plain)
+
 This Git repository also contains a toy sample application,
 `template-survey-example.py`, giving some sense of how
 the JSON files might be used.
