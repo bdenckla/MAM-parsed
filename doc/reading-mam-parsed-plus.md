@@ -20,6 +20,7 @@ then use this document for the differences.
 | Template representation | `stmpl` (stringified) | `tmpl_name`/`tmpl_args`/`tmpl_params` |
 | CP column (verse reference) | Every verse has `מ:פסוק` | Only first verse of chapter |
 | `good_ending_plus` | Not present | **Added** (at book39 level) |
+| `he_to_int` in header | Not present | **Added** (Hebrew-numeral to integer mapping) |
 | Special letter marking | Not present | **Added** (`מ:אות-מיוחדת-במילה`) |
 | Targeted ketiv-qere templates | Generic only | **Added** (e.g. `מ:כו"ק כתיב מילה חדה...`) |
 
@@ -32,6 +33,41 @@ Same as plain:
   "header": { ... },
   "book39s": [ ... ]
 }
+```
+
+## Header
+
+The plus header gains a `he_to_int` key — a mapping from every
+Hebrew-numeral string that appears as a chapter or verse key in the
+file to its integer equivalent. This allows consumers to navigate
+chapters and verses by integer without needing to implement
+Hebrew-numeral decoding.
+
+```json
+"header": {
+  "book24_names": ["ספר איוב"],
+  "sub_book_names": {},
+  "chapter_counts": [
+    { "book24_name": "ספר איוב", "sub_book_name": null, "chapter_count": 42 }
+  ],
+  "he_to_int": {
+    "א": 1,
+    "ב": 2,
+    "ג": 3,
+    ...
+    "קעו": 176
+  }
+}
+```
+
+The mapping is sorted by integer value and covers the union of all
+chapter and verse keys across all `book39s` in the file.
+To look up, say, chapter 5 verse 12, a consumer can build the
+reverse mapping once:
+
+```python
+int_to_he = {v: k for k, v in header['he_to_int'].items()}
+verse_data = chapters[int_to_he[5]][int_to_he[12]]
 ```
 
 ## Book39 entry
