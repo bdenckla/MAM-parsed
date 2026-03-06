@@ -158,7 +158,11 @@ All templates in the plus format use the expanded representation:
 ```json
 {
   "tmpl_name": "קו\"כ",
-  "tmpl_args": ["את", "אַננאַנתַָּֽה"]
+  "tmpl_args": ["את", "אַ֠תָּ֠ה"],
+  "tmpl_params": {
+    "1": "את",
+    "2": "אַ֠תָּ֠ה"
+  }
 }
 ```
 
@@ -166,7 +170,7 @@ All templates in the plus format use the expanded representation:
 |-----|------|-------------|
 | `tmpl_name` | string | Template name |
 | `tmpl_args` | array | Positional arguments (strings, arrays, or nested template objects) |
-| `tmpl_params` | object | Named parameters — **present only when needed** (see below) |
+| `tmpl_params` | object | Named parameters (optional; maps param names to values) |
 
 Contrast with the plain format where the same template would be:
 
@@ -180,52 +184,6 @@ In the plus format, template arguments can themselves be:
 - Strings
 - Nested template objects
 - Arrays of mixed strings and template objects
-
-### When `tmpl_params` is present
-
-`tmpl_params` is **only** included on a template when the Wikitext
-source uses at least one explicitly-named parameter (e.g. `2=א=...`).
-Templates whose arguments are all purely positional have `tmpl_args`
-but **no** `tmpl_params` key.
-
-When `tmpl_params` is present:
-
-- Numeric keys `"1"`, `"2"`, … correspond to the positional
-  arguments.  `tmpl_params["1"]` is the same object as
-  `tmpl_args[0]`.  `tmpl_params["2"]` equals `tmpl_args[1]` with
-  the `"2="` positional prefix already stripped.
-- Non-numeric keys (e.g. `"ד"`, `"ס"`, `"סדר"`) represent
-  explicitly-named parameters like `ד=...` in the wikitext.
-
-The key advantage of `tmpl_params` is that consumers never need to
-parse away positional prefixes like `"2="`.  When `tmpl_params` is
-present it fully supersedes `tmpl_args` — every positional argument
-has a corresponding named entry — so consumers should use
-`tmpl_params` directly and only fall back to `tmpl_args` when
-`tmpl_params` is absent.
-
-A recommended helper:
-
-```python
-def tmpl_param(tmpl, key):
-    """Get a template parameter, preferring tmpl_params over tmpl_args.
-
-    When tmpl_params is present it fully supersedes tmpl_args, so we
-    return params[key] directly.  When it is absent we fall back to
-    tmpl_args using the 1-based numeric key as an index.
-    """
-    params = tmpl.get('tmpl_params')
-    if params is not None:
-        return params[key]
-    return tmpl['tmpl_args'][int(key) - 1]
-```
-
-Examples of templates that **do** have `tmpl_params`:
-`נוסח`, `קו"כ-אם`, `מ:קמץ`, `מ:פסוק`
-
-Examples of templates that **do not** have `tmpl_params`:
-`קו"כ`, `כו"ק`, `מ:דחי`, `מ:צינור`, `מ:אות-ג`, `מ:אות-ק`,
-`מ:אות-מיוחדת-במילה`
 
 Example — a word with a special letter inside a ketiv-qere inside a nusach:
 
@@ -332,25 +290,6 @@ book = json.loads(Path('plus/D3-Job.json').read_text('utf-8'))
 b39 = book['book39s'][0]
 chapters = b39['chapters']
 
-
-def tmpl_param(tmpl, key):
-    """Get a template parameter, preferring tmpl_params over tmpl_args.
-
-    tmpl_params is only present when the wikitext source uses named
-    parameters.  For purely positional templates we fall back to
-    tmpl_args using the 1-based numeric key as an index.
-    """
-    params = tmpl.get('tmpl_params')
-    if params is not None and key in params:
-        return params[key]
-    args = tmpl.get('tmpl_args', [])
-    try:
-        idx = int(key) - 1
-    except (ValueError, TypeError):
-        return None
-    return args[idx] if 0 <= idx < len(args) else None
-
-
 def extract_text(ep_column):
     """Extract plain text from EP column atoms."""
     parts = []
@@ -359,30 +298,32 @@ def extract_text(ep_column):
             parts.append(atom)
         elif isinstance(atom, dict):
             name = atom.get('tmpl_name', '')
+            args = atom.get('tmpl_args', [])
             if name in ('קו"כ', 'קו"כ-אם'):
-                # Use qere (param 2)
-                p2 = tmpl_param(atom, '2')
-                if isinstance(p2, str):
-                    parts.append(p2)
+                # Use qere (2nd arg)
+                if len(args) >= 2 and isinstance(args[1], str):
+                    parts.append(args[1])
             elif name == 'נוסח':
-                # Use primary text (param 1)
-                p1 = tmpl_param(atom, '1')
-                if isinstance(p1, str):
-                    parts.append(p1)
-                elif isinstance(p1, dict):
-                    parts.append(extract_text([p1]))
+                # Use primary text (1st arg)
+                if args:
+                    first = args[0]
+                    if isinstance(first, str):
+                        parts.append(first)
+                    elif isinstance(first, dict):
+                        # Recurse into nested template
+                        parts.append(extract_text([first]))
             elif name.startswith('מ:כו"ק'):
-                # Targeted kq: param 2 is the qere
-                p2 = tmpl_param(atom, '2')
-                if isinstance(p2, str):
-                    parts.append(p2)
-                elif isinstance(p2, list):
-                    parts.append(extract_text(p2))
+                # Targeted kq: 2nd arg is the qere
+                if len(args) >= 2:
+                    qere = args[1]
+                    if isinstance(qere, str):
+                        parts.append(qere)
+                    elif isinstance(qere, list):
+                        parts.append(extract_text(qere))
             elif name == 'מ:אות-מיוחדת-במילה':
-                # Use plain word (param 2)
-                p2 = tmpl_param(atom, '2')
-                if isinstance(p2, str):
-                    parts.append(p2)
+                # Use plain word (2nd arg)
+                if len(args) >= 2 and isinstance(args[1], str):
+                    parts.append(args[1])
             # Skip formatting-only templates (ר0–ר4, מ:לגרמיה-2, etc.)
     return ''.join(parts).strip()
 
