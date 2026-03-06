@@ -158,7 +158,7 @@ All templates in the plus format use the expanded representation:
 ```json
 {
   "tmpl_name": "קו\"כ",
-  "tmpl_args": ["את", "אַננאַנתַָּֽה"]
+  "tmpl_args": ["את", "אַ֠תָּ֠ה"]
 }
 ```
 
@@ -204,7 +204,9 @@ has a corresponding named entry — so consumers should use
 `tmpl_params` directly and only fall back to `tmpl_args` when
 `tmpl_params` is absent.
 
-A recommended helper:
+The recommended access pattern is to always use string keys
+(e.g. `"1"`, `"2"`, `"ד"`) and let a small helper handle the
+fallback:
 
 ```python
 def tmpl_param(tmpl, key):
@@ -336,19 +338,14 @@ chapters = b39['chapters']
 def tmpl_param(tmpl, key):
     """Get a template parameter, preferring tmpl_params over tmpl_args.
 
-    tmpl_params is only present when the wikitext source uses named
-    parameters.  For purely positional templates we fall back to
+    When tmpl_params is present it fully supersedes tmpl_args, so we
+    return params[key] directly.  When it is absent we fall back to
     tmpl_args using the 1-based numeric key as an index.
     """
     params = tmpl.get('tmpl_params')
-    if params is not None and key in params:
+    if params is not None:
         return params[key]
-    args = tmpl.get('tmpl_args', [])
-    try:
-        idx = int(key) - 1
-    except (ValueError, TypeError):
-        return None
-    return args[idx] if 0 <= idx < len(args) else None
+    return tmpl['tmpl_args'][int(key) - 1]
 
 
 def extract_text(ep_column):
