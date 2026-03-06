@@ -1,3 +1,4 @@
+.novc/
 __pycache__/
 .ropeproject
 *.tmp.*
