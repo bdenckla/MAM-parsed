@@ -17,7 +17,7 @@ then use this document for the differences.
 | Pseudo-verses `"0"` and `"תתת"` | Present | **Removed** |
 | Custom XML tags (`noinclude` etc.) | Present | **Removed** |
 | Wikitext line breaks (`"//"`) | Present in D column | **Removed** |
-| Template representation | `stmpl` (stringified) | `tmpl_name`/`tmpl_args`/`tmpl_params` |
+| Template representation | `stmpl` (stringified) | `tmpl_name`/`tmpl_params` |
 | CP column (verse reference) | Every verse has `מ:פסוק` | Only first verse of chapter |
 | `good_ending_plus` | Not present | **Added** (at book39 level) |
 | `he_to_int` in header | Not present | **Added** (Hebrew-numeral to integer mapping) |
@@ -98,10 +98,10 @@ The `good_ending_plus` key captures this:
   "last_chapnver": ["סו", "כד"],
   "wikitext_element": {
     "tmpl_name": "נוסח",
-    "tmpl_args": [
-      {"tmpl_name": "מ:סיום בטוב", "tmpl_args": ["..."]},
+    "tmpl_params": {
+      "1": {"tmpl_name": "מ:סיום בטוב", "tmpl_params": {"1": "..."}},
       ...
-    ]
+    }
   }
 }
 ```
@@ -127,7 +127,7 @@ Simplified compared to plain. No `"//"` Wikitext line breaks:
 | `["__"]` | No break (continuation) |
 | `[{"tmpl_name": "פפ"}]` | Parashah petuchah |
 | `[{"tmpl_name": "סס"}]` | Parashah setumah |
-| `[{"tmpl_name": "מ:ספר חדש", "tmpl_args": ["איוב"]}]` | New book |
+| `[{"tmpl_name": "מ:ספר חדש", "tmpl_params": {"1": "איוב"}}]` | New book |
 | `[{"tmpl_name": "מ:אין פרשה בתחילת פרק"}]` | No parashah at chapter start |
 
 ### CP column (index 1): Verse reference
@@ -137,7 +137,7 @@ All other verses have an empty `[]`:
 
 ```json
 // First verse (א):
-[{"tmpl_name": "מ:פסוק", "tmpl_args": ["איוב", "א", "א", "סדר=א"], "tmpl_params": {...}}]
+[{"tmpl_name": "מ:פסוק", "tmpl_params": {"1": "איוב", "2": "א", "3": "א", "סדר": "א"}}]
 
 // Subsequent verses (ב, ג, ...):
 []
@@ -158,15 +158,14 @@ All templates in the plus format use the expanded representation:
 ```json
 {
   "tmpl_name": "קו\"כ",
-  "tmpl_args": ["את", "אַ֠תָּ֠ה"]
+  "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"}
 }
 ```
 
 | Key | Type | Description |
 |-----|------|-------------|
 | `tmpl_name` | string | Template name |
-| `tmpl_args` | array | Positional arguments (strings, arrays, or nested template objects) |
-| `tmpl_params` | object | Named parameters — **present only when needed** (see below) |
+| `tmpl_params` | object | Parameters — **present only when the template has params** |
 
 Contrast with the plain format where the same template would be:
 
@@ -174,82 +173,57 @@ Contrast with the plain format where the same template would be:
 {"stmpl": "קו\"כ|את|אַ֠תָּ֠ה"}
 ```
 
-### Template arguments can be complex
+### `tmpl_params` keys
 
-In the plus format, template arguments can themselves be:
+- Numeric string keys `"1"`, `"2"`, … correspond to positional arguments,
+  with any `"2="` prefix already stripped.
+- Non-numeric keys (e.g. `"ד"`, `"ס"`, `"סדר"`) represent named parameters
+  like `ד=...` in the wikitext.
+
+`tmpl_params` is absent only when the template has no parameters at all
+(e.g. `פפ`, `סס`, `מ:פסק`).
+
+### Template parameter values can be complex
+
+Parameter values can themselves be:
 - Strings
 - Nested template objects
 - Arrays of mixed strings and template objects
 
-### When `tmpl_params` is present
+### Accessing template parameters
 
-`tmpl_params` is **only** included on a template when the Wikitext
-source uses at least one explicitly-named parameter (e.g. `2=א=...`).
-Templates whose arguments are all purely positional have `tmpl_args`
-but **no** `tmpl_params` key.
-
-When `tmpl_params` is present:
-
-- Numeric keys `"1"`, `"2"`, … correspond to the positional
-  arguments.  `tmpl_params["1"]` is the same object as
-  `tmpl_args[0]`.  `tmpl_params["2"]` equals `tmpl_args[1]` with
-  the `"2="` positional prefix already stripped.
-- Non-numeric keys (e.g. `"ד"`, `"ס"`, `"סדר"`) represent
-  explicitly-named parameters like `ד=...` in the wikitext.
-
-The key advantage of `tmpl_params` is that consumers never need to
-parse away positional prefixes like `"2="`.  When `tmpl_params` is
-present it fully supersedes `tmpl_args` — every positional argument
-has a corresponding named entry — so consumers should use
-`tmpl_params` directly and only fall back to `tmpl_args` when
-`tmpl_params` is absent.
-
-The recommended access pattern is to always use string keys
-(e.g. `"1"`, `"2"`, `"ד"`) and let a small helper handle the
-fallback:
+Use `tmpl_params` directly with the string key:
 
 ```python
 def tmpl_param(tmpl, key):
-    """Get a template parameter, preferring tmpl_params over tmpl_args.
-
-    When tmpl_params is present it fully supersedes tmpl_args, so we
-    return params[key] directly.  When it is absent we fall back to
-    tmpl_args using the 1-based numeric key as an index.
-    """
-    params = tmpl.get('tmpl_params')
-    if params is not None:
-        return params[key]
-    return tmpl['tmpl_args'][int(key) - 1]
+    """Get a template parameter by string key (e.g. '1', '2', 'ד')."""
+    return tmpl['tmpl_params'][key]
 ```
-
-Examples of templates that **do** have `tmpl_params`:
-`נוסח`, `קו"כ-אם`, `מ:קמץ`, `מ:פסוק`
-
-Examples of templates that **do not** have `tmpl_params`:
-`קו"כ`, `כו"ק`, `מ:דחי`, `מ:צינור`, `מ:אות-ג`, `מ:אות-ק`,
-`מ:אות-מיוחדת-במילה`
 
 Example — a word with a special letter inside a ketiv-qere inside a nusach:
 
 ```json
 {
   "tmpl_name": "נוסח",
-  "tmpl_args": [
-    {
+  "tmpl_params": {
+    "1": {
       "tmpl_name": "כו\"ק",
-      "tmpl_args": [
-        {
+      "tmpl_params": {
+        "1": {
           "tmpl_name": "מ:אות-מיוחדת-במילה",
-          "tmpl_args": [
-            ["ו", {"tmpl_name": "מ:אות-ק", "tmpl_args": ["ג"]}, "יש"],
-            "וגיש", ".ג..", "ק", "ג/ק"
-          ]
+          "tmpl_params": {
+            "1": ["ו", {"tmpl_name": "מ:אות-ק", "tmpl_params": {"1": "ג"}}, "יש"],
+            "2": "וגיש",
+            "3": ".ג..",
+            "4": "ק",
+            "5": "ג/ק"
+          }
         },
-        "וְג֣וּשׁ"
-      ]
+        "2": "וְג֣וּשׁ"
+      }
     },
-    ["2==commentary text...", ...]
-  ]
+    "2": "=commentary text..."
+  }
 }
 ```
 
@@ -263,13 +237,13 @@ Marks a word containing a letter with a special size or form
 ```json
 {
   "tmpl_name": "מ:אות-מיוחדת-במילה",
-  "tmpl_args": [
-    ["שִׁבְ", {"tmpl_name": "מ:אות-ג", "tmpl_args": ["ט֑"]}, "וֹ"],
-    "שִׁבְט֑וֹ",
-    "..ט.",
-    "ג",
-    "ט/ג"
-  ]
+  "tmpl_params": {
+    "1": ["שִׁבְ", {"tmpl_name": "מ:אות-ג", "tmpl_params": {"1": "ט֑"}}, "וֹ"],
+    "2": "שִׁבְט֑וֹ",
+    "3": "..ט.",
+    "4": "ג",
+    "5": "ט/ג"
+  }
 }
 ```
 
@@ -296,10 +270,10 @@ Example of the targeted template (Job 38:1):
 ```json
 {
   "tmpl_name": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
-  "tmpl_args": [
-    "מנהסערה",
-    ["מִ֥ן", {"tmpl_name": "מ:פסק"}, "הַסְּעָרָ֗ה"]
-  ]
+  "tmpl_params": {
+    "1": "מנהסערה",
+    "2": ["מִ֥ן", {"tmpl_name": "מ:פסק"}, "הַסְּעָרָ֗ה"]
+  }
 }
 ```
 
@@ -307,7 +281,7 @@ Here the ketiv "מנהסערה" (one word) is read as "מִ֥ן הַסְּעָר
 
 ## Common templates (shared with plain)
 
-These templates appear in both formats. In plus they use `tmpl_name`/`tmpl_args`
+These templates appear in both formats. In plus they use `tmpl_name`/`tmpl_params`
 instead of `stmpl`:
 
 | Template | Purpose |
@@ -336,16 +310,8 @@ chapters = b39['chapters']
 
 
 def tmpl_param(tmpl, key):
-    """Get a template parameter, preferring tmpl_params over tmpl_args.
-
-    When tmpl_params is present it fully supersedes tmpl_args, so we
-    return params[key] directly.  When it is absent we fall back to
-    tmpl_args using the 1-based numeric key as an index.
-    """
-    params = tmpl.get('tmpl_params')
-    if params is not None:
-        return params[key]
-    return tmpl['tmpl_args'][int(key) - 1]
+    """Get a template parameter by string key (e.g. '1', '2', 'ד')."""
+    return tmpl['tmpl_params'][key]
 
 
 def extract_text(ep_column):
@@ -395,7 +361,7 @@ The following plain-format features are absent in plus:
 
 - `{"custom_tag": "noinclude"}` / `{"custom_tag": "/noinclude"}` — custom XML tags
 - `{"tmpl": [...]}` — parsed template trees (only in pseudo-verses)
-- `{"stmpl": "..."}` — stringified templates (replaced by `tmpl_name`/`tmpl_args`)
+- `{"stmpl": "..."}` — stringified templates (replaced by `tmpl_name`/`tmpl_params`)
 - `"0"` and `"תתת"` pseudo-verses
 - `"//"` Wikitext line breaks in D column
 - `גלגל-2` — galgal accent annotation (handled differently in plus)
