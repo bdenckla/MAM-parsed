@@ -45,7 +45,7 @@ based on their format, be aware that their format is still subject to change at 
 
 Other versions/formats of MAM (each with their tradeoffs) include:
 
-* [MAM-XML](https://github.com/bdenckla/MAM-XML)
+* [MAM-simple](https://github.com/bdenckla/MAM-simple)
 * [MAM for Sefaria](https://github.com/bdenckla/MAM-for-Sefaria)
 
 Questions? Email maintainer@miqra.simplelogin.com.
