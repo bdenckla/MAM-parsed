@@ -279,6 +279,79 @@ Example of the targeted template (Job 38:1):
 
 Here the ketiv "מנהסערה" (one word) is read as "מִ֥ן הַסְּעָרָ֗ה" (two words).
 
+### `מ:הערה-2` — Targeted scroll-difference note
+
+The plain format has `מ:הערה` (a scroll-difference footnote) which is
+"non-targeted": it carries the footnote text but does not explicitly
+identify which word the note applies to. The plus format adds
+`מ:הערה-2`, a "targeted" version that wraps the target word:
+
+```json
+{
+  "tmpl_name": "מ:הערה-2",
+  "tmpl_params": {
+    "1": "מִנְּשֹֽׂא",
+    "2": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
+    "3": "אאא*"
+  }
+}
+```
+
+Arguments:
+1. The target word (the word the note applies to)
+2. The footnote text (the scroll-difference description)
+3. Mark position: `"אאא*"` means the note marker (star) comes after
+   the target; `"*אאא"` means it comes before (only Deut 22:6)
+
+**The `מ:הערה` template is retained alongside `מ:הערה-2`.** The plus
+format redundantly keeps both representations. This is by design:
+
+- The `מ:הערה` template is a faithful representation of what is in the
+  upstream Wikisource wikitext. Removing it would lose that fidelity.
+- Some downstream consumers use the `מ:הערה-2` template only to extract
+  the target word and use the `מ:הערה` template separately to extract
+  the footnote text as a standalone annotation. Removing the `מ:הערה`
+  template would break those consumers.
+- In one verse (Deut 11:21), the two templates are not adjacent: sof
+  pasuq is sandwiched between them. The `מ:הערה` template appears after
+  sof pasuq (due to Wikisource transclusion needs), but the `מ:הערה-2`
+  template correctly excludes sof pasuq from its target. This
+  structural divergence means one cannot be trivially derived from the
+  other in all cases.
+
+Param 2 of the `מ:הערה-2` template always equals param 1 of the
+accompanying `מ:הערה` template. The `מ:הערה-2` template often appears
+nested as param 1 of a `נוסח` (documentation note), with the `מ:הערה`
+template appearing as a sibling immediately after the `נוסח`:
+
+```json
+[
+  "וַיֹּ֥אמֶר קַ֖יִן אֶל־יְהֹוָ֑ה גָּד֥וֹל עֲוֺנִ֖י ",
+  {
+    "tmpl_name": "נוסח",
+    "tmpl_params": {
+      "1": {
+        "tmpl_name": "מ:הערה-2",
+        "tmpl_params": {
+          "1": "מִנְּשֹֽׂא",
+          "2": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
+          "3": "אאא*"
+        }
+      },
+      "2": "=commentary text..."
+    }
+  },
+  {
+    "tmpl_name": "מ:הערה",
+    "tmpl_params": {
+      "1": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא",
+      "שם": "בספרי ספרד ואשכנז מִנְּשֽׂוֹא"
+    }
+  },
+  "׃"
+]
+```
+
 ## Common templates (shared with plain)
 
 These templates appear in both formats. In plus they use `tmpl_name`/`tmpl_params`
