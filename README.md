@@ -33,8 +33,8 @@ from the Google Sheet in the following ways:
 
 For detailed documentation of the JSON file structures, see:
 
-* [Reading MAM-parsed plain JSON](doc/reading-mam-parsed-plain.md) — structure reference for the "plain" format
-* [Reading MAM-parsed plus JSON](doc/reading-mam-parsed-plus.md) — structure reference for the "plus" format (differences from plain)
+* [Reading MAM-parsed plain JSON](doc-under-readme/reading-mam-parsed-plain.md) — structure reference for the "plain" format
+* [Reading MAM-parsed plus JSON](doc-under-readme/reading-mam-parsed-plus.md) — structure reference for the "plus" format (differences from plain)
 
 This Git repository also contains a toy sample application,
 `template-survey-example.py`, giving some sense of how

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plus template call graphs</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    max-width: 960px;
+    margin: 2em auto;
+    padding: 0 1em;
+    line-height: 1.6;
+    color: #24292f;
+  }
+  h1, h2 { border-bottom: 1px solid #d0d7de; padding-bottom: 0.3em; }
+  object { display: block; max-width: 100%; margin: 1em 0; }
+  blockquote {
+    border-left: 4px solid #d0d7de;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    color: #57606a;
+  }
+</style>
+</head>
+<body>
+
+<h1>Plus template call graphs</h1>
+
+<p>These call graphs show the <strong>grammar of template nesting</strong> in the
+MAM-parsed plus format: which templates can appear inside which other
+templates, and how often each combination occurs in the corpus.</p>
+
+<p>Each node is a template (or a spreadsheet column: <strong>C</strong>, <strong>D</strong>, <strong>E</strong>).
+An edge from A to B labelled <em>n</em> means &ldquo;template A contains template B
+as a parameter value in <em>n</em> corpus occurrences.&rdquo; Bold boxes represent
+the top-level columns; regular boxes represent templates.</p>
+
+<p>Some nodes are <strong>collapsed groups</strong>: when several templates have
+identical predecessor and successor sets they are merged into a single
+node. Hover over a collapsed node (indicated by &ldquo;, ...&rdquo; in its label)
+to see the full list of grouped templates.</p>
+
+<blockquote>
+<p><strong>Note:</strong> The templates <strong>מ:כפול</strong>, <strong>נוסח</strong>, and <strong>ש</strong> are discarded
+from the full call graph (including them
+would obscure the rest of the structure). The focused call graphs
+below restore them for the specific templates they highlight.</p>
+</blockquote>
+
+<h2>Full call graph</h2>
+
+<p>Shows all template-nesting relationships in the plus format
+(with מ:כפול, נוסח, and ש discarded, and מ:הערה deeply discarded):</p>
+
+<object type="image/svg+xml" data="plus-call-graph.svg">Full call graph (SVG not supported)</object>
+
+<h2>Focused call graph: מ:כפול (kaful)</h2>
+
+<p>Shows every call chain that passes through the <strong>מ:כפול</strong> (dual cantillation)
+template:</p>
+
+<object type="image/svg+xml" data="plus-kaful-call-graph.svg">Kaful call graph (SVG not supported)</object>
+
+<h2>Focused call graph: נוסח (nusach)</h2>
+
+<p>Shows every call chain that passes through the <strong>נוסח</strong> (textual-variant)
+template. Note that נוסח is always called either directly from a
+top-level column (C, D, or E) or one level down, under מ:כפול:</p>
+
+<object type="image/svg+xml" data="plus-nusach-call-graph.svg">Nusach call graph (SVG not supported)</object>
+
+</body>
+</html>

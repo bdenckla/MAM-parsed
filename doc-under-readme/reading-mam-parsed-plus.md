@@ -191,7 +191,7 @@ Parameter values can themselves be:
 - Arrays of mixed strings and template objects
 
 For a visual overview of which templates nest inside which,
-see the [plus template call graphs](plus-template-call-graphs.md).
+see the [plus template call graphs](https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html).
 
 ### Accessing template parameters
 
