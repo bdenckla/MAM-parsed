@@ -190,6 +190,9 @@ Parameter values can themselves be:
 - Nested template objects
 - Arrays of mixed strings and template objects
 
+For a visual overview of which templates nest inside which,
+see the [plus template call graphs](plus-template-call-graphs.md).
+
 ### Accessing template parameters
 
 Use `tmpl_params` directly with the string key:
