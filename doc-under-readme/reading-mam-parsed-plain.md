@@ -10,6 +10,15 @@ The "plain" format closely mirrors the contents of the
 [MAM Google Sheet](https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit#gid=920165745),
 with the Wikitext in columns C and E parsed into structured objects.
 
+Besides Unicode text (letters, niqqud, and accents), the data contains
+**templates** — functions, often with parameters, representing visible
+features in the masoretic text or concepts related to its presentation.
+These features require documentation and/or formatting beyond simple
+Unicode characters. Many template names begin with `מ:` (short for
+`מקרא`), indicating they are specific to the Miqra al pi ha-Masorah
+project. Any implementation consuming this data must decide how to
+interpret and apply the templates according to its own needs and goals.
+
 For the "plus" format, which adds and removes certain features,
 see [reading-mam-parsed-plus.md](reading-mam-parsed-plus.md).
 
@@ -132,10 +141,21 @@ The D column indicates parashah breaks and other section boundaries:
 | Value | Meaning |
 |-------|---------|
 | `["__"]` | No break (continuation from previous verse) |
-| `["//", {"stmpl": "פפ"}, "//"]` | Parashah petuchah (open paragraph) |
-| `["//", {"stmpl": "סס"}, "//"]` | Parashah setumah (closed paragraph) |
-| `[{"stmpl": "מ:ספר חדש\|..."}]` | New book marker |
-| `[{"stmpl": "מ:אין פרשה בתחילת פרק"}]` | No parashah at chapter start |
+| `["//", {"stmpl": "פפ"}, "//"]` | **Parashah petuchah** (open paragraph) — blank line separates the end of the previous parashah from the start of the next |
+| `["//", {"stmpl": "סס"}, "//"]` | **Parashah setumah** (closed paragraph) — next parashah begins on a new indented line |
+| `[{"stmpl": "מ:ספר חדש\|..."}]` | **New book marker** — marks the start of one of the 24 books with defined spacing; parameter is the book name. Not used for second halves of two-part books (2 Samuel, 2 Kings, Nehemiah, 2 Chronicles) or individual Minor Prophets after Hosea |
+| `[{"stmpl": "מ:אין פרשה בתחילת פרק"}]` | **No parashah at chapter start** — tags chapters that don't begin with a visible parashah, so appropriate spacing can be added when text is presented sequentially |
+
+Additional parashah-related templates that may appear:
+
+| Template | Meaning |
+|----------|---------|
+| `פפפ` | Open parashah starting immediately on the next line (no blank line) |
+| `ססס` | Closed parashah inline — blank spaces mid-line with text before and after |
+| `סס2` | Narrow closed parashah — smaller indentation for narrow-column layouts (e.g. Ten Commandments charts) |
+| `פסקא באמצע פסוק` | Parashah division within a verse; first param is the parashah template (`פפ`/`סס`), optional second param gives the verse location |
+| `מ:רווח בתרי עשר` | Spacing between Minor Prophets; parameter is the prophet's name |
+| `מ:רווח לספר בתהלים` | Spacing between the 5 "books" of Psalms (at Psalms 1, 42, 73, 90, 107); parameter is the book name |
 
 The `"//"` strings are Wikitext line breaks from the Google Sheet.
 
@@ -148,6 +168,12 @@ Contains a `מ:פסוק` template identifying the verse:
 ```
 
 This is equivalent to the Wikitext `{{מ:פסוק|איוב|א|ב}}`.
+The three required parameters are: book name, chapter number, and verse number
+(all in Hebrew letters). Optional named parameters include `סדר=` (seder number)
+and `עלייה=` (Torah aliyah identification). All numbering follows Koren
+(the only exception being initial verses of the Ten Commandments).
+Note: Ovadiah is spelled `עובדיה` in this template but `עבדיה` in column A.
+
 Empty `[]` for pseudo-verses.
 
 ### EP column (index 2): Verse text
@@ -212,38 +238,101 @@ Wikitext custom XML tags that appear in pseudo-verses:
 
 ## Common templates in the EP (verse text) column
 
-| Template | Purpose | Example |
-|----------|---------|---------|
-| `מ:לגרמיה-2` | Legarmeih accent marker | `{"stmpl": "מ:לגרמיה-2"}` |
-| `קו"כ` | Ketiv-qere | `{"stmpl": "קו\"כ\|את\|אַ֠תָּ֠ה"}` |
-| `קו"כ-אם` | Ketiv-qere (conditional) | Similar to קו"כ |
-| `נוסח` | Textual variant (nusach) | `{"stmpl": "נוסח\|וּבֵרְﬞכ֥וּ\|2=..."}` |
-| `מ:דחי` | Dechik accent annotation | `{"stmpl": "מ:דחי\|word\|variant"}` |
-| `מ:פסק` | Pasek mark | `{"stmpl": "מ:פסק"}` |
-| `מ:צינור` | Tsinor accent annotation | `{"stmpl": "מ:צינור"}` |
-| `מ:קמץ` | Qamats annotation | `{"stmpl": "מ:קמץ"}` |
-| `מ:מקף אפור` | Gray maqaf | `{"stmpl": "מ:מקף אפור"}` |
-| `מ:אות תלויה` | Suspended letter | `{"stmpl": "מ:אות תלויה\|..."}` |
-| `גלגל-2` | Galgal accent annotation | `{"stmpl": "גלגל-2\|word"}` |
-| `ר0`–`ר4` | Re'via annotation tiers | `{"stmpl": "ר0"}` |
-| `פפ` / `סס` | Parashah petuchah / setumah | In D column |
-| `פרשה-מרכז` | Centered parashah marker | `{"stmpl": "פרשה-מרכז"}` |
+For authoritative English and Hebrew descriptions of every template, see the
+[Templates tab](https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=1670945398#gid=1670945398)
+of the MAM Google Sheet.
 
-### Ketiv-qere (`קו"כ`)
+The templates are organized below by category.
 
-The first argument is the ketiv (written form), the second is the qere (read form):
+### Documentation template (`נוסח`)
+
+The most extensively used template. Its first parameter is the "target" — the
+exact text appearing in the edition. The second parameter contains notes
+documenting anomalous forms, variant readings, uncertain readings, and other
+data relevant to the target. The template is designed not to interfere with
+how the target text appears to the reader; it only marks notable, unusual,
+or questionable elements and attaches documentation to them.
+
+```json
+{"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"}
+```
+
+### Ketiv-qere templates
+
+| Template | Purpose |
+|----------|---------|
+| `כו"ק` | **Standard ketiv-qere.** Param 1 = unpointed ketiv, param 2 = pointed qere. Displays ketiv (gray) then qere (regular color) |
+| `קו"כ` | **Reversed ketiv-qere.** Same parameters as `כו"ק` but displays qere *before* ketiv. Used when the pair follows a maqaf, for better appearance |
+| `קו"כ-אם` | **Matres lectionis ketiv-qere.** For cases where the qere differs only in spelling (אֵם קריאה). No ketiv/qere pair is displayed; the single parameter is the vocalized ketiv shown normally. A note documents the qere |
+| `כתיב ולא קרי` | **Written but not read.** Single parameter = the ketiv, shown in gray within parentheses. E.g. `(אם)` in Ruth 3:12 |
+| `קרי ולא כתיב` | **Read but not written.** Single parameter = the qere, shown normally within square brackets. E.g. `[אֵלַ֔י]` in Ruth 3:17 |
+| `מ:קו"כ קרי שונה מהכתיב בשתי מילים` | **Two-word qere (special).** For 2 Kings 18:27 and Isaiah 36:12 where one ketiv maps to two qere words and the first qere appears in brackets. Three params: ketiv, first qere (bracketed), second qere |
+
+Example of standard ketiv-qere:
 
 ```json
 {"stmpl": "קו\"כ|את|אַ֠תָּ֠ה"}
 ```
 
-### Nusach (variant reading, `נוסח`)
+### Special letter templates
 
-The first argument is the primary text; the second describes the variant:
+| Template | Purpose |
+|----------|---------|
+| `מ:אות-ג` | **Large letter.** Marks a masoretically large letter. Parameter is the pointed letter (occurs within a word). Often wrapped in `נוסח` since traditions vary |
+| `מ:אות-ק` | **Small letter.** Marks a masoretically small letter. Parameter is the pointed letter |
+| `מ:אות תלויה` | **Suspended (hung) letter.** Appears raised in the text. Parameter is the pointed letter |
+| `מ:אות מנוקדת` | **Dotted letter/word.** Marks words with masoretic dots above/below (dots are Unicode). Parameter is the dotted word |
+| `מ:נו"ן הפוכה` | **Reversed nun.** The inverted nun mark (Unicode character) |
 
-```json
-{"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"}
-```
+### Accent and cantillation templates
+
+| Template | Purpose |
+|----------|---------|
+| `מ:לגרמיה-2` | **Legarmeih.** The vertical line `׀` as legarmeih (part of the word's cantillation). Shown close to the preceding word with thin space, in bold. Shares Unicode with paseq but differs in function |
+| `מ:פסק` | **Paseq.** The vertical line `׀` as a separator warning not to conflate two words. Shown equidistant between words, small gray font. No parameters |
+| `מ:מקף אפור` | **Gray maqaf.** Gray hyphen between oleh-ve-yored words in 50 verses of Psalms, Proverbs, and Job. No parameters |
+| `מ:דחי` | **Dechik** accent annotation |
+| `מ:צינור` | **Tsinor** accent annotation |
+| `גלגל-2` | **Galgal accent** (3 poetic books). Same Unicode character as yeraḥ ben yomo but distinguished as in the Aleppo Codex |
+| `ירח בן יומו` | **Yeraḥ ben yomo accent** (21 books). Same Unicode character as galgal. No parameters |
+| `אתנח הפוך` | **Etnaḥ haphukh** (3 poetic books). Similar to but distinct from galgal in the Aleppo Codex; later codices merged them. No parameters |
+| `מ:קמץ` | **Qamats qatan.** Named params: `ד=` (theoretical grammar, default) and `ס=` (Sephardic tradition, which less often voices qamats qatan in certain forms) |
+
+### Jerusalem spelling
+
+| Template | Purpose |
+|----------|---------|
+| `מ:ירושלם` | Handles the masoretic spelling of Jerusalem without yod. Two params (vowel and accent of lamed); automatically provides ḥiriq for the missing yod with CGJ for proper display |
+| `מ:ירושלמה` | Like `מ:ירושלם` but for the directional form "to Jerusalem" (4 cases: 1 Kgs 10:2, 2 Kgs 9:28, Isa 36:2, Ezk 8:3). Uses sheva instead of ḥiriq |
+
+### Poetic form templates (ספרי אמ"ת)
+
+| Template | Purpose |
+|----------|---------|
+| `ר1` | Following stich on its own line, **one** indent. In 2 cases (Ps 70, 108) represents a closed parashah |
+| `ר2` | Following stich on its own line, **two** indents |
+| `ר3` | Following stich at line start, **no** indent |
+| `ר4` | New verse at line start, **no** indent |
+| `ר0` | Extra division point when a verse has an odd number of stiches, for even-column display |
+| `פרשה-מרכז` | **Centered title.** For "titles" in Job and Proverbs (not found elsewhere). Parameter is the title text |
+
+All poetic formatting can be removed by treating `ר0`–`ר4` as simple word spaces.
+
+### Footnote template
+
+| Template | Purpose |
+|----------|---------|
+| `מ:הערה` | **Scroll-difference footnote** (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text |
+
+### Other templates
+
+| Template | Purpose |
+|----------|---------|
+| `פפ` / `סס` | Parashah petuchah / setumah (primarily in D column) |
+| `מ:סיום בטוב` | **Good ending.** Repeats the penultimate verse so public reading ends positively. Used at the end of Lamentations, Ecclesiastes, Isaiah, and Malachi |
+| `מ:טעם ומתג באות אחת` | Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter |
+| `מ:גרש ותלישא גדולה` | Combined geresh + telisha gedolah (2 words, 3 uses). No parameters |
+| `מ:גרשיים ותלישא גדולה` | Combined gershayim + telisha gedolah (3 words, 4 uses). No parameters |
 
 ## Extracting plain text from verses
 

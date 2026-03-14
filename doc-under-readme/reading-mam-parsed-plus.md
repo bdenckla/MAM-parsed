@@ -10,6 +10,10 @@ The plus format shares the same overall structure as the
 Read the plain format documentation first for the foundation,
 then use this document for the differences.
 
+For authoritative English and Hebrew descriptions of every template, see the
+[Templates tab](https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=1670945398#gid=1670945398)
+of the MAM Google Sheet.
+
 ## Differences from plain at a glance
 
 | Feature | Plain | Plus |
@@ -86,12 +90,13 @@ The book39 entry gains a `good_ending_plus` key:
 ### `good_ending_plus`
 
 Some books in the Jewish tradition repeat the penultimate verse
-after the final verse so that public reading ends on a positive note.
-The `good_ending_plus` key captures this:
+after the final verse so that public reading ends on a positive note
+(using the `מ:סיום בטוב` template). The `good_ending_plus` key captures this:
 
 - `null` for most books (including Job)
-- For books that have it (Isaiah, Malachi, Lamentations, Ecclesiastes),
-  it is an object with:
+- For the 4 books/book-parts that have it (Isaiah, Malachi, Lamentations,
+  Ecclesiastes — note that MAM considers Malachi part of "The 12"
+  Minor Prophets), it is an object with:
 
 ```json
 {
@@ -259,16 +264,25 @@ Arguments:
 
 ### Targeted ketiv-qere templates
 
-The plus format expands generic `קו"כ` cases into specific named templates:
+The plus format expands generic ketiv-qere cases into specific named
+templates that encode the structural relationship between ketiv and qere.
+The standard templates (`כו"ק`, `קו"כ`, `קו"כ-אם`, `כתיב ולא קרי`,
+`קרי ולא כתיב`) are shared with plain (described there in detail).
+
+The following are plus-specific targeted variants:
 
 | Template | Meaning |
 |----------|---------|
-| `מ:כו"ק כתיב מילה חדה וקרי תרתין מילין` | Ketiv is one word, qere is two words |
-| `כו"ק` | Standard ketiv-qere (also in plain) |
-| `כו"ק-אם` | Conditional ketiv-qere (also in plain) |
-| `כו"ק` | Standard (same as plain) |
+| `מ:כו"ק בין שני מקפים` | Ketiv-qere between two maqafim (Isaiah 26:20 only) |
+| `מ:כו"ק כתיב מילה חדה וקרי תרתין מילין` | 1-word ketiv mapped to 2-atom qere. Optional param `רווח=כן` (only Ps 55:16, where qere ends with legarmeih) |
+| `מ:כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים` | Same as above but between maqafim (1 Chronicles 9:4 only) |
+| `מ:כו"ק כתיב תרתין מילין וקרי מילה חדה` | 2-word ketiv mapped to 1-atom qere |
+| `מ:קו"כ כתיב מילה חדה וקרי תרתין מילין` | Like the k1→q2 template but in reversed (qk) display order, for use after maqaf (Nehemiah 2:13 only) |
+| `מ:קו"כ קרי שונה מהכתיב בשתי מילים` | 1 ketiv → 2 qere words, first qere bracketed. 3 params: ketiv, first qere, second qere (2 Kgs 18:27, Isa 36:12, Ezk 9:11) |
+| `מ:כו"ק של שתי מילים בהערה אחת` | 2-word ketiv, 2-atom qere |
+| `כו"ק של שלוש מילים בהערה אחת` | 3-word ketiv, 3-atom qere (2 Samuel 21:12) |
 
-Example of the targeted template (Job 38:1):
+Example of a targeted template (Job 38:1):
 
 ```json
 {
@@ -354,6 +368,31 @@ template appearing as a sibling immediately after the `נוסח`:
   "׃"
 ]
 ```
+
+### `מ:כפול` — Dual-trope text
+
+Encodes a dually-accented span of text and its corresponding
+singly-accented "strands." Used in three sections with dual cantillation:
+the two Decalogues (Exodus 20, Deuteronomy 5) and the Saga of Reuben
+(Genesis 35:22).
+
+```json
+{
+  "tmpl_name": "מ:כפול",
+  "tmpl_params": {
+    "כפול": "...text with two accents on some words...",
+    "א": "...strand 1 (singly-accented)...",
+    "ב": "...strand 2 (singly-accented)..."
+  }
+}
+```
+
+Named parameters:
+- `כפול` — the text with dual accents (as found in the great codexes)
+- `א` — first singly-accented strand (for Reuben: פשוטה cantillation;
+  for Decalogues: תחתון cantillation)
+- `ב` — second singly-accented strand (for Reuben: מדרשית cantillation;
+  for Decalogues: עליון cantillation)
 
 ## Common templates (shared with plain)
 
