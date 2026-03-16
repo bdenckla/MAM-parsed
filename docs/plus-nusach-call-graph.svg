@@ -52,7 +52,7 @@
 <title>E&#45;&gt;נוסח</title>
 <path fill="none" stroke="black" d="M54.28,-51.43C90.06,-60.19 154.27,-75.91 194.99,-85.88"/>
 <polygon fill="black" stroke="black" points="194.05,-89.25 204.6,-88.23 195.72,-82.45 194.05,-89.25"/>
-<text xml:space="preserve" text-anchor="middle" x="127.5" y="-77.74" font-family="Helvetica,sans-Serif" font-size="9.00">3522</text>
+<text xml:space="preserve" text-anchor="middle" x="127.5" y="-77.74" font-family="Helvetica,sans-Serif" font-size="9.00">3527</text>
 </g>
 <!-- מ:כפול -->
 <g id="node6" class="node">
@@ -81,7 +81,7 @@
 <title>נוסח&#45;&gt;כו&quot;ק</title>
 <path fill="none" stroke="black" d="M260.64,-95C274.16,-95 290.86,-95 305.7,-95"/>
 <polygon fill="black" stroke="black" points="305.59,-98.5 315.59,-95 305.59,-91.5 305.59,-98.5"/>
-<text xml:space="preserve" text-anchor="middle" x="288.75" y="-96.95" font-family="Helvetica,sans-Serif" font-size="9.00">4154</text>
+<text xml:space="preserve" text-anchor="middle" x="288.75" y="-96.95" font-family="Helvetica,sans-Serif" font-size="9.00">4164</text>
 </g>
 <!-- מ:כפול&#45;&gt;נוסח -->
 <g id="edge5" class="edge">

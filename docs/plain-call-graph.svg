@@ -30,7 +30,7 @@
 <title>C&#45;&gt;#בלי קטע:</title>
 <path fill="none" stroke="black" d="M43.04,-154.85C50.86,-146.38 61.06,-136.87 72,-130.75 91.76,-119.69 115.75,-112.68 136.64,-108.29"/>
 <polygon fill="black" stroke="black" points="137.25,-111.73 146.4,-106.39 135.91,-104.86 137.25,-111.73"/>
-<text xml:space="preserve" text-anchor="middle" x="85.12" y="-132.7" font-family="Helvetica,sans-Serif" font-size="9.00">13316</text>
+<text xml:space="preserve" text-anchor="middle" x="85.12" y="-132.7" font-family="Helvetica,sans-Serif" font-size="9.00">13315</text>
 </g>
 <!-- מ:קישור בהערה -->
 <g id="node9" class="node">
@@ -46,7 +46,7 @@
 <title>C&#45;&gt;מ:קישור בהערה</title>
 <path fill="none" stroke="black" d="M41.77,-191.48C61.85,-217.68 98.7,-264.16 116.25,-276.25 119.27,-278.33 122.46,-280.29 125.76,-282.13"/>
 <polygon fill="black" stroke="black" points="124.04,-285.18 134.54,-286.61 127.22,-278.95 124.04,-285.18"/>
-<text xml:space="preserve" text-anchor="middle" x="85.12" y="-260.92" font-family="Helvetica,sans-Serif" font-size="9.00">3522</text>
+<text xml:space="preserve" text-anchor="middle" x="85.12" y="-260.92" font-family="Helvetica,sans-Serif" font-size="9.00">3523</text>
 </g>
 <!-- מ:הערה -->
 <g id="node11" class="node">
@@ -172,7 +172,7 @@
 <title>E&#45;&gt;מ:קישור בהערה</title>
 <path fill="none" stroke="black" d="M28.44,-782.8C30.58,-699.64 41.12,-362.23 72,-327.75 85.21,-313 105.01,-306.08 124.42,-303.18"/>
 <polygon fill="black" stroke="black" points="124.71,-306.67 134.25,-302.07 123.93,-299.71 124.71,-306.67"/>
-<text xml:space="preserve" text-anchor="middle" x="85.12" y="-329.7" font-family="Helvetica,sans-Serif" font-size="9.00">5052</text>
+<text xml:space="preserve" text-anchor="middle" x="85.12" y="-329.7" font-family="Helvetica,sans-Serif" font-size="9.00">5056</text>
 </g>
 <!-- שני טעמים באות אחת קמץ&#45;תחתון&#45;פתח&#45;עליון -->
 <g id="node10" class="node">
@@ -293,7 +293,7 @@
 <title>E&#45;&gt;מ:לגרמיה&#45;2</title>
 <path fill="none" stroke="black" d="M28.5,-819.68C30.51,-884.69 39.61,-1102.68 72,-1163.25 99.97,-1215.56 126.93,-1232.25 186.25,-1232.25 186.25,-1232.25 186.25,-1232.25 656.25,-1232.25 742.67,-1232.25 755.96,-912.63 758,-812.12"/>
 <polygon fill="black" stroke="black" points="761.5,-812.3 758.18,-802.24 754.5,-812.18 761.5,-812.3"/>
-<text xml:space="preserve" text-anchor="middle" x="462.5" y="-1234.2" font-family="Helvetica,sans-Serif" font-size="9.00">1817</text>
+<text xml:space="preserve" text-anchor="middle" x="462.5" y="-1234.2" font-family="Helvetica,sans-Serif" font-size="9.00">1814</text>
 </g>
 <!-- מ:מקף אפור -->
 <g id="node22" class="node">
@@ -319,7 +319,7 @@
 <title>E&#45;&gt;מ:פסק</title>
 <path fill="none" stroke="black" d="M28.49,-819.47C30.83,-864.04 43.92,-977.95 116.25,-1019.25 121.45,-1022.22 278.88,-1060.51 352.38,-1078.29"/>
 <polygon fill="black" stroke="black" points="351.4,-1081.65 361.95,-1080.6 353.05,-1074.85 351.4,-1081.65"/>
-<text xml:space="preserve" text-anchor="middle" x="187.25" y="-1056.65" font-family="Helvetica,sans-Serif" font-size="9.00">511</text>
+<text xml:space="preserve" text-anchor="middle" x="187.25" y="-1056.65" font-family="Helvetica,sans-Serif" font-size="9.00">514</text>
 </g>
 <!-- מ:קמץ -->
 <g id="node24" class="node">
