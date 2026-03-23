@@ -262,6 +262,11 @@ Arguments:
 4. The size/type code (ג = large, ק = small, etc.)
 5. Letter/type summary
 
+When the word is followed by a legarmeih, the `מ:לגרמיה-2` template is
+included at the end of argument 1, and the pasoleg character (׀) is
+appended to argument 2. Argument 3 gets an extra dot for that position.
+(E.g. Ruth 3:13 לִ֣ינִי׀, Esther 1:6 ח֣וּר׀.)
+
 ### Targeted ketiv-qere templates
 
 The plus format expands generic ketiv-qere cases into specific named
