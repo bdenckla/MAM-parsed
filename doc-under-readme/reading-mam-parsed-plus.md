@@ -2,6 +2,11 @@
 
 > **⚠ Note:** This documentation was AI-generated and is known to contain inaccuracies, but it is a lot better than no documentation.
 
+> **Cross-references:** The per-template extraction rules documented in the `extract_text` example below are also encoded in several downstream repos. When updating those rules here, check for matching logic to propagate:
+> - `mgketer/documentation/mpp-parsing.md` — AI-facing catalogue of every template decision in mgketer's MPP traversal
+> - `holman-ketiv-qere/py/python_modules/mam_plus_verse_data.py` — `_collect_text_fragments` function
+> - `holman-ketiv-qere/py/python_modules/qere_projection.py` — `project_qere_atoms` function
+
 This document describes the structure of the **plus** format JSON files
 in the MAM-parsed repository.
 
@@ -399,6 +404,8 @@ Named parameters:
 - `ב` — second singly-accented strand (for Reuben: מדרשית cantillation;
   for Decalogues: עליון cantillation)
 
+For plain text extraction, use `כפול` — the combined text as it appears in the great codexes. Params `א` and `ב` are the individual singly-accented strands and are only needed for accent analysis.
+
 ## Common templates (shared with plain)
 
 These templates appear in both formats. In plus they use `tmpl_name`/`tmpl_params`
@@ -469,7 +476,36 @@ def extract_text(ep_column):
                 elif isinstance(p2, list):
                     parts.append(extract_text(p2))
             elif name == 'מ:אות-מיוחדת-במילה':
-                # Use plain word (param 2)
+                # Use plain word (param 2). Param 1 has SLH markup for structural
+                # analysis (legarmeh positions etc.); param 2 is the pre-flattened
+                # plain string and is sufficient for text extraction.
+                p2 = tmpl_param(atom, '2')
+                if isinstance(p2, str):
+                    parts.append(p2)
+            elif name == 'מ:כפול':
+                # Dual-trope text: use כפול (combined, as in the great codexes).
+                # Params א and ב are the individual singly-accented strands.
+                p = tmpl_param(atom, 'כפול')
+                if isinstance(p, str):
+                    parts.append(p)
+                elif isinstance(p, list):
+                    parts.append(extract_text(p))
+            elif name in ('מ:דחי', 'מ:צינור'):
+                # Accent annotations: param 1 is the clean word form;
+                # param 2 duplicates the accent for display and is discarded.
+                p1 = tmpl_param(atom, '1')
+                if isinstance(p1, str):
+                    parts.append(p1)
+            elif name == 'מ:קמץ':
+                # Qamats variant: param ד is the dikduk (grammarians') form;
+                # param ס is the Sephardic traditional reading.
+                pd = tmpl_param(atom, 'ד')
+                if isinstance(pd, str):
+                    parts.append(pd)
+            elif name == 'כתיב ולא קרי':
+                pass  # Written-but-not-read: contributes nothing to the reading.
+            elif name == 'קרי ולא כתיב':
+                # Read-but-not-written: param 2 is the qere text.
                 p2 = tmpl_param(atom, '2')
                 if isinstance(p2, str):
                     parts.append(p2)
