@@ -455,9 +455,10 @@ def extract_text(ep_column):
                 if isinstance(p2, str):
                     parts.append(p2)
             elif name == 'קו"כ-אם':
-                # Trivial qere: param 1 = pointed ketiv (displayed),
-                # param 2 = qere in named-note format (e.g. 'א-קרי=חֲסָדָֽיו').
-                # For plain text extraction, use param 1 (what is displayed).
+              # Trivial qere: param 1 = pointed ketiv (displayed),
+              # param 2 = a structured note describing the pointed qere
+              # (e.g. 'א-קרי=חֲסָדָֽיו'). For plain text extraction,
+              # use param 1 (what is displayed).
                 p1 = tmpl_param(atom, '1')
                 if isinstance(p1, str):
                     parts.append(p1)
