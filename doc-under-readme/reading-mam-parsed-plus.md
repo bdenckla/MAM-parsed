@@ -276,8 +276,9 @@ appended to argument 2. Argument 3 gets an extra dot for that position.
 
 The plus format expands generic ketiv-qere cases into specific named
 templates that encode the structural relationship between ketiv and qere.
-The standard templates (`כו"ק`, `קו"כ`, `קו"כ-אם`, `כתיב ולא קרי`,
+The standard templates (`כו"ק`, `קו"כ`, `קו"כ-אם` / `מ:קו"כ-אם-2`, `כתיב ולא קרי`,
 `קרי ולא כתיב`) are shared with plain (described there in detail).
+`קו"כ-אם` is the legacy name; `מ:קו"כ-אם-2` is the current name after a bot edit.
 
 The following are plus-specific targeted variants:
 
@@ -422,6 +423,7 @@ instead of `stmpl`:
 | `מ:מקף אפור` | Gray maqaf |
 | `נוסח` | Textual variant |
 | `קו"כ` | Ketiv-qere |
+| `מ:קו"כ-אם-2` | Trivial ketiv-qere (current name; legacy name `קו"כ-אם` also appears in older snapshots) |
 | `פפ` / `סס` | Parashah petuchah / setumah |
 | `ר0`–`ר4` | Re'via annotation tiers |
 
@@ -454,11 +456,11 @@ def extract_text(ep_column):
                 p2 = tmpl_param(atom, '2')
                 if isinstance(p2, str):
                     parts.append(p2)
-            elif name == 'קו"כ-אם':
-              # Trivial ketiv/qere: param 1 = pointed ketiv (displayed),
-              # param 2 = a structured note describing the pointed qere
-              # (e.g. 'א-קרי=חֲסָדָֽיו'). For plain text extraction,
-              # use param 1 (what is displayed).
+            elif name == 'קו"כ-אם' or name == 'מ:קו"כ-אם-2':
+              # Trivial ketiv/qere: param 1 = pointed ketiv (displayed).
+              # Old format (קו"כ-אם): param 2 = structured note (e.g. 'א-קרי=...').
+              # New format (מ:קו"כ-אם-2): param 2 = unpointed ketiv, param 3 = pointed qere.
+              # For plain text extraction, use param 1 (what is displayed).
                 p1 = tmpl_param(atom, '1')
                 if isinstance(p1, str):
                     parts.append(p1)

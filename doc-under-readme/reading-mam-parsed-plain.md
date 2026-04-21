@@ -263,7 +263,8 @@ or questionable elements and attaches documentation to them.
 |----------|---------|
 | `כו"ק` | **Standard ketiv-qere.** Param 1 = unpointed ketiv, param 2 = pointed qere. Displays ketiv (gray) then qere (regular color) |
 | `קו"כ` | **Reversed ketiv-qere.** Same parameters as `כו"ק` but displays qere *before* ketiv. Used when the pair follows a maqaf, for better appearance |
-| `קו"כ-אם` | **Matres lectionis ketiv-qere.** For cases where the qere differs only in spelling (אֵם קריאה). No ketiv/qere pair is displayed; the vocalized ketiv is shown normally. Param 1 = pointed ketiv, param 2 = a structured note describing the pointed qere (e.g. `ל-קרי=…`, `א-קרי=…`, or similar) |
+| `קו"כ-אם` | **Trivial ketiv-qere (legacy name).** For cases where the qere differs only in spelling (אֵם קריאה). No ketiv/qere pair is displayed; the vocalized ketiv is shown normally. Param 1 = pointed ketiv, param 2 = a structured note describing the pointed qere (e.g. `ל-קרי=…`, `א-קרי=…`, or similar). **This name is replaced by `מ:קו"כ-אם-2` in current Wikisource data** (see below) |
+| `מ:קו"כ-אם-2` | **Trivial ketiv-qere (current name).** Same semantic as `קו"כ-אם` but with explicit parameters. Param 1 = pointed ketiv, param 2 = unpointed ketiv, param 3 = pointed qere, optional `מקורות=` = source indicator |
 | `כתיב ולא קרי` | **Written but not read.** Single parameter = the ketiv, shown in gray within parentheses. E.g. `(אם)` in Ruth 3:12 |
 | `קרי ולא כתיב` | **Read but not written.** Single parameter = the qere, shown normally within square brackets. E.g. `[אֵלַ֔י]` in Ruth 3:17 |
 | `מ:קו"כ קרי שונה מהכתיב בשתי מילים` | **Two-word qere (special).** For 2 Kings 18:27 and Isaiah 36:12 where one ketiv maps to two qere words and the first qere appears in brackets. Three params: ketiv, first qere (bracketed), second qere |
@@ -357,8 +358,9 @@ def extract_text(ep_column):
             stmpl = atom.get('stmpl', '')
             name = stmpl.split('|')[0] if '|' in stmpl else stmpl
             args = stmpl.split('|')[1:] if '|' in stmpl else []
-            if name in ('קו"כ', 'קו"כ-אם'):
-                # Use qere (2nd arg) for reading
+            if name in ('קו"כ', 'קו"כ-אם', 'מ:קו"כ-אם-2'):
+                # Use qere (2nd arg) for reading; for קו"כ-אם / מ:קו"כ-אם-2
+                # (matres lectionis kq) the 1st arg is the displayed ketiv.
                 if len(args) >= 2:
                     parts.append(args[1])
             elif name == 'נוסח':
