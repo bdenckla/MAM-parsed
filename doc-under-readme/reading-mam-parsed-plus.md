@@ -285,7 +285,7 @@ The following are plus-specific targeted variants:
 | Template | Meaning |
 |----------|---------|
 | `מ:כו"ק בין שני מקפים` | Ketiv-qere between two maqafim (Isaiah 26:20 only) |
-| `מ:כו"ק כתיב מילה חדה וקרי תרתין מילין` | 1-word ketiv mapped to 2-atom qere. Optional param `רווח=כן` (only Ps 55:16, where qere ends with legarmeih) |
+| `מ:כו"ק כתיב מילה חדה וקרי תרתין מילין` | 1-word ketiv mapped to 2-atom qere |
 | `מ:כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים` | Same as above but between maqafim (1 Chronicles 9:4 only) |
 | `מ:כו"ק כתיב תרתין מילין וקרי מילה חדה` | 2-word ketiv mapped to 1-atom qere |
 | `מ:קו"כ כתיב מילה חדה וקרי תרתין מילין` | Like the k1→q2 template but in reversed (qk) display order, for use after maqaf (Nehemiah 2:13 only) |
