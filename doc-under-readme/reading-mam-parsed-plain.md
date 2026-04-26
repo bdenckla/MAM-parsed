@@ -264,10 +264,18 @@ or questionable elements and attaches documentation to them.
 | `כו"ק` | **Standard ketiv-qere.** Param 1 = unpointed ketiv, param 2 = pointed qere. Displays ketiv (gray) then qere (regular color) |
 | `קו"כ` | **Reversed ketiv-qere.** Same parameters as `כו"ק` but displays qere *before* ketiv. Used when the pair follows a maqaf, for better appearance |
 | `קו"כ-אם` | **Trivial ketiv-qere (legacy name).** For cases where the qere differs only in spelling (אֵם קריאה). No ketiv/qere pair is displayed; the vocalized ketiv is shown normally. Param 1 = pointed ketiv, param 2 = a structured note describing the pointed qere (e.g. `ל-קרי=…`, `א-קרי=…`, or similar). **This name is replaced by `מ:קו"כ-אם-2` in current Wikisource data** (see below) |
-| `מ:קו"כ-אם-2` | **Trivial ketiv-qere (current name).** Same semantic as `קו"כ-אם` but with explicit parameters. Param 1 = pointed ketiv, param 2 = unpointed ketiv, param 3 = pointed qere, optional `מקורות=` = source indicator |
+| `מ:קו"כ-אם-2` | **Trivial ketiv-qere (current name).** Same semantic as `קו"כ-אם` but with explicit parameters. Param 1 = pointed ketiv, param 2 = unpointed ketiv, param 3 = pointed qere, optional `מקורות=` = source indicator, optional `סוג=` = category label |
 | `כתיב ולא קרי` | **Written but not read.** Single parameter = the ketiv, shown in gray within parentheses. E.g. `(אם)` in Ruth 3:12 |
 | `קרי ולא כתיב` | **Read but not written.** Single parameter = the qere, shown normally within square brackets. E.g. `[אֵלַ֔י]` in Ruth 3:17 |
 | `מ:קו"כ קרי שונה מהכתיב בשתי מילים` | **Two-word qere (special).** For 2 Kings 18:27 and Isaiah 36:12 where one ketiv maps to two qere words and the first qere appears in brackets. Three params: ketiv, first qere (bracketed), second qere |
+
+Current values observed for optional `סוג=` in `מ:קו"כ-אם-2` are:
+
+- `אל"ף מיותרת`
+- `כתיב ה"א בסיומת של חולם`
+- `כתיב הוא קרי היא`
+- `כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו`
+- `כתיב נער קרי נערה`
 
 Example of standard ketiv-qere:
 
