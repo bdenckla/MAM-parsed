@@ -271,7 +271,7 @@ or questionable elements and attaches documentation to them.
 
 Current values observed for optional `סוג=` in `מ:קו"כ-אם-2` are:
 
-- `אל"ף מיותרת`
+- `אל"ף נחה באמצע תיבה ולא נקראת`
 - `כתיב ה"א בסיומת של חולם`
 - `כתיב הוא קרי היא`
 - `כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו`
