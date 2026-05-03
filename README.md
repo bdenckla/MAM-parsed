@@ -2,6 +2,8 @@
  
 This Git repository contains
 [Miqra According to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah)
+
+No non-Dovi equivalent currently exists for this page on en.wikisource.org.
 in two parsed formats: "plain" and "plus."
 
 Each format contains a JSON file for each of the 24 books of the Miqra.

@@ -20,6 +20,8 @@ Attribution in English and all languages other than Hebrew shall be to "Hebrew W
 
 [Miqra according to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning)
 
+No non-Dovi equivalent currently exists for this page on en.wikisource.org.
+
 ----
 רשיון:
 
