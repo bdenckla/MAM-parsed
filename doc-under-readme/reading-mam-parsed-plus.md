@@ -31,7 +31,7 @@ of the MAM Google Sheet.
 | `good_ending_plus` | Not present | **Added** (at book39 level) |
 | `he_to_int` in header | Not present | **Added** (Hebrew-numeral to integer mapping) |
 | Special letter marking | Not present | **Added** (`מ:אות-מיוחדת-במילה`) |
-| Targeted ketiv-qere templates | Generic only | **Added** (e.g. `מ:כו"ק כתיב מילה חדה...`) |
+| Special ketiv-qere template | `מ:כו"ק מיוחד` with `סוג=` | Same (subtype details below) |
 
 ## Top-level structure
 
@@ -272,35 +272,41 @@ included at the end of argument 1, and the pasoleg character (׀) is
 appended to argument 2. Argument 3 gets an extra dot for that position.
 (E.g. Ruth 3:13 לִ֣ינִי׀, Esther 1:6 ח֣וּר׀.)
 
-### Targeted ketiv-qere templates
+### Special ketiv-qere template (`מ:כו"ק מיוחד`)
 
-The plus format expands generic ketiv-qere cases into specific named
-templates that encode the structural relationship between ketiv and qere.
+Nine former dedicated templates for structurally unusual ketiv-qere cases
+were consolidated into a single unified Wikisource template, `מ:כו"ק מיוחד`,
+in a bot edit. The structural subtype is identified by the required named
+parameter `סוג=`; its value is the former template name with the leading
+`מ:` stripped. This template appears in both plain and plus format data.
+
 The standard templates (`כו"ק`, `קו"כ`, `קו"כ-אם` / `מ:קו"כ-אם-2`, `כתיב ולא קרי`,
-`קרי ולא כתיב`) are shared with plain (described there in detail).
+`קרי ולא כתיב`) are unchanged and shared with plain (described there in detail).
 `קו"כ-אם` is the legacy name; `מ:קו"כ-אם-2` is the current name after a bot edit.
 
-The following are plus-specific targeted variants:
+The following `סוג=` values are used with `מ:כו"ק מיוחד`:
 
-| Template | Meaning |
-|----------|---------|
-| `מ:כו"ק בין שני מקפים` | Ketiv-qere between two maqafim (Isaiah 26:20 only) |
-| `מ:כו"ק כתיב מילה חדה וקרי תרתין מילין` | 1-word ketiv mapped to 2-atom qere |
-| `מ:כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים` | Same as above but between maqafim (1 Chronicles 9:4 only) |
-| `מ:כו"ק כתיב תרתין מילין וקרי מילה חדה` | 2-word ketiv mapped to 1-atom qere |
-| `מ:קו"כ כתיב מילה חדה וקרי תרתין מילין` | Like the k1→q2 template but in reversed (qk) display order, for use after maqaf (Nehemiah 2:13 only) |
-| `מ:קו"כ קרי שונה מהכתיב בשתי מילים` | 1 ketiv → 2 qere words, first qere bracketed. 3 params: ketiv, first qere, second qere (2 Kgs 18:27, Isa 36:12, Ezk 9:11) |
-| `מ:כו"ק של שתי מילים בהערה אחת` | 2-word ketiv, 2-atom qere |
+| `סוג=` value | Meaning |
+|-------------|---------|
+| `כו"ק בין שני מקפים` | Ketiv-qere between two maqafim (Isaiah 26:20 only) |
+| `כו"ק כתיב מילה חדה וקרי תרתין מילין` | 1-word ketiv mapped to 2-atom qere |
+| `כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים` | Same as above but between maqafim (1 Chronicles 9:4 only) |
+| `כו"ק כתיב תרתין מילין וקרי מילה חדה` | 2-word ketiv mapped to 1-atom qere |
+| `קו"כ כתיב מילה חדה וקרי תרתין מילין` | Like the k1→q2 case but in reversed (qk) display order, for use after maqaf (Nehemiah 2:13 only) |
+| `כו"ק קרי שונה מהכתיב בשתי מילים` | 1-word ketiv, 2-word qere (kq display order) |
+| `קו"כ קרי שונה מהכתיב בשתי מילים` | 1-word ketiv, 2-word qere in reversed (qk) display order (2 Kgs 18:27, Isa 36:12) |
+| `כו"ק של שתי מילים בהערה אחת` | 2-word ketiv, 2-atom qere |
 | `כו"ק של שלוש מילים בהערה אחת` | 3-word ketiv, 3-atom qere (2 Samuel 21:12) |
 
-Example of a targeted template (Job 38:1):
+Example (Job 38:1):
 
 ```json
 {
-  "tmpl_name": "מ:כו\"ק כתיב מילה חדה וקרי תרתין מילין",
+  "tmpl_name": "מ:כו\"ק מיוחד",
   "tmpl_params": {
     "1": "מנהסערה",
-    "2": ["מִ֥ן", {"tmpl_name": "מ:פסק"}, "הַסְּעָרָ֗ה"]
+    "2": ["מִ֥ן", {"tmpl_name": "מ:פסק"}, "הַסְּעָרָ֗ה"],
+    "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
   }
 }
 ```
@@ -423,6 +429,7 @@ instead of `stmpl`:
 | `מ:מקף אפור` | Gray maqaf |
 | `נוסח` | Textual variant |
 | `קו"כ` | Ketiv-qere |
+| `מ:כו"ק מיוחד` | Special ketiv-qere (9 subtypes via `סוג=`; see [section above](#special-ketiv-qere-template-מכוק-מיוחד)) |
 | `מ:קו"כ-אם-2` | Trivial ketiv-qere (current name; legacy name `קו"כ-אם` also appears in older snapshots) |
 | `פפ` / `סס` | Parashah petuchah / setumah |
 | `ר0`–`ר4` | Re'via annotation tiers |

@@ -267,7 +267,7 @@ or questionable elements and attaches documentation to them.
 | `מ:קו"כ-אם-2` | **Trivial ketiv-qere (current name).** Same semantic as `קו"כ-אם` but with explicit parameters. Param 1 = pointed ketiv, param 2 = unpointed ketiv, param 3 = pointed qere, optional `מקורות=` = source indicator, optional `סוג=` = category label |
 | `כתיב ולא קרי` | **Written but not read.** Single parameter = the ketiv, shown in gray within parentheses. E.g. `(אם)` in Ruth 3:12 |
 | `קרי ולא כתיב` | **Read but not written.** Single parameter = the qere, shown normally within square brackets. E.g. `[אֵלַ֔י]` in Ruth 3:17 |
-| `מ:קו"כ קרי שונה מהכתיב בשתי מילים` | **Two-word qere (special).** For 2 Kings 18:27 and Isaiah 36:12 where one ketiv maps to two qere words and the first qere appears in brackets. Three params: ketiv, first qere (bracketed), second qere |
+| `מ:כו"ק מיוחד` | **Special ketiv-qere (unified).** Replaced nine former dedicated templates in a Wikisource bot edit. The required `סוג=` named parameter identifies the structural subtype. See the [plus format documentation](reading-mam-parsed-plus.md) for the full subtype list |
 
 Current values observed for optional `סוג=` in `מ:קו"כ-אם-2` are:
 
