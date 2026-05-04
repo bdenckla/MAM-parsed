@@ -276,9 +276,18 @@ appended to argument 2. Argument 3 gets an extra dot for that position.
 
 Nine former dedicated templates for structurally unusual ketiv-qere cases
 were consolidated into a single unified Wikisource template, `מ:כו"ק מיוחד`,
-in a bot edit. The structural subtype is identified by the required named
+in a bot edit. The structural subtype is encoded in the required named
 parameter `סוג=`; its value is the former template name with the leading
-`מ:` stripped. This template appears in both plain and plus format data.
+`מ:` stripped.
+
+`סוג=` is a **dataset-level classification tag**: it records which structural
+subtype this k/q pair belongs to, independent of any particular MAM edition.
+An edition may use it for display selection — the MAM Wikisource edition, for
+example, reads `סוג=` to choose a rendering, applying four distinct display
+behaviors across the nine subtypes. Other MAM editions are free to implement
+their own rendering keyed off the same `סוג=` values.
+
+This template appears in both plain and plus format data.
 
 The standard templates (`כו"ק`, `קו"כ`, `קו"כ-אם` / `מ:קו"כ-אם-2`, `כתיב ולא קרי`,
 `קרי ולא כתיב`) are unchanged and shared with plain (described there in detail).
