@@ -37,9 +37,10 @@ For detailed documentation of the JSON file structures, see:
 * [Reading MAM-parsed plain JSON](doc-under-readme/reading-mam-parsed-plain.md) — structure reference for the "plain" format
 * [Reading MAM-parsed plus JSON](doc-under-readme/reading-mam-parsed-plus.md) — structure reference for the "plus" format (differences from plain)
 
-This Git repository also contains a toy sample application,
-`template-survey-example.py`, giving some sense of how
-the JSON files might be used.
+This Git repository also contains a toy sample application
+[`main_tmpl_survey_toy.py`](py-examples/main_tmpl_survey_toy.py),
+giving some sense of how the JSON files might be used.
+It writes its output to [`out/tmpl_survey_toy.json`](out/tmpl_survey_toy.json).
 
 The format of these JSON files is not yet stable. I.e. if you write an application
 based on their format, be aware that their format is still subject to change at this time.
