@@ -8,25 +8,27 @@ in the MAM-parsed repository.
 Each JSON file corresponds to one of the 24 books of the Miqra.
 The "plain" format closely mirrors the contents of the
 [MAM Google Sheet](https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit#gid=920165745),
-with the Wikitext in columns C and E parsed into structured objects.
+with the Wikitext in columns C, D, and E parsed into structured objects.
 
-Besides Unicode text (letters, niqqud, and accents), the data contains
-**templates** — functions, often with parameters, representing visible
-features in the masoretic text or concepts related to its presentation.
-These features require documentation and/or formatting beyond simple
-Unicode characters. Many template names begin with `מ:` (short for
-`מקרא`), indicating they are specific to the Miqra al pi ha-Masorah
-project. Any implementation consuming this data must decide how to
-interpret and apply the templates according to its own needs and goals.
+Besides Unicode text, the data contains
+**templates** (aka functions), often with parameters, that
+serve to mark up that Unicode text.
+Different applications will need to interpret these templates
+differently.
 
-For the "plus" format, which adds and removes certain features,
-see [reading-mam-parsed-plus.md](reading-mam-parsed-plus.md).
+The "plus" format, which adds and removes certain features
+relative to the "plain" format,
+is documented in [reading-mam-parsed-plus.md](reading-mam-parsed-plus.md).
 
 ## File naming
 
-File names start with a two-character code identifying the book (in the "24 books" sense).
-The first character (`sec_char`), A through F, indicates which of the six sections of Tanakh the book is in.
-The second character (`book24_char`), a digit 1 through 5 or an uppercase letter A through C, indicates the book within that section.
+File names start with a two-characters that identify the book (in the "24 books" sense).
+In addition to identifying the book, they provide a standard ordering of the books,
+when collated in the standard ASCII fashion.
+The first character (`sec_char`) comes from the set ABCDEF and
+indicates which of the six sections of Tanakh the book is in.
+The second character (`book24_char`) comes from the set 12345AC and
+indicates which book this is within that section.
 
 Files are named `{sec_char}{book24_char}-{EnglishName}.json`:
 
@@ -39,10 +41,12 @@ Files are named `{sec_char}{book24_char}-{EnglishName}.json`:
 | E1–E5 | Five Scrolls | Song of Songs, Ruth, Lamentations, Ecclesiastes, Esther |
 | F1, FA, FC | Late Books | Daniel, Ezra-Nehemiah, Chronicles |
 
-When `book24_char` is a letter (`A`, `C`),
+When `book24_char` is A or C,
 the file is a **composite book** containing multiple sub-books
-(e.g. Samuel contains 1 Samuel + 2 Samuel).
+(e.g. BA-Samuel contains both 1 Samuel and 2 Samuel).
 (Sub-books are books in the "39 books" sense.)
+(The letter B is not used in order to make these codes
+compatible with a set of codes used for the 39-book system.)
 
 ## Top-level structure
 
