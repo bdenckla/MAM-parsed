@@ -1,0 +1,78 @@
+:root {
+  color-scheme: light dark;
+}
+.element {
+  color: light-dark(black, white);
+  background-color: light-dark(white, black);
+}
+body {
+    max-width: 40em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14pt;
+}
+body.wide {
+    max-width: 80em;
+}
+*[lang="hbo"] {
+    font-family: "Taamey D WOFF2";
+    font-size: 140%;
+    font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
+}
+@font-face {
+    font-family: "Taamey D WOFF2";
+    src: url("woff2/Taamey_D.woff2");
+}
+em { font-style: normal; font-weight: bold; }
+span.romanized { font-style: italic; }
+*[lang="he"] span.book-title { font-weight: bold; font-style: normal; }
+span.book-title { font-style: italic; }
+abbr.small-caps { text-transform: lowercase; font-variant: small-caps; }
+p { text-align: justify; }
+li { text-align: justify; }
+blockquote { text-align: justify; }
+*.extra-letter-spacing { letter-spacing: 0.1em; } /* span or bdi */
+*.gray { color: gray; }
+*.big { font-size: 250%; }
+table.border-collapse { border-collapse: collapse; }
+table.center { margin-left: auto; margin-right: auto; }
+p.center { text-align: center; }
+p.center-and-spaced { text-align: center; word-spacing: 1.5em; }
+img.width10em { width: 10em; }
+img.width5em { width: 5em; }
+th, td { padding-right: 0.4em; padding-left: 0.4em; }
+img { max-width: 100%; }
+code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85em;
+    background: light-dark(#f0f0f0, #2a2a2a);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+pre.json-block {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85em;
+    background: light-dark(#f8f8f8, #1e1e1e);
+    border: 1px solid light-dark(#ddd, #444);
+    border-radius: 4px;
+    padding: 1em;
+    line-height: 1.5;
+    overflow-x: auto;
+    direction: ltr;
+    unicode-bidi: normal;
+    white-space: pre;
+}
+.tok-key     { color: light-dark(#0033b3, #9cdcfe); }
+.tok-string  { color: light-dark(#067d17, #ce9178); }
+.tok-number  { color: light-dark(#1750eb, #b5cea8); }
+.tok-keyword { color: light-dark(#7b0070, #569cd6); }
+.tok-punct   { color: light-dark(#333333, #d4d4d4); }
+.json-block .heb {
+    unicode-bidi: isolate;
+    direction: rtl;
+}
+.json-block .pointed {
+    font-size: 1.2em;
+    line-height: 1.8;
+}

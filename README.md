@@ -34,8 +34,8 @@ from the Google Sheet in the following ways:
 
 For detailed documentation of the JSON file structures, see:
 
-* [Reading MAM-parsed plain JSON](doc-under-readme/reading-mam-parsed-plain.md) — structure reference for the "plain" format
-* [Reading MAM-parsed plus JSON](doc-under-readme/reading-mam-parsed-plus.md) — structure reference for the "plus" format (differences from plain)
+* [Reading MAM-parsed plain JSON](https://bdenckla.github.io/MAM-parsed/reading_mam_parsed_plain.html) — structure reference for the "plain" format
+* [Reading MAM-parsed plus JSON](https://bdenckla.github.io/MAM-parsed/reading_mam_parsed_plus.html) — structure reference for the "plus" format (differences from plain)
 
 This Git repository also contains a toy sample application
 [`main_tmpl_survey_toy.py`](py-examples/main_tmpl_survey_toy.py),
