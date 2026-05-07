@@ -26,12 +26,11 @@ of the MAM Google Sheet.
 | Pseudo-verses `"0"` and `"תתת"` | Present | **Removed** |
 | Custom XML tags (`noinclude` etc.) | Present | **Removed** |
 | Wikitext line breaks (`"//"`) | Present in D column | **Removed** |
-| Template representation | `stmpl` (stringified) | `tmpl_name`/`tmpl_params` |
+| Named params | not parsed | unified with positional |
 | CP column (verse reference) | Every verse has `מ:פסוק` | Only first verse of chapter |
 | `good_ending_plus` | Not present | **Added** (at book39 level) |
-| `he_to_int` in header | Not present | **Added** (Hebrew-numeral to integer mapping) |
-| Special letter marking | Not present | **Added** (`מ:אות-מיוחדת-במילה`) |
-| Special ketiv-qere template | `מ:כו"ק מיוחד` with `סוג=` | Same (subtype details below) |
+| Hebrew numeral help | Not present | **Added** (`he_to_int`) |
+| Words with special letters | interrupted | uninterrupted provided |
 
 ## Top-level structure
 
@@ -39,8 +38,8 @@ Same as plain:
 
 ```json
 {
-  "header": { ... },
-  "book39s": [ ... ]
+  "header": {},
+  "book39s": []
 }
 ```
 
@@ -130,18 +129,6 @@ Same 3-element array `[D, CP, EP]`, but with differences in each column.
 
 ### D column (index 0): Section markers
 
-Simplified compared to plain. No `"//"` Wikitext line breaks:
-
-| Value | Meaning |
-|-------|---------|
-| `["__"]` | No break (continuation) |
-| `[{"tmpl_name": "פפ"}]` | Parashah petuchah |
-| `[{"tmpl_name": "סס"}]` | Parashah setumah |
-| `[{"tmpl_name": "מ:ספר חדש", "tmpl_params": {"1": "איוב"}}]` | New book |
-| `[{"tmpl_name": "מ:אין פרשה בתחילת פרק"}]` | No parashah at chapter start |
-
-### CP column (index 1): Verse reference
-
 In plus, only the **first verse of each chapter** has the `מ:פסוק` template.
 All other verses have an empty `[]`:
 
@@ -155,6 +142,11 @@ All other verses have an empty `[]`:
 
 (The verse identity is already encoded in the dict key,
 so repeating it in CP is redundant.)
+
+### CP column (index 1): Verse reference
+
+Simplified compared to plain by removing `"//"` Wikitext line breaks.
+
 
 ### EP column (index 2): Verse text
 
@@ -171,6 +163,7 @@ All templates in the plus format use the expanded representation:
   "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"}
 }
 ```
+<!-- ltr -->
 
 | Key | Type | Description |
 |-----|------|-------------|
@@ -186,11 +179,11 @@ Contrast with the plain format where the same template would be:
 ### `tmpl_params` keys
 
 - Numeric string keys `"1"`, `"2"`, … correspond to positional arguments,
-  with any `"2="` prefix already stripped.
+  with any `"2="` prefix already interpreted.
 - Non-numeric keys (e.g. `"ד"`, `"ס"`, `"סדר"`) represent named parameters
   like `ד=...` in the wikitext.
 
-`tmpl_params` is absent only when the template has no parameters at all
+The `tmpl_params` dict is absent only when the template has no parameters
 (e.g. `פפ`, `סס`, `מ:פסק`).
 
 ### Template parameter values can be complex
@@ -242,7 +235,7 @@ Example — a word with a special letter inside a ketiv-qere inside a nusach:
 
 ## Plus-only templates
 
-### `מ:אות-מיוחדת-במילה` — Special letter marking
+### Special letter marking — `מ:אות-מיוחדת-במילה`
 
 Marks a word containing a letter with a special size or form
 (large, small, suspended, etc.):
@@ -261,51 +254,52 @@ Marks a word containing a letter with a special size or form
 ```
 
 Arguments:
-1. Array showing the word decomposed around the special letter
-2. The word as a plain string
+1. Array showing the word decomposed around the special letter, i.e. interrupted by special letters
+2. The word as a plain string (uninterrupted)
 3. A dot-mask showing the position of the special letter
-4. The size/type code (ג = large, ק = small, etc.)
+4. The size/type code (ג = large, ק = small, ע = hung (suspended))
 5. Letter/type summary
 
-When the word is followed by a legarmeih, the `מ:לגרמיה-2` template is
-included at the end of argument 1, and the pasoleg character (׀) is
-appended to argument 2. Argument 3 gets an extra dot for that position.
+When the word is followed by a legarmeh,
+the `מ:לגרמיה-2` template is included at the end of argument 1,
+and the _paseq/legarmeh_ character (׀) is appended to argument 2.
+Argument 3 has a dot for every letter, plus a dot for the _legarmeh_.
 (E.g. Ruth 3:13 לִ֣ינִי׀, Esther 1:6 ח֣וּר׀.)
 
 ### Special ketiv-qere template (`מ:כו"ק מיוחד`)
 
-Nine former dedicated templates for structurally unusual ketiv-qere cases
-were consolidated into a single unified Wikisource template, `מ:כו"ק מיוחד`,
-in a bot edit. The structural subtype is encoded in the required named
-parameter `סוג=`; its value is the former template name with the leading
-`מ:` stripped.
+Nine special ketiv-qere types are encoded in the required named
+parameter <bdi>`סוג=`</bdi>.
 
-`סוג=` is a **dataset-level classification tag**: it records which structural
+<!-- ltr -->
+
+The value given to <bdi>`סוג=`</bdi>
+is a **dataset-level classification tag**: it records which structural
 subtype this k/q pair belongs to, independent of any particular MAM edition.
 An edition may use it for display selection — the MAM Wikisource edition, for
-example, reads `סוג=` to choose a rendering, applying four distinct display
+example, reads <bdi>`סוג=`</bdi> to choose a rendering, applying four distinct display
 behaviors across the nine subtypes. Other MAM editions are free to implement
-their own rendering keyed off the same `סוג=` values.
+their own rendering keyed off the same <bdi>`סוג=`</bdi> values.
 
 This template appears in both plain and plus format data.
 
-The standard templates (`כו"ק`, `קו"כ`, `קו"כ-אם` / `מ:קו"כ-אם-2`, `כתיב ולא קרי`,
-`קרי ולא כתיב`) are unchanged and shared with plain (described there in detail).
-`קו"כ-אם` is the legacy name; `מ:קו"כ-אם-2` is the current name after a bot edit.
+The following `סוג=` values are used with the `מ:כו"ק מיוחד` template:
 
-The following `סוג=` values are used with `מ:כו"ק מיוחד`:
 
-| `סוג=` value | Meaning |
+<!-- ltr -->
+
+
+| Type | Meaning |
 |-------------|---------|
-| `כו"ק בין שני מקפים` | Ketiv-qere between two maqafim (Isaiah 26:20 only) |
-| `כו"ק כתיב מילה חדה וקרי תרתין מילין` | 1-word ketiv mapped to 2-atom qere |
-| `כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים` | Same as above but between maqafim (1 Chronicles 9:4 only) |
-| `כו"ק כתיב תרתין מילין וקרי מילה חדה` | 2-word ketiv mapped to 1-atom qere |
-| `קו"כ כתיב מילה חדה וקרי תרתין מילין` | Like the k1→q2 case but in reversed (qk) display order, for use after maqaf (Nehemiah 2:13 only) |
-| `כו"ק קרי שונה מהכתיב בשתי מילים` | 1-word ketiv, 2-word qere (kq display order) |
-| `קו"כ קרי שונה מהכתיב בשתי מילים` | 1-word ketiv, 2-word qere in reversed (qk) display order (2 Kgs 18:27, Isa 36:12) |
-| `כו"ק של שתי מילים בהערה אחת` | 2-word ketiv, 2-atom qere |
-| `כו"ק של שלוש מילים בהערה אחת` | 3-word ketiv, 3-atom qere (2 Samuel 21:12) |
+| <bdi>כו"ק בין שני מקפים</bdi> | Ketiv-qere between two maqafim (Isaiah 26:20 only) |
+| <bdi>כו"ק כתיב מילה חדה וקרי תרתין מילין</bdi> | 1-word ketiv mapped to 2-atom qere |
+| <bdi>כו"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים</bdi> | Same as above but between maqafim (1 Chronicles 9:4 only) |
+| <bdi>כו"ק כתיב תרתין מילין וקרי מילה חדה</bdi> | 2-word ketiv mapped to 1-atom qere |
+| <bdi>קו"כ כתיב מילה חדה וקרי תרתין מילין</bdi> | Like the k1→q2 case but in reversed (qk) display order, for use after maqaf (Nehemiah 2:13 only) |
+| <bdi>כו"ק קרי שונה מהכתיב בשתי מילים</bdi> | 1-word ketiv, 2-word qere (kq display order) |
+| <bdi>קו"כ קרי שונה מהכתיב בשתי מילים</bdi> | 1-word ketiv, 2-word qere in reversed (qk) display order (2 Kgs 18:27, Isa 36:12) |
+| <bdi>כו"ק של שתי מילים בהערה אחת</bdi> | 2-word ketiv, 2-atom qere |
+| <bdi>כו"ק של שלוש מילים בהערה אחת</bdi> | 3-word ketiv, 3-atom qere (2 Samuel 21:12) |
 
 Example (Job 38:1):
 
@@ -322,7 +316,7 @@ Example (Job 38:1):
 
 Here the ketiv "מנהסערה" (one word) is read as "מִ֥ן הַסְּעָרָ֗ה" (two words).
 
-### `מ:הערה-2` — Targeted scroll-difference note
+### Targeted scroll-difference note — `מ:הערה-2`
 
 The plain format has `מ:הערה` (a scroll-difference footnote) which is
 "non-targeted": it carries the footnote text but does not explicitly
@@ -395,9 +389,9 @@ template appearing as a sibling immediately after the `נוסח`:
 ]
 ```
 
-### `מ:כפול` — Dual-trope text
+### Dual-trope text — `מ:כפול`
 
-Encodes a dually-accented span of text and its corresponding
+This template encodes a dually-accented span of text and its corresponding
 singly-accented "strands." Used in three sections with dual cantillation:
 the two Decalogues (Exodus 20, Deuteronomy 5) and the Saga of Reuben
 (Genesis 35:22).
@@ -413,137 +407,44 @@ the two Decalogues (Exodus 20, Deuteronomy 5) and the Saga of Reuben
 }
 ```
 
-Named parameters:
-- `כפול` — the text with dual accents (as found in the great codexes)
-- `א` — first singly-accented strand (for Reuben: פשוטה cantillation;
-  for Decalogues: תחתון cantillation)
-- `ב` — second singly-accented strand (for Reuben: מדרשית cantillation;
-  for Decalogues: עליון cantillation)
+<!-- ltr -->
 
-For plain text extraction, use `כפול` — the combined text as it appears in the great codexes. Params `א` and `ב` are the individual singly-accented strands and are only needed for accent analysis.
+Named parameters:
+- Param `כפול` — the text with dual accents (as found in the great codexes)
+- Param `א` — first singly-accented strand (for Reuben: פשוטה cantillation;
+  for Decalogues: תחתון cantillation)
+- Param `ב` — second singly-accented strand (for Reuben: מדרשית cantillation;
+  for Decalogues: עליון cantillation)
 
 ## Common templates (shared with plain)
 
 These templates appear in both formats. In plus they use `tmpl_name`/`tmpl_params`
-instead of `stmpl`:
+format:
 
 | Template | Purpose |
 |----------|---------|
-| `מ:לגרמיה-2` | Legarmeih accent marker |
-| `מ:פסוק` | Verse reference |
-| `מ:פסק` | Pasek mark |
-| `מ:דחי` | Dechik accent annotation |
-| `מ:צינור` | Tsinor accent annotation |
-| `מ:קמץ` | Qamats annotation |
-| `מ:מקף אפור` | Gray maqaf |
-| `נוסח` | Textual variant |
-| `קו"כ` | Ketiv-qere |
-| `מ:כו"ק מיוחד` | Special ketiv-qere (9 subtypes via `סוג=`; see [section above](#special-ketiv-qere-template-מכוק-מיוחד)) |
-| `מ:קו"כ-אם-2` | Trivial ketiv-qere (current name; legacy name `קו"כ-אם` also appears in older snapshots) |
-| `פפ` / `סס` | Parashah petuchah / setumah |
-| `ר0`–`ר4` | Re'via annotation tiers |
-
-## Extracting plain text from plus
-
-```python
-import json
-from pathlib import Path
-
-book = json.loads(Path('plus/D3-Job.json').read_text('utf-8'))
-b39 = book['book39s'][0]
-chapters = b39['chapters']
-
-
-def tmpl_param(tmpl, key):
-    """Get a template parameter by string key (e.g. '1', '2', 'ד')."""
-    return tmpl['tmpl_params'][key]
-
-
-def extract_text(ep_column):
-    """Extract plain text from EP column atoms."""
-    parts = []
-    for atom in ep_column:
-        if isinstance(atom, str):
-            parts.append(atom)
-        elif isinstance(atom, dict):
-            name = atom.get('tmpl_name', '')
-            if name == 'קו"כ':
-                # Use qere (param 2)
-                p2 = tmpl_param(atom, '2')
-                if isinstance(p2, str):
-                    parts.append(p2)
-            elif name == 'קו"כ-אם' or name == 'מ:קו"כ-אם-2':
-              # Trivial ketiv/qere: param 1 = pointed ketiv (displayed).
-              # Old format (קו"כ-אם): param 2 = structured note (e.g. 'א-קרי=...').
-              # New format (מ:קו"כ-אם-2): param 2 = unpointed ketiv, param 3 = pointed qere.
-              # For plain text extraction, use param 1 (what is displayed).
-                p1 = tmpl_param(atom, '1')
-                if isinstance(p1, str):
-                    parts.append(p1)
-            elif name == 'נוסח':
-                # Use primary text (param 1)
-                p1 = tmpl_param(atom, '1')
-                if isinstance(p1, str):
-                    parts.append(p1)
-                elif isinstance(p1, dict):
-                    parts.append(extract_text([p1]))
-            elif name.startswith('מ:כו"ק'):
-                # Targeted kq: param 2 is the qere
-                p2 = tmpl_param(atom, '2')
-                if isinstance(p2, str):
-                    parts.append(p2)
-                elif isinstance(p2, list):
-                    parts.append(extract_text(p2))
-            elif name == 'מ:אות-מיוחדת-במילה':
-                # Use plain word (param 2). Param 1 has SLH markup for structural
-                # analysis (legarmeh positions etc.); param 2 is the pre-flattened
-                # plain string and is sufficient for text extraction.
-                p2 = tmpl_param(atom, '2')
-                if isinstance(p2, str):
-                    parts.append(p2)
-            elif name == 'מ:כפול':
-                # Dual-trope text: use כפול (combined, as in the great codexes).
-                # Params א and ב are the individual singly-accented strands.
-                p = tmpl_param(atom, 'כפול')
-                if isinstance(p, str):
-                    parts.append(p)
-                elif isinstance(p, list):
-                    parts.append(extract_text(p))
-            elif name in ('מ:דחי', 'מ:צינור'):
-                # Accent annotations: param 1 is the clean word form;
-                # param 2 duplicates the accent for display and is discarded.
-                p1 = tmpl_param(atom, '1')
-                if isinstance(p1, str):
-                    parts.append(p1)
-            elif name == 'מ:קמץ':
-                # Qamats variant: param ד is the dikduk (grammarians') form;
-                # param ס is the Sephardic traditional reading.
-                pd = tmpl_param(atom, 'ד')
-                if isinstance(pd, str):
-                    parts.append(pd)
-            elif name == 'כתיב ולא קרי':
-                pass  # Written-but-not-read: contributes nothing to the reading.
-            elif name == 'קרי ולא כתיב':
-                # Read-but-not-written: param 2 is the qere text.
-                p2 = tmpl_param(atom, '2')
-                if isinstance(p2, str):
-                    parts.append(p2)
-            # Skip formatting-only templates (ר0–ר4, מ:לגרמיה-2, etc.)
-    return ''.join(parts).strip()
-
-# Print Job 1:1
-ch1 = chapters['א']
-ep = ch1['א'][2]  # [D, CP, EP] → EP
-print(extract_text(ep))
-```
+| <bdi>מ:לגרמיה-2</bdi> | _Legarmeh_ (as distinct from _paseq_) |
+| <bdi>מ:פסוק</bdi> | Verse label |
+| <bdi>מ:פסק</bdi> | _Paseq_ (as distinct from _legarmeh_) |
+| <bdi>מ:דחי</bdi> | Deḥi variation: without stress helper and with stress helper |
+| <bdi>מ:צינור</bdi> | Tsinnor variation: without stress helper and with stress helper |
+| <bdi>מ:קמץ</bdi> | Qamats variation: A qamats that is qatan in ד is gadol in ס |
+| <bdi>מ:מקף אפור</bdi> | Gray (implicit) maqaf |
+| <bdi>נוסח</bdi> | Documentation note |
+| <bdi>קו"כ</bdi> | Standard ketiv-qere |
+| <bdi>קו"כ</bdi> | Post-maqaf ketiv-qere |
+| <bdi>מ:כו"ק מיוחד</bdi> | Special ketiv-qere (9 subtypes via `סוג=`; see [section above](#special-ketiv-qere-template-מכוק-מיוחד)) |
+| <bdi>מ:קו"כ-אם-2</bdi> | Trivial ketiv-qere |
+| <bdi>פפ, סס</bdi>, etc. | Parashah petuchah / setumah |
+| <bdi>ר0–ר4</bdi> | Poetic spacing |
 
 ## Templates not in plus (removed from plain)
 
 The following plain-format features are absent in plus:
 
 - `{"custom_tag": "noinclude"}` / `{"custom_tag": "/noinclude"}` — custom XML tags
-- `{"tmpl": [...]}` — parsed template trees (only in pseudo-verses)
+- `{"tmpl": [...]}` — parsed template trees (replaced by `tmpl_name`/`tmpl_params`)
 - `{"stmpl": "..."}` — stringified templates (replaced by `tmpl_name`/`tmpl_params`)
 - `"0"` and `"תתת"` pseudo-verses
 - `"//"` Wikitext line breaks in D column
-- `גלגל-2` — galgal accent annotation (handled differently in plus)
+- <bdi>`גלגל-2`</bdi> — galgal accent annotation (handled differently in plus)
