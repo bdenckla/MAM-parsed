@@ -24,7 +24,11 @@ see [reading-mam-parsed-plus.md](reading-mam-parsed-plus.md).
 
 ## File naming
 
-Files are named `{section}{number}-{EnglishName}.json`:
+File names start with a two-character code identifying the book (in the "24 books" sense).
+The first character (`sec_char`), A through F, indicates which of the six sections of Tanakh the book is in.
+The second character (`book24_char`), a digit 1 through 5 or an uppercase letter A through C, indicates the book within that section.
+
+Files are named `{sec_char}{book24_char}-{EnglishName}.json`:
 
 | Prefix | Section | Books |
 |--------|---------|-------|
@@ -35,7 +39,7 @@ Files are named `{section}{number}-{EnglishName}.json`:
 | E1–E5 | Five Scrolls | Song of Songs, Ruth, Lamentations, Ecclesiastes, Esther |
 | F1, FA, FC | Late Books | Daniel, Ezra-Nehemiah, Chronicles |
 
-When the number is replaced by a letter (`A`, `C`),
+When `book24_char` is a letter (`A`, `C`),
 the file is a **composite book** containing multiple book39 entries
 (e.g. Samuel contains 1 Samuel + 2 Samuel).
 
