@@ -40,8 +40,9 @@ Files are named `{sec_char}{book24_char}-{EnglishName}.json`:
 | F1, FA, FC | Late Books | Daniel, Ezra-Nehemiah, Chronicles |
 
 When `book24_char` is a letter (`A`, `C`),
-the file is a **composite book** containing multiple book39 entries
+the file is a **composite book** containing multiple sub-books
 (e.g. Samuel contains 1 Samuel + 2 Samuel).
+(Sub-books are books in the "39 books" sense.)
 
 ## Top-level structure
 
@@ -58,14 +59,16 @@ the file is a **composite book** containing multiple book39 entries
       }
     ]
   },
-  "book39s": [ ... ]
+  "book39s": []
 }
 ```
 
-| Key | Type | Description |
-|-----|------|-------------|
-| `header` | object | Metadata: book names, sub-book names, chapter counts |
-| `book39s` | array | One element per book39 (sub-book). Usually 1; composite books have 2+ |
+<!-- ltr -->
+
+Key | Type | Description
+--- | ---- | -----------
+`header` | object | Metadata: book names, sub-book names, chapter counts.
+`book39s` | array | One element per book39 (sub-book).
 
 ### Composite books
 
@@ -82,8 +85,8 @@ For composite books like Samuel, `book39s` has multiple entries:
     ]
   },
   "book39s": [
-    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\"א", "chapters": {...}},
-    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\"ב", "chapters": {...}}
+    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\"א", "chapters": {}},
+    {"book24_name": "ספר שמואל", "sub_book_name": "שמ\"ב", "chapters": {}}
   ]
 }
 ```
@@ -94,91 +97,85 @@ For composite books like Samuel, `book39s` has multiple entries:
 {
   "book24_name": "ספר איוב",
   "sub_book_name": null,
-  "chapters": { ... }
+  "chapters": {}
 }
 ```
 
+<!-- ltr -->
+
 ## Chapter structure
 
-`chapters` is a **dict** keyed by Hebrew-letter chapter names:
-
-```
-"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י",
-"יא", "יב", ..., "כ", "כא", ..., "ל", "לא", ..., "מב"
-```
-
-These follow standard Hebrew gematria numbering:
-- 1–9: א–ט
-- 10–19: י, יא–יט
-- 15 and 16 use טו and טז (not יה, יו) to avoid spelling divine names
-- 20–29: כ, כא–כט
-- and so on
-
-Each chapter is also a **dict** keyed by Hebrew-letter verse names,
-plus two special pseudo-verse keys:
+The `chapters` dict is keyed as follows:
 
 | Key | Category | Purpose |
 |-----|----------|---------|
 | `"0"` | Pre-chapter | Wiki navigation templates, page setup |
-| `"א"`, `"ב"`, ... | Normal verses | Actual verse data |
-| `"תתת"` | Post-chapter | Wiki footer templates, end-of-chapter markup |
+| Hebrew numerals | Normal verses | Actual verse data |
+| <bdi>`"תתת"`</bdi> | Post-chapter | Wiki footer templates, end-of-chapter markup |
+
+The keys for normal verses are Hebrew numerals
+conforming to the system that 
+uses טו and טז for 15 and 16.
+(This avoids the _yod-he_ and _yod-vav_ letter-pairs
+that could be associated with the divine name.)
 
 ## Verse (pseudo-verse) structure
 
-Each verse is a **3-element array** `[D, CP, EP]`, named after the corresponding
-columns of the Google Sheet:
+Each verse is a **3-element array** corresponding to the D, C, and E
+columns of the Google Sheet.
+(This ordering rather than C, D, E made more sense in this context.)
 
-```json
-["<D column data>", "<C column parsed>", "<E column parsed>"]
-```
+|      | Content
+| ---- | -------
+| D    | Verse label (`מ:פסוק` template): book name, chapter number, verse number, etc. |
+| C    | Verse separator: parashah break or `"__"` for a plain space |
+| E    | Verse text with inline templates |
 
-| Index | Name | Google Sheet column | Content |
-|-------|------|---------------------|---------|
-| 0 | D | D (section markers) | Parashah break type or `"__"` for continuation |
-| 1 | CP | C (verse reference) | Parsed `מ:פסוק` template identifying the verse |
-| 2 | EP | E (verse text) | Parsed verse text with inline templates |
+### Index 0 (Google column D): Verse label
 
-### D column (index 0): Section markers
-
-The D column indicates parashah breaks and other section boundaries:
-
-| Value | Meaning |
-|-------|---------|
-| `["__"]` | No break (continuation from previous verse) |
-| `["//", {"stmpl": "פפ"}, "//"]` | **Parashah petuchah** (open paragraph) — blank line separates the end of the previous parashah from the start of the next |
-| `["//", {"stmpl": "סס"}, "//"]` | **Parashah setumah** (closed paragraph) — next parashah begins on a new indented line |
-| `[{"stmpl": "מ:ספר חדש\|..."}]` | **New book marker** — marks the start of one of the 24 books with defined spacing; parameter is the book name. Not used for second halves of two-part books (2 Samuel, 2 Kings, Nehemiah, 2 Chronicles) or individual Minor Prophets after Hosea |
-| `[{"stmpl": "מ:אין פרשה בתחילת פרק"}]` | **No parashah at chapter start** — tags chapters that don't begin with a visible parashah, so appropriate spacing can be added when text is presented sequentially |
-
-Additional parashah-related templates that may appear:
-
-| Template | Meaning |
-|----------|---------|
-| `פפפ` | Open parashah starting immediately on the next line (no blank line) |
-| `ססס` | Closed parashah inline — blank spaces mid-line with text before and after |
-| `סס2` | Narrow closed parashah — smaller indentation for narrow-column layouts (e.g. Ten Commandments charts) |
-| `פסקא באמצע פסוק` | Parashah division within a verse; first param is the parashah template (`פפ`/`סס`), optional second param gives the verse location |
-| `מ:רווח בתרי עשר` | Spacing between Minor Prophets; parameter is the prophet's name |
-| `מ:רווח לספר בתהלים` | Spacing between the 5 "books" of Psalms (at Psalms 1, 42, 73, 90, 107); parameter is the book name |
-
-The `"//"` strings are Wikitext line breaks from the Google Sheet.
-
-### CP column (index 1): Verse reference
-
-Contains a `מ:פסוק` template identifying the verse:
+The context at index 0 is empty `[]` for pseudo-verses.
+For normal verses, it is a list containing exactly one element:
+The `מ:פסוק` template labeling the verse, e.g. for Job 1:2:
 
 ```json
 [{"stmpl": "מ:פסוק|איוב|א|ב"}]
 ```
 
 This is equivalent to the Wikitext `{{מ:פסוק|איוב|א|ב}}`.
-The three required parameters are: book name, chapter number, and verse number
-(all in Hebrew letters). Optional named parameters include `סדר=` (seder number)
-and `עלייה=` (Torah aliyah identification). All numbering follows Koren
-(the only exception being initial verses of the Ten Commandments).
+The three required parameters are:
+book name (Hebrew alphabet string),
+chapter number (Hebrew numeral), and
+verse number (Hebrew numeral).
+Optional named parameters include <bdi>`סדר=`</bdi> (seder number)
+and <bdi>`עלייה=`</bdi> (Torah aliyah identification).
 Note: Ovadiah is spelled `עובדיה` in this template but `עבדיה` in column A.
 
-Empty `[]` for pseudo-verses.
+
+### Index 1 (Google column C): Verse separator
+
+The contents at index 1 indicates how this verse is separated from the verse that precedes it.
+Double underscoe (`"__"`) is by var the most common value here, indicating merely a plain space
+separating this verse from the verse that precedes it. More interesting values include the following:
+
+| Template | Meaning |
+|-------|---------|
+| <bdi>`פפ`</bdi> | **Parashah petuchah** (open paragraph) |
+| <bdi>`סס`</bdi> | **Parashah setumah** (closed paragraph) |
+| <bdi>`מ:ספר חדש`</bdi> | **New book marker** — marks the start of one of the 24 books with defined spacing; parameter is the book name. Not used for second halves of two-part books (2 Samuel, 2 Kings, Nehemiah, 2 Chronicles) or individual Minor Prophets after Hosea |
+| <bdi>`מ:אין פרשה בתחילת פרק`</bdi> | **No parashah at chapter start** — tags chapters that don't begin with a visible parashah, so appropriate spacing can be added when text is presented sequentially |
+
+Additional parashah-related templates that may appear:
+
+| Template | Meaning |
+|----------|---------|
+| <bdi>`פפפ`</bdi> | Open parashah starting immediately on the next line (no blank line) |
+| <bdi>`ססס`</bdi> | Closed parashah inline — blank spaces mid-line with text before and after |
+| <bdi>`סס2`</bdi> | Narrow closed parashah |
+| <bdi>`פסקא באמצע פסוק`</bdi> | Parashah division within a verse |
+| <bdi>`מ:רווח בתרי עשר`</bdi> | Spacing between Minor Prophets |
+| <bdi>`מ:רווח לספר בתהלים`</bdi> | Spacing between the 5 "books" of Psalms (at Psalms 1, 42, 73, 90, 107) |
+
+The `"//"` strings sometimes sprinkled in Index 1 are Wikitext line breaks from the Google Sheet.
 
 ### EP column (index 2): Verse text
 
@@ -196,16 +193,13 @@ Example (Job 1:1):
 ]
 ```
 
-To extract plain text, concatenate the string elements and extract the
-first argument of relevant templates (e.g. `קו"כ`, `נוסח`).
+## Template objects in plain
 
-## Template (atom) formats in plain
-
-The plain format uses three kinds of template atom:
+The plain format uses three kinds of template objects:
 
 ### 1. Stringified template (`stmpl`)
 
-Most templates appear as a pipe-delimited string:
+Many templates are simple enough and short enough appear as a pipe-delimited string:
 
 ```json
 {"stmpl": "מ:פסוק|איוב|א|ב"}
@@ -217,7 +211,7 @@ remaining segments are positional arguments.
 
 ### 2. Parsed template tree (`tmpl`)
 
-Some complex templates (mainly in pseudo-verses) appear as parse trees:
+Longer and/or more complex templates appear as parse trees:
 
 ```json
 {
@@ -228,8 +222,9 @@ Some complex templates (mainly in pseudo-verses) appear as parse trees:
 }
 ```
 
-The first sub-array is the template name (possibly containing nested templates);
-subsequent sub-arrays are the arguments.
+The first sub-array is the template name.
+Subsequent sub-arrays are the arguments.
+The arguments may contain nested template "calls".
 
 ### 3. Custom XML tag (`custom_tag`)
 
@@ -250,12 +245,13 @@ The templates are organized below by category.
 
 ### Documentation template (`נוסח`)
 
-The most extensively used template. Its first parameter is the "target" — the
-exact text appearing in the edition. The second parameter contains notes
-documenting anomalous forms, variant readings, uncertain readings, and other
-data relevant to the target. The template is designed not to interfere with
-how the target text appears to the reader; it only marks notable, unusual,
-or questionable elements and attaches documentation to them.
+Its first parameter is the "target" — what is being documented.
+The second parameter contains the documentation.
+Examples of documentation include
+anomalous forms,
+variant readings,
+uncertain readings, and
+other information relevant to the target.
 
 ```json
 {"stmpl": "נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)"}
@@ -265,13 +261,12 @@ or questionable elements and attaches documentation to them.
 
 | Template | Purpose |
 |----------|---------|
-| `כו"ק` | **Standard ketiv-qere.** Param 1 = unpointed ketiv, param 2 = pointed qere. Displays ketiv (gray) then qere (regular color) |
-| `קו"כ` | **Reversed ketiv-qere.** Same parameters as `כו"ק` but displays qere *before* ketiv. Used when the pair follows a maqaf, for better appearance |
-| `קו"כ-אם` | **Trivial ketiv-qere (legacy name).** For cases where the qere differs only in spelling (אֵם קריאה). No ketiv/qere pair is displayed; the vocalized ketiv is shown normally. Param 1 = pointed ketiv, param 2 = a structured note describing the pointed qere (e.g. `ל-קרי=…`, `א-קרי=…`, or similar). **This name is replaced by `מ:קו"כ-אם-2` in current Wikisource data** (see below) |
-| `מ:קו"כ-אם-2` | **Trivial ketiv-qere (current name).** Same semantic as `קו"כ-אם` but with explicit parameters. Param 1 = pointed ketiv, param 2 = unpointed ketiv, param 3 = pointed qere, optional `מקורות=` = source indicator, optional `סוג=` = category label |
-| `כתיב ולא קרי` | **Written but not read.** Single parameter = the ketiv, shown in gray within parentheses. E.g. `(אם)` in Ruth 3:12 |
-| `קרי ולא כתיב` | **Read but not written.** Single parameter = the qere, shown normally within square brackets. E.g. `[אֵלַ֔י]` in Ruth 3:17 |
-| `מ:כו"ק מיוחד` | **Special ketiv-qere (unified).** Replaced nine former dedicated templates in a Wikisource bot edit. The required `סוג=` named parameter identifies the structural subtype. See the [plus format documentation](reading-mam-parsed-plus.md) for the full subtype list |
+| <bdi>`כו"ק`</bdi> | **standard ketiv-qere.** Param 1 = unpointed ketiv, param 2 = pointed qere. |
+| <bdi>`קו"כ`</bdi> | **post-maqaf ketiv-qere.** Same parameters as `כו"ק` but used when the pair follows a maqaf. Some editions choose to display pairs like this with the qere *before* ketiv. |
+| <bdi>`מ:קו"כ-אם-2`</bdi> | **trivial ketiv-qere.** For cases where the difference between the ketiv and the qere is deemed trivial. Some editions choose to display only the vocalized ketiv in such cases. Param 1 = pointed ketiv, param 2 = unpointed ketiv, param 3 = pointed qere, optional `מקורות=` = source indicator, optional `סוג=` = category label. |
+| <bdi>`כתיב ולא קרי`</bdi> | **ketiv without qere.** Single parameter = the ketiv, shown in gray within parentheses. E.g. `(אם)` in Ruth 3:12 |
+| <bdi>`קרי ולא כתיב`</bdi> | **qere without ketiv.** Single parameter = the qere, shown normally within square brackets. E.g. `[אֵלַ֔י]` in Ruth 3:17 |
+| <bdi>`מ:כו"ק מיוחד`</bdi> | **special ketiv-qere.** The required `סוג=` named parameter identifies the subtype. See the [plus format documentation](reading-mam-parsed-plus.md) for the full subtype list. |
 
 Current values observed for optional `סוג=` in `מ:קו"כ-אם-2` are:
 
@@ -291,105 +286,61 @@ Example of standard ketiv-qere:
 
 | Template | Purpose |
 |----------|---------|
-| `מ:אות-ג` | **Large letter.** Marks a masoretically large letter. Parameter is the pointed letter (occurs within a word). Often wrapped in `נוסח` since traditions vary |
-| `מ:אות-ק` | **Small letter.** Marks a masoretically small letter. Parameter is the pointed letter |
-| `מ:אות תלויה` | **Suspended (hung) letter.** Appears raised in the text. Parameter is the pointed letter |
-| `מ:אות מנוקדת` | **Dotted letter/word.** Marks words with masoretic dots above/below (dots are Unicode). Parameter is the dotted word |
-| `מ:נו"ן הפוכה` | **Reversed nun.** The inverted nun mark (Unicode character) |
+| <bdi>`מ:אות-ג`</bdi> | **Large letter.** Marks a masoretically large letter. Parameter is the pointed letter (occurs within a word). Often wrapped in `נוסח` since traditions vary |
+| <bdi>`מ:אות-ק`</bdi> | **Small letter.** Marks a masoretically small letter. Parameter is the pointed letter |
+| <bdi>`מ:אות תלויה`</bdi> | **Suspended (hung) letter.** Appears raised in the text. Parameter is the pointed letter |
+| <bdi>`מ:אות מנוקדת`</bdi> | **Dotted letter/word.** Marks words with masoretic dots above/below (dots are Unicode). Parameter is the dotted word |
+| <bdi>`מ:נו"ן הפוכה`</bdi> | **Reversed nun.** The inverted nun mark (Unicode character) |
 
 ### Accent and cantillation templates
 
 | Template | Purpose |
 |----------|---------|
-| `מ:לגרמיה-2` | **Legarmeih.** The vertical line `׀` as legarmeih (part of the word's cantillation). Shown close to the preceding word with thin space, in bold. Shares Unicode with paseq but differs in function |
-| `מ:פסק` | **Paseq.** The vertical line `׀` as a separator warning not to conflate two words. Shown equidistant between words, small gray font. No parameters |
-| `מ:מקף אפור` | **Gray maqaf.** Gray hyphen between oleh-ve-yored words in 50 verses of Psalms, Proverbs, and Job. No parameters |
-| `מ:דחי` | **Dechik** accent annotation |
-| `מ:צינור` | **Tsinor** accent annotation |
-| `גלגל-2` | **Galgal accent** (3 poetic books). Same Unicode character as yeraḥ ben yomo but distinguished as in the Aleppo Codex |
-| `ירח בן יומו` | **Yeraḥ ben yomo accent** (21 books). Same Unicode character as galgal. No parameters |
-| `אתנח הפוך` | **Etnaḥ haphukh** (3 poetic books). Similar to but distinct from galgal in the Aleppo Codex; later codices merged them. No parameters |
-| `מ:קמץ` | **Qamats qatan.** Named params: `ד=` (theoretical grammar, default) and `ס=` (Sephardic tradition, which less often voices qamats qatan in certain forms) |
+| <bdi>`מ:לגרמיה-2`</bdi> | **Legarmeh.** The vertical line `׀` as legarmeh (part of the word's cantillation).  Shares Unicode with paseq but differs in function |
+| <bdi>`מ:פסק`</bdi> | **Paseq.** The vertical line `׀` as _paseq_ in the narrow sense, i.e. _paseq_ as distinct from _legarmeh_. |
+| <bdi>`מ:מקף אפור`</bdi> | **Gray maqaf.** A _maqaf_ that is only implicit in the manuscript. Appears only in poetic verses. |
+| <bdi>`מ:דחי`</bdi> | **Deḥi variation.** Presents both stress-helped and non-stress-helped versions of a word. |
+| <bdi>`מ:צינור`</bdi> | **Tsinnor variation.** Presents both stress-helped and non-stress-helped versions of a word. |
+| <bdi>`גלגל-2`</bdi> | **Galgal.** Distinguishes poetic from prose uses of Unicode YERAH BEN YOMO. |
+| <bdi>`ירח בן יומו`</bdi> | **Yeraḥ ben yomo.** Distinguishes prose from poetic uses of Unicode YERAH BEN YOMO. |
+| <bdi>`אתנח הפוך`</bdi> | **Atnaḥ hafukh.** Helps distinguish this accent from galgal/yeraḥ ben yomo because many fonts do not make this distinction. |
+| <bdi>`מ:קמץ`</bdi> | **Qamats variation.** Named params: `ד=` (theoretical/grammatical) and `ס=` (Sephardic tradition, which less often voices qamats qatan in certain forms). |
 
 ### Jerusalem spelling
 
 | Template | Purpose |
 |----------|---------|
-| `מ:ירושלם` | Handles the masoretic spelling of Jerusalem without yod. Two params (vowel and accent of lamed); automatically provides ḥiriq for the missing yod with CGJ for proper display |
-| `מ:ירושלמה` | Like `מ:ירושלם` but for the directional form "to Jerusalem" (4 cases: 1 Kgs 10:2, 2 Kgs 9:28, Isa 36:2, Ezk 8:3). Uses sheva instead of ḥiriq |
+| <bdi>`מ:ירושלם`</bdi> | Handles the masoretic spelling of Jerusalem without yod. Two params (vowel and accent of lamed); automatically provides ḥiriq for the missing yod with CGJ for proper display |
+| <bdi>`מ:ירושלמה`</bdi> | Like `מ:ירושלם` but for the directional form "to Jerusalem" (4 cases: 1 Kgs 10:2, 2 Kgs 9:28, Isa 36:2, Ezk 8:3). Uses sheva instead of ḥiriq. |
 
 ### Poetic form templates (ספרי אמ"ת)
 
 | Template | Purpose |
 |----------|---------|
-| `ר1` | Following stich on its own line, **one** indent. In 2 cases (Ps 70, 108) represents a closed parashah |
-| `ר2` | Following stich on its own line, **two** indents |
-| `ר3` | Following stich at line start, **no** indent |
-| `ר4` | New verse at line start, **no** indent |
-| `ר0` | Extra division point when a verse has an odd number of stiches, for even-column display |
-| `פרשה-מרכז` | **Centered title.** For "titles" in Job and Proverbs (not found elsewhere). Parameter is the title text |
+| <bdi>`ר1`</bdi> | Following stich on its own line, **one** indent. In 2 cases (Ps 70, 108) represents a closed parashah |
+| <bdi>`ר2`</bdi> | Following stich on its own line, **two** indents |
+| <bdi>`ר3`</bdi> | Following stich at line start, **no** indent |
+| <bdi>`ר4`</bdi> | New verse at line start, **no** indent |
+| <bdi>`ר0`</bdi> | Extra division point when a verse has an odd number of stiches, for even-column display |
+| <bdi>`פרשה-מרכז`</bdi> | **Centered title.** For "titles" in Job and Proverbs (not found elsewhere). Parameter is the title text |
 
-All poetic formatting can be removed by treating `ר0`–`ר4` as simple word spaces.
+Many editions will choose to skip poetic formatting by treating `ר0`–`ר4` as simple word spaces.
 
 ### Footnote template
 
 | Template | Purpose |
 |----------|---------|
-| `מ:הערה` | **Scroll-difference footnote** (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text |
+| <bdi>`מ:הערה`</bdi> | **Scroll-difference footnote** (Torah and Esther only). Footnote markers appear within the text itself. Parameter is the footnote text |
 
 ### Other templates
 
 | Template | Purpose |
 |----------|---------|
-| `פפ` / `סס` | Parashah petuchah / setumah (primarily in D column) |
-| `מ:סיום בטוב` | **Good ending.** Repeats the penultimate verse so public reading ends positively. Used at the end of Lamentations, Ecclesiastes, Isaiah, and Malachi |
-| `מ:טעם ומתג באות אחת` | Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter |
-| `מ:גרש ותלישא גדולה` | Combined geresh + telisha gedolah (2 words, 3 uses). No parameters |
-| `מ:גרשיים ותלישא גדולה` | Combined gershayim + telisha gedolah (3 words, 4 uses). No parameters |
-
-## Extracting plain text from verses
-
-To extract the verse text for programmatic use,
-iterate over the EP column (index 2) and handle each atom:
-
-```python
-import json
-from pathlib import Path
-
-book = json.loads(Path('plain/D3-Job.json').read_text('utf-8'))
-b39 = book['book39s'][0]
-chapters = b39['chapters']
-
-def extract_text(ep_column):
-    """Extract plain text from EP column atoms."""
-    parts = []
-    for atom in ep_column:
-        if isinstance(atom, str):
-            parts.append(atom)
-        elif isinstance(atom, dict):
-            stmpl = atom.get('stmpl', '')
-            name = stmpl.split('|')[0] if '|' in stmpl else stmpl
-            args = stmpl.split('|')[1:] if '|' in stmpl else []
-            if name in ('קו"כ', 'קו"כ-אם', 'מ:קו"כ-אם-2'):
-                # Use qere (2nd arg) for reading; for קו"כ-אם / מ:קו"כ-אם-2
-                # (matres lectionis kq) the 1st arg is the displayed ketiv.
-                if len(args) >= 2:
-                    parts.append(args[1])
-            elif name == 'נוסח':
-                # Use primary text (1st arg)
-                if args:
-                    parts.append(args[0])
-            elif name == 'גלגל-2':
-                if args:
-                    parts.append(args[0])
-            # Skip formatting-only templates (ר0–ר4, מ:לגרמיה-2, etc.)
-    return ''.join(parts).strip()
-
-# Print Job 1:1
-ch1 = chapters['א']
-ep = ch1['א'][2]  # [D, CP, EP] → EP
-print(extract_text(ep))
-```
+| <bdi>`פפ` / `סס`</bdi> | Parashah petuchah / setumah (primarily in D column) |
+| <bdi>`מ:סיום בטוב`</bdi> | **Good ending.** Repeats the penultimate verse so public reading ends positively. Used at the end of Lamentations, Ecclesiastes, Isaiah, and Malachi |
+| <bdi>`מ:טעם ומתג באות אחת`</bdi> | Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter |
+| <bdi>`מ:גרש ותלישא גדולה`</bdi> | Combined geresh + telisha gedolah (2 words, 3 uses). No parameters |
+| <bdi>`מ:גרשיים ותלישא גדולה`</bdi> | Combined gershayim + telisha gedolah (3 words, 4 uses). No parameters |
 
 ## Pseudo-verses (0 and תתת)
 
@@ -398,7 +349,4 @@ Wiki-specific navigation and formatting markup, not biblical text.
 They can generally be skipped when extracting verse content.
 
 - `"0"`: Contains `noinclude` tags, navigation templates, margin settings
-- `"תתת"`: Contains end-of-chapter markers, unnumbered-verse section
-
-For the template survey example showing how to categorize pseudo-verses
-vs. normal verses, see `template-survey-example.py` in the repo root.
+- <bdi>`"תתת"`</bdi>: Contains end-of-chapter markers, unnumbered-verse section
