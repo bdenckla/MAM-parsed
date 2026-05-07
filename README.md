@@ -8,7 +8,7 @@ in two parsed formats: "plain" and "plus."
 Each format contains a JSON file for each of the 24 books of the Miqra.
 
 The source of this data is the
-[MAM Google Sheet](https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit#gid=920165745).
+[MAM Google Sheet](https://purl.org/mam/google-sheet#gid=920165745).
 
 Each JSON file represents its corresponding book in a format that is easier to read than the format of the Google Sheet.
 (It is easier for a *program* to read, that is. It is not very human-readable.)
