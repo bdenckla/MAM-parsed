@@ -15,15 +15,6 @@ body {
 body.wide {
     max-width: 80em;
 }
-*[lang="hbo"] {
-    font-family: "Taamey D WOFF2";
-    font-size: 140%;
-    font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
-}
-@font-face {
-    font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
-}
 em { font-style: normal; font-weight: bold; }
 span.romanized { font-style: italic; }
 *[lang="he"] span.book-title { font-weight: bold; font-style: normal; }
@@ -43,6 +34,7 @@ img.width10em { width: 10em; }
 img.width5em { width: 5em; }
 th, td { padding-right: 0.4em; padding-left: 0.4em; }
 img { max-width: 100%; }
+
 code {
     font-family: Consolas, "Courier New", monospace;
     font-size: 0.85em;
