@@ -52,9 +52,9 @@ section.</p>
 <td>Daniel, Ezra-Nehemiah, Chronicles</td>
 </tr>
 </table>
-<p>When <code>book24_char</code> is A or C, the file is a composite book containing multiple
-sub-books (e.g. BA-Samuel contains both 1 Samuel and 2 Samuel). The letter B is not used in order to
-keep compatibility with a set of codes used for the 39-book system.</p>
+<p>When <code>book24_char</code> is A or C, the file is a composite book24, i.e. a book24 that
+contains sub-books (e.g. BA-Samuel contains both 1 Samuel and 2 Samuel). The letter B is not used in
+order to keep compatibility with a set of codes used for the 39-book system.</p>
 <h2>Top-level structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct">
   </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct">
@@ -138,35 +138,24 @@ structure</h2>
 <p>The keys for normal verses are Hebrew numerals conforming to the system that uses טו and טז for
 15 and 16, avoiding the divine-name letter-pairs.</p>
 <h2>Verse (pseudo-verse) structure</h2>
-<p>Each verse is a 3-element array corresponding to the D, C, and E columns of the Google Sheet.
-(This ordering, rather than C, D, E, made more sense in this context.)</p>
+<p>Each verse is a 3-element array corresponding to the C, D, and E columns of the Google Sheet.</p>
 <table class="center">
-<tr>
-<td>D</td>
-<td>Verse label (<code>מ:פסוק</code> template): book name, chapter, verse, etc.</td>
-</tr>
 <tr>
 <td>C</td>
 <td>Verse separator: <span class="romanized">parashah</span> break or <code>"__"</code> for a plain
 space</td>
 </tr>
 <tr>
+<td>D</td>
+<td>Verse label (<code>מ:פסוק</code> template): book name, chapter, verse, etc.</td>
+</tr>
+<tr>
 <td>E</td>
 <td>Verse text with inline templates</td>
 </tr>
 </table>
-<h3>Index 0 (Google column D): Verse label</h3>
-<p>The context at index 0 is empty <code>[]</code> for pseudo-verses. For normal verses, it is a
-list containing exactly one element: the <bdi lang="hbo">מ:פסוק</bdi> template labeling the verse,
-e.g. for Job 1:2:</p>
-<pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct">
-</span></pre><p>The
-three required parameters are book name (Hebrew alphabet string), chapter number (Hebrew numeral),
-and verse number (Hebrew numeral). Optional named parameters include <bdi lang="hbo">סדר=</bdi>
-(seder number) and <bdi lang="hbo">עלייה=</bdi> (Torah <span class="romanized">aliyah</span>
-identification).</p>
-<h3>Index 1 (Google column C): Verse separator</h3>
-<p>The contents at index 1 indicate how this verse is separated from the preceding verse.
+<h3>Index 0 (Google column C): Verse separator</h3>
+<p>The contents at index 0 indicate how this verse is separated from the preceding verse.
 <code>"__"</code> is by far the most common value, indicating a plain space. More interesting values
 include:</p>
 <table class="center">
@@ -226,9 +215,19 @@ and after</td>
 <td>Spacing between the 5 “books” of Psalms (Psalms 1, 42, 73, 90, 107)</td>
 </tr>
 </table>
-<p>The <code>"//"​</code> strings sometimes sprinkled in index 1 are Wikitext line breaks from the
+<p>The <code>"//"​</code> strings sometimes sprinkled in index 0 are Wikitext line breaks from the
 Google Sheet.</p>
-<h3>EP column (index 2): Verse text</h3>
+<h3>Index 1 (Google column D): Verse label</h3>
+<p>The content at index 1 is empty <code>[]</code> for pseudo-verses. For normal verses, it is a
+list containing exactly one element: the <bdi lang="hbo">מ:פסוק</bdi> template labeling the verse,
+e.g. for Job 1:2:</p>
+<pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct">
+</span></pre><p>The
+three required parameters are book name (Hebrew alphabet string), chapter number (Hebrew numeral),
+and verse number (Hebrew numeral). Optional named parameters include <bdi lang="hbo">סדר=</bdi>
+(seder number) and <bdi lang="hbo">עלייה=</bdi> (Torah <span class="romanized">aliyah</span>
+identification).</p>
+<h3>E column (index 2): Verse text</h3>
 <p>Contains the actual verse text as a mixed array of strings (Hebrew text with cantillation marks)
 and template objects (inline markup). Example (Job 1:1):</p>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct">
@@ -261,7 +260,7 @@ nested template “calls”.</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;custom_tag&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;noinclude&quot;</span><span class="tok-punct">}</span><span class="tok-punct">
 </span><span class="tok-punct">{</span><span class="tok-key">&quot;custom_tag&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;/noinclude&quot;</span><span class="tok-punct">}</span><span class="tok-punct">
 </span></pre><h2>Common
-templates in the EP (verse text) column</h2>
+templates in the E (verse text) column</h2>
 <p>For authoritative English and Hebrew descriptions of every template, see the
 <a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
 <a href="https://purl.org/mam/google-sheet#gid=920165745">MAM Google Sheet</a>.</p>

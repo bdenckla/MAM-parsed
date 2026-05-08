@@ -15,7 +15,7 @@ import collections
 import json
 import os
 
-_MINIROW = collections.namedtuple("Minirow", "D, CP, EP")
+_MINIROW = collections.namedtuple("Minirow", "C, D, E")
 _SUBTYPE_FNS = {  # wte: Wikitext element (str or single-item dict)
     "tmpl": lambda wte: wte[0][0],
     "stmpl": lambda wte: wte.split("|")[0],
@@ -74,9 +74,9 @@ def _do_survey(sec_body):
             for pseudoverse in chapter.items():
                 psv_psn, psv_contents = pseudoverse
                 minirow = _MINIROW(*psv_contents)
-                for wikitext_el in minirow.CP:
+                for wikitext_el in minirow.C:
                     _record(survey, wikitext_el, psv_psn, "C")
-                for wikitext_el in minirow.EP:
+                for wikitext_el in minirow.E:
                     _record(survey, wikitext_el, psv_psn, "E")
     return survey
 
