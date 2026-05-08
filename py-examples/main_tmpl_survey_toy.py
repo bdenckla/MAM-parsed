@@ -101,7 +101,7 @@ def almost_main(plain_path):
         book24 = json.load(fpi)
     survey = _do_survey(book24["book39s"])
     records = _reformat_survey(survey)
-    with _openw("./out/tmpl_survey_toy.json") as fpo:
+    with _openw("./py-examples-out/tmpl_survey_toy.json") as fpo:
         dump_opts = {"indent": 0, "ensure_ascii": False}
         json.dump(records, fpo, **dump_opts)
 
