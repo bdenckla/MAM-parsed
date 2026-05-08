@@ -8,11 +8,28 @@
 </head>
 <body>
 <h1>Reading MAM-parsed plus JSON</h1>
+<p>The <abbr class="small-caps">MAM</abbr>-parsed plus format is a fully parsed JSON representation
+of the biblical text. This document covers:</p>
+<ul>
+<li>File naming</li>
+<li>Top-level structure and header metadata</li>
+<li>Book39 entries (including good-ending data)</li>
+<li>Chapter and verse structure</li>
+<li>Template format (expanded from plain)</li>
+<li>Plus-only templates</li>
+<li>Common templates in the verse-text column</li>
+<li>Templates removed in plus (present in plain)</li>
+<li>Summary comparison with plain format</li>
+</ul>
+<p>For authoritative English and Hebrew descriptions of every template, see the
+<a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
+<abbr class="small-caps">MAM</abbr> Google Sheet.</p>
 <h2>File naming</h2>
-<p>File names start with two characters that identify the book (in the “24 books” sense) and provide
-a standard ordering. The first character (<code>sec_char</code>) comes from the set ABCDEF and
-indicates the section of Tanakh. The second character (<code>book24_char</code>) comes from the set
-12345AC and indicates the book within that section.</p>
+<p>File names (e.g. <code>A1-Genesis.json</code>) start with two characters that identify the book
+(in the “24 books” sense) and provide a standard ordering. The first character
+(<code>sec_char</code>) comes from the set ABCDEF and indicates the section of Tanakh. The second
+character (<code>book24_char</code>) comes from the set 12345AC and indicates the book within that
+section.</p>
 <p>Files are named <code>{sec_char}{book24_char}-{EnglishName}.json</code>:</p>
 <table class="center">
 <tr>
@@ -54,11 +71,6 @@ indicates the section of Tanakh. The second character (<code>book24_char</code>)
 <p>When <code>book24_char</code> is A or C, the file is a composite book containing multiple
 sub-books (e.g. BA-Samuel contains both 1 Samuel and 2 Samuel). The letter B is not used in order to
 keep compatibility with a set of codes used for the 39-book system.</p>
-<p>The plus format is a fully parsed representation that diverges from the plain format in several
-ways.</p>
-<p>For authoritative English and Hebrew descriptions of every template, see the
-<a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
-<abbr class="small-caps">MAM</abbr> Google Sheet.</p>
 <h2>Top-level structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct">
   </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{},</span><span class="tok-punct">
