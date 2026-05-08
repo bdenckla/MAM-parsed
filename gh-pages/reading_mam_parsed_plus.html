@@ -9,8 +9,7 @@
 <body>
 <h1>Reading MAM-parsed plus JSON</h1>
 <p>The plus format shares the same overall structure as the
-<a href="reading_mam_parsed_plain.html">plain format</a> but diverges in several ways. Read the
-plain format documentation first, then use this document for the differences.</p>
+<a href="reading_mam_parsed_plain.html">plain format</a> but diverges in several ways.</p>
 <p>For authoritative English and Hebrew descriptions of every template, see the
 <a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
 <abbr class="small-caps">MAM</abbr> Google Sheet.</p>
@@ -366,9 +365,93 @@ parameters:</p>
 <td>Second singly-accented strand (for Reuben: מדרשית; for Decalogues: עליון cantillation)</td>
 </tr>
 </table>
-<h2>Common templates (shared with plain)</h2>
-<p>These templates appear in both formats. In plus they use
-<code>tmpl_name</code>/<code>tmpl_params</code> format:</p>
+<h2>Common templates in the EP (verse text) column</h2>
+<p>For authoritative English and Hebrew descriptions of every template, see the
+<a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
+<a href="https://purl.org/mam/google-sheet#gid=920165745">MAM Google Sheet</a>.</p>
+<p>In plus format these templates use <code>tmpl_name</code>/<code>tmpl_params</code> format.</p>
+<h3>Documentation template (נוסח)</h3>
+<p>Its first parameter is the “target” — what is being documented. The second parameter contains the
+documentation (anomalous forms, variant readings, uncertain readings, etc.):</p>
+<pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)&quot;</span><span class="tok-punct">}</span><span class="tok-punct">
+</span></pre><h3>Ketiv-<span class="romanized">qere</span>
+templates</h3>
+<table class="center">
+<tr>
+<th>Template</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><bdi lang="hbo">כו"ק</bdi></td>
+<td>Standard ketiv-<span class="romanized">qere</span>. Param 1 = unpointed ketiv, param 2 = pointed
+<span class="romanized">qere</span>.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">קו"כ</bdi></td>
+<td>Post-<span class="romanized">maqaf</span> ketiv-<span class="romanized">qere</span>. Same
+parameters as <bdi lang="hbo">כו"ק</bdi> but used when the pair follows a
+<span class="romanized">maqaf</span>.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:קו"כ-אם-2</bdi></td>
+<td>Trivial ketiv-<span class="romanized">qere</span>. Param 1 = pointed ketiv, param 2 = unpointed
+ketiv, param 3 = pointed <span class="romanized">qere</span>.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">כתיב ולא קרי</bdi></td>
+<td>Ketiv without <span class="romanized">qere</span>. Single parameter = the ketiv.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">קרי ולא כתיב</bdi></td>
+<td>Qere without ketiv. Single parameter = the <span class="romanized">qere</span>.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:כו"ק מיוחד</bdi></td>
+<td>Special ketiv-<span class="romanized">qere</span>. The required <bdi lang="hbo">סוג=</bdi> named
+parameter identifies the subtype. Nine subtypes.</td>
+</tr>
+</table>
+<p>Current values observed for optional <bdi lang="hbo">סוג=</bdi> in
+<bdi lang="hbo">מ:קו"כ-אם-2</bdi>:</p>
+<ul>
+<li><bdi lang="hbo">אל"ף נחה באמצע תיבה ולא נקראת</bdi></li>
+<li><bdi lang="hbo">כתיב ה"א בסיומת של חולם</bdi></li>
+<li><bdi lang="hbo">כתיב הוא קרי היא</bdi></li>
+<li><bdi lang="hbo">כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו</bdi></li>
+<li><bdi lang="hbo">כתיב נער קרי נערה</bdi></li>
+</ul>
+<p>Example of standard ketiv-<span class="romanized">qere</span>:</p>
+<pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;קו\&quot;כ|את|אַ֠תָּ֠ה&quot;</span><span class="tok-punct">}</span><span class="tok-punct">
+</span></pre><h3>Special
+letter templates</h3>
+<table class="center">
+<tr>
+<th>Template</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:אות-ג</bdi></td>
+<td>Large letter. Marks a masoretically large letter. Parameter is the pointed letter.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:אות-ק</bdi></td>
+<td>Small letter. Marks a masoretically small letter. Parameter is the pointed letter.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:אות תלויה</bdi></td>
+<td>Suspended (hung) letter. Appears raised in the text.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:אות מנוקדת</bdi></td>
+<td>Dotted letter/word. Marks words with masoretic dots above/below.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:נו"ן הפוכה</bdi></td>
+<td>Reversed <span class="romanized">nun</span>. The inverted <span class="romanized">nun</span>
+mark (Unicode character).</td>
+</tr>
+</table>
+<h3>Accent and cantillation templates</h3>
 <table class="center">
 <tr>
 <th>Template</th>
@@ -376,63 +459,136 @@ parameters:</p>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:לגרמיה-2</bdi></td>
-<td><span class="romanized">Legarmeh</span> (as distinct from
-<span class="romanized">paseq</span>)</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:פסוק</bdi></td>
-<td>Verse label</td>
+<td><span class="romanized">Legarmeh</span>. The vertical line ׀ as
+<span class="romanized">legarmeh</span> (part of the word’s cantillation). Shares Unicode with
+<span class="romanized">paseq</span> but differs in function.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:פסק</bdi></td>
-<td><span class="romanized">Paseq</span> (as distinct from
-<span class="romanized">legarmeh</span>)</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:דחי</bdi></td>
-<td>Deḥi variation: without stress helper and with stress helper</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:צינור</bdi></td>
-<td>Tsinnor variation: without stress helper and with stress helper</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:קמץ</bdi></td>
-<td>Qamats variation: A <span class="romanized">qamats</span> that is qatan in
-<bdi lang="hbo">ד</bdi> is gadol in <bdi lang="hbo">ס</bdi></td>
+<td><span class="romanized">Paseq</span>. The vertical line ׀ as
+<span class="romanized">paseq</span> in the narrow sense, i.e. <span class="romanized">paseq</span>
+as distinct from <span class="romanized">legarmeh</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:מקף אפור</bdi></td>
-<td>Gray (implicit) <span class="romanized">maqaf</span></td>
+<td>Gray <span class="romanized">maqaf</span>. A <span class="romanized">maqaf</span> that is only
+implicit in the manuscript. Appears only in poetic verses.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">נוסח</bdi></td>
-<td>Documentation note</td>
+<td><bdi lang="hbo">מ:דחי</bdi></td>
+<td>Deḥi variation. Presents both stress-helped and non-stress-helped versions of a word.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">כו"ק</bdi></td>
-<td>Standard ketiv-<span class="romanized">qere</span></td>
+<td><bdi lang="hbo">מ:צינור</bdi></td>
+<td>Tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">קו"כ</bdi></td>
-<td>Post-<span class="romanized">maqaf</span> ketiv-<span class="romanized">qere</span></td>
+<td><bdi lang="hbo">גלגל-2</bdi></td>
+<td>Galgal. Distinguishes poetic from prose uses of Unicode YERAH BEN YOMO.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:כו"ק מיוחד</bdi></td>
-<td>Special ketiv-<span class="romanized">qere</span> (9 subtypes via <bdi lang="hbo">סוג=</bdi>;
-see section above)</td>
+<td><bdi lang="hbo">ירח בן יומו</bdi></td>
+<td>Yeraḥ ben yomo. Distinguishes prose from poetic uses of Unicode YERAH BEN YOMO.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:קו"כ-אם-2</bdi></td>
-<td>Trivial ketiv-<span class="romanized">qere</span></td>
+<td><bdi lang="hbo">אתנח הפוך</bdi></td>
+<td>Atnaḥ hafukh. Helps distinguish this accent from galgal/yeraḥ ben yomo.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">פפ</bdi>, <bdi lang="hbo">סס</bdi>, etc.</td>
-<td>Parashah petuchah / setumah</td>
+<td><bdi lang="hbo">מ:קמץ</bdi></td>
+<td>Qamats variation. Named params: <bdi lang="hbo">ד=</bdi> (grammatical) and
+<bdi lang="hbo">ס=</bdi> (Sephardic tradition).</td>
+</tr>
+</table>
+<h3>Jerusalem spelling</h3>
+<table class="center">
+<tr>
+<th>Template</th>
+<th>Purpose</th>
 </tr>
 <tr>
-<td><bdi lang="hbo">ר0</bdi>–<bdi lang="hbo">ר4</bdi></td>
-<td>Poetic spacing</td>
+<td><bdi lang="hbo">מ:ירושלם</bdi></td>
+<td>Handles the masoretic spelling of Jerusalem without <span class="romanized">yod</span>. Two
+params (vowel and accent of <span class="romanized">lamed</span>).</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:ירושלמה</bdi></td>
+<td>Like מ:ירושלם but for the directional form “to Jerusalem” (4 cases).</td>
+</tr>
+</table>
+<h3>Poetic form templates (ספרי אמת)</h3>
+<table class="center">
+<tr>
+<th>Template</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><bdi lang="hbo">ר1</bdi></td>
+<td>Following stich on its own line, one indent. In 2 cases (Ps 70, 108) represents a closed
+<span class="romanized">parashah</span>.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">ר2</bdi></td>
+<td>Following stich on its own line, two indents.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">ר3</bdi></td>
+<td>Following stich at line start, no indent.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">ר4</bdi></td>
+<td>New verse at line start, no indent.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">ר0</bdi></td>
+<td>Extra division point when a verse has an odd number of stiches, for even-column display.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">פרשה-מרכז</bdi></td>
+<td>Centered title. For “titles” in Job and Proverbs. Parameter is the title text.</td>
+</tr>
+</table>
+<p>Many editions will choose to skip poetic formatting by treating פ0–פ4 as simple word spaces.</p>
+<h3>Footnote template</h3>
+<table class="center">
+<tr>
+<th>Template</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:הערה</bdi></td>
+<td>Scroll-difference footnote (Torah and Esther only). Footnote markers appear within the text
+itself. Parameter is the footnote text.</td>
+</tr>
+</table>
+<h3>Other templates</h3>
+<table class="center">
+<tr>
+<th>Template</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td><bdi lang="hbo">פפ</bdi> / <bdi lang="hbo">סס</bdi></td>
+<td>Parashah petuchah / setumah (primarily in D column)</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:סיום בטוב</bdi></td>
+<td>Good ending. Repeats the penultimate verse so public reading ends positively. Used at the end of
+Lamentations, Ecclesiastes, Isaiah, and Malachi.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:טעם ומתג באות אחת</bdi></td>
+<td>Normalization-robust meteg for 10 cases where a below-accent and meteg share one letter.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:גרש ותלישא גדולה</bdi></td>
+<td>Combined <span class="romanized">geresh</span> + <span class="romanized">telisha</span> gedolah
+(2 words, 3 uses). No parameters.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:גרשיים ותלישא גדולה</bdi></td>
+<td>Combined gershayim + <span class="romanized">telisha</span> gedolah (3 words, 4 uses). No
+parameters.</td>
 </tr>
 </table>
 <h2>Templates not in plus (removed from plain)</h2>
