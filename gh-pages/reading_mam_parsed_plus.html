@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Reading MAM-parsed plus JSON</title>
+<title>Reading MAM-parsed-plus</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Reading MAM-parsed plus JSON</h1>
-<p>The <abbr class="small-caps">MAM</abbr>-parsed plus format is a fully parsed JSON representation
-of the biblical text. This document covers:</p>
+<h1>Reading MAM-parsed-plus</h1>
+<p>The <abbr class="small-caps">MAM</abbr>-parsed-plus JSON files are a parsed representation of the
+Wikitext of the <abbr class="small-caps">MAM</abbr> dataset. This document covers:</p>
 <ul>
 <li>File naming</li>
 <li>Top-level structure and header metadata</li>
@@ -21,9 +21,6 @@ of the biblical text. This document covers:</p>
 <li>Templates removed in plus (present in plain)</li>
 <li>Summary comparison with plain format</li>
 </ul>
-<p>For authoritative English and Hebrew descriptions of every template, see the
-<a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
-<abbr class="small-caps">MAM</abbr> Google Sheet.</p>
 <h2>File naming</h2>
 <p>File names (e.g. <code>A1-Genesis.json</code>) start with two characters that identify the book
 (in the “24 books” sense) and provide a standard ordering. The first character
@@ -77,9 +74,35 @@ keep compatibility with a set of codes used for the 39-book system.</p>
   </span><span class="tok-key">&quot;book39s&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[]</span><span class="tok-punct">
 </span><span class="tok-punct">}</span><span class="tok-punct">
 </span></pre><h2>Header</h2>
-<p>The plus header gains a <code>he_to_int</code> key — a mapping from every Hebrew-numeral string
-that appears as a chapter or verse key in the file to its integer equivalent. This allows consumers
-to navigate chapters and verses by integer without needing to implement Hebrew-numeral decoding.</p>
+<table class="center">
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>book24_names</code></td>
+<td>array</td>
+<td>24-book names for all books in the file.</td>
+</tr>
+<tr>
+<td><code>sub_book_names</code></td>
+<td>object</td>
+<td>Maps each composite-book name to an ordered list of its sub-book names. Empty object for
+single-book files.</td>
+</tr>
+<tr>
+<td><code>chapter_counts</code></td>
+<td>array</td>
+<td>One object per sub-book, each with <code>book24_name</code>, <code>sub_book_name</code> (null
+for non-composite books), and <code>chapter_count</code>.</td>
+</tr>
+<tr>
+<td><code>he_to_int</code></td>
+<td>object</td>
+<td>Hebrew numeral → integer mapping for all chapter and verse keys in the file.</td>
+</tr>
+</table>
 <pre class="json-block"><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct">
   </span><span class="tok-key">&quot;book24_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;ספר איוב&quot;</span><span class="tok-punct">],</span><span class="tok-punct">
   </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{},</span><span class="tok-punct">
@@ -94,8 +117,9 @@ to navigate chapters and verses by integer without needing to implement Hebrew-n
   </span><span class="tok-punct">}</span><span class="tok-punct">
 </span><span class="tok-punct">}</span><span class="tok-punct">
 </span></pre><p>The
-mapping is sorted by integer value and covers the union of all chapter and verse keys across all
-<code>book39s</code> in the file.</p>
+<code>he_to_int</code> mapping allows consumers to navigate chapters and verses by integer without
+needing to implement Hebrew-numeral decoding. It is sorted by integer value and covers the union of
+all chapter and verse keys across all <code>book39s</code> in the file.</p>
 <h2>Book39 entry</h2>
 <p>The book39 entry gains a <code>good_ending_plus</code> key:</p>
 <h3><code>good_ending_plus</code></h3>
