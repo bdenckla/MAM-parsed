@@ -8,6 +8,52 @@
 </head>
 <body>
 <h1>Reading MAM-parsed plus JSON</h1>
+<h2>File naming</h2>
+<p>File names start with two characters that identify the book (in the “24 books” sense) and provide
+a standard ordering. The first character (<code>sec_char</code>) comes from the set ABCDEF and
+indicates the section of Tanakh. The second character (<code>book24_char</code>) comes from the set
+12345AC and indicates the book within that section.</p>
+<p>Files are named <code>{sec_char}{book24_char}-{EnglishName}.json</code>:</p>
+<table class="center">
+<tr>
+<th>Prefix</th>
+<th>Section</th>
+<th>Books</th>
+</tr>
+<tr>
+<td>A1–A5</td>
+<td>Torah</td>
+<td>Genesis, Exodus, Leviticus, Numbers, Deuteronomy</td>
+</tr>
+<tr>
+<td>B1, B2, BA, BC</td>
+<td>Former Prophets</td>
+<td>Joshua, Judges, Samuel, Kings</td>
+</tr>
+<tr>
+<td>C1–C3, CA</td>
+<td>Latter Prophets</td>
+<td>Isaiah, Jeremiah, Ezekiel, The 12 Minor Prophets</td>
+</tr>
+<tr>
+<td>D1–D3</td>
+<td>Wisdom</td>
+<td>Psalms, Proverbs, Job</td>
+</tr>
+<tr>
+<td>E1–E5</td>
+<td>Five Scrolls</td>
+<td>Song of Songs, Ruth, Lamentations, Ecclesiastes, Esther</td>
+</tr>
+<tr>
+<td>F1, FA, FC</td>
+<td>Late Books</td>
+<td>Daniel, Ezra-Nehemiah, Chronicles</td>
+</tr>
+</table>
+<p>When <code>book24_char</code> is A or C, the file is a composite book containing multiple
+sub-books (e.g. BA-Samuel contains both 1 Samuel and 2 Samuel). The letter B is not used in order to
+keep compatibility with a set of codes used for the 39-book system.</p>
 <p>The plus format is a fully parsed representation that diverges from the plain format in several
 ways, summarized in the table below.</p>
 <p>For authoritative English and Hebrew descriptions of every template, see the
