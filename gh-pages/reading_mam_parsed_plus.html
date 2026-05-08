@@ -55,58 +55,10 @@ indicates the section of Tanakh. The second character (<code>book24_char</code>)
 sub-books (e.g. BA-Samuel contains both 1 Samuel and 2 Samuel). The letter B is not used in order to
 keep compatibility with a set of codes used for the 39-book system.</p>
 <p>The plus format is a fully parsed representation that diverges from the plain format in several
-ways, summarized in the table below.</p>
+ways.</p>
 <p>For authoritative English and Hebrew descriptions of every template, see the
 <a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
 <abbr class="small-caps">MAM</abbr> Google Sheet.</p>
-<h2>Differences from plain at a glance</h2>
-<table class="center">
-<tr>
-<th>Feature</th>
-<th>Plain</th>
-<th>Plus</th>
-</tr>
-<tr>
-<td>Pseudo-verses “0” and “תתת”</td>
-<td>Present</td>
-<td>Removed</td>
-</tr>
-<tr>
-<td>Custom XML tags (נוינקלוד etc.)</td>
-<td>Present</td>
-<td>Removed</td>
-</tr>
-<tr>
-<td>Wikitext line breaks (“//”)</td>
-<td>Present in D column</td>
-<td>Removed</td>
-</tr>
-<tr>
-<td>Named params</td>
-<td>not parsed</td>
-<td>unified with positional</td>
-</tr>
-<tr>
-<td>CP column (verse reference)</td>
-<td>Every verse has <bdi lang="hbo">מ:פסוק</bdi></td>
-<td>Only first verse of chapter</td>
-</tr>
-<tr>
-<td><code>good_ending_plus</code></td>
-<td>Not present</td>
-<td>Added (at book39 level)</td>
-</tr>
-<tr>
-<td>Hebrew numeral help</td>
-<td>Not present</td>
-<td>Added (<code>he_to_int</code>)</td>
-</tr>
-<tr>
-<td>Words with special letters</td>
-<td>interrupted</td>
-<td>uninterrupted provided</td>
-</tr>
-</table>
 <h2>Top-level structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct">
   </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{},</span><span class="tok-punct">
@@ -135,10 +87,13 @@ mapping is sorted by integer value and covers the union of all chapter and verse
 <h2>Book39 entry</h2>
 <p>The book39 entry gains a <code>good_ending_plus</code> key:</p>
 <h3><code>good_ending_plus</code></h3>
-<p>Some books in the Jewish tradition repeat the penultimate verse after the final verse so that
-public reading ends on a positive note. The <code>good_ending_plus</code> key captures this: it is
-<code>null</code> for most books (including Job). For the 4 books/book-parts that have it (Isaiah,
-Malachi, Lamentations, Ecclesiastes), it is an object:</p>
+<p>Four books of the Bible end with a verse of rather negative tone. There is a tradition that
+prevents these verses from being the last verses recited. The tradition is to recite the
+next-to-last verse after reciting the last verse. To facilitate this tradition, some publications
+repeat the next-to-last verse, in unpointed form, after the officially-last verse. The
+<code>good_ending_plus</code> key captures this: it is <code>null</code> for most books (including
+Job). For the 4 books/book-parts that have it (Isaiah, Malachi, Lamentations, Ecclesiastes), it is
+an object:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct">
   </span><span class="tok-key">&quot;last_chapnver&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;סו&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;כד&quot;</span><span class="tok-punct">],</span><span class="tok-punct">
   </span><span class="tok-key">&quot;wikitext_element&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct">
@@ -649,5 +604,53 @@ XML tags</li>
 <li><code>"//"​</code> Wikitext line breaks in D column</li>
 <li><bdi lang="hbo">גלגל-2</bdi> — galgal accent annotation (handled differently in plus)</li>
 </ul>
+<h2>Differences from plain at a glance</h2>
+<table class="center">
+<tr>
+<th>Feature</th>
+<th>Plain</th>
+<th>Plus</th>
+</tr>
+<tr>
+<td>Pseudo-verses “0” and “תתת”</td>
+<td>Present</td>
+<td>Removed</td>
+</tr>
+<tr>
+<td>Custom XML tags (נוינקלוד etc.)</td>
+<td>Present</td>
+<td>Removed</td>
+</tr>
+<tr>
+<td>Wikitext line breaks (“//”)</td>
+<td>Present in D column</td>
+<td>Removed</td>
+</tr>
+<tr>
+<td>Named params</td>
+<td>not parsed</td>
+<td>unified with positional</td>
+</tr>
+<tr>
+<td>CP column (verse reference)</td>
+<td>Every verse has <bdi lang="hbo">מ:פסוק</bdi></td>
+<td>Only first verse of chapter</td>
+</tr>
+<tr>
+<td><code>good_ending_plus</code></td>
+<td>Not present</td>
+<td>Added (at book39 level)</td>
+</tr>
+<tr>
+<td>Hebrew numeral help</td>
+<td>Not present</td>
+<td>Added (<code>he_to_int</code>)</td>
+</tr>
+<tr>
+<td>Words with special letters</td>
+<td>interrupted</td>
+<td>uninterrupted provided</td>
+</tr>
+</table>
 </body>
 </html>
