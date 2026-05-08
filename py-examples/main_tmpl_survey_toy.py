@@ -18,6 +18,7 @@ import os
 _MINIROW = collections.namedtuple("Minirow", "D, CP, EP")
 _SUBTYPE_FNS = {  # wte: Wikitext element (str or single-item dict)
     "tmpl": lambda wte: wte[0][0],
+    "stmpl": lambda wte: wte.split("|")[0],
     "custom_tag": lambda wte: wte,
 }
 _PSV_PSN_CATEGORIES = {
