@@ -8,8 +8,8 @@
 </head>
 <body>
 <h1>Reading MAM-parsed plus JSON</h1>
-<p>The plus format shares the same overall structure as the
-<a href="reading_mam_parsed_plain.html">plain format</a> but diverges in several ways.</p>
+<p>The plus format is a fully parsed representation that diverges from the plain format in several
+ways, summarized in the table below.</p>
 <p>For authoritative English and Hebrew descriptions of every template, see the
 <a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
 <abbr class="small-caps">MAM</abbr> Google Sheet.</p>
@@ -62,7 +62,6 @@
 </tr>
 </table>
 <h2>Top-level structure</h2>
-<p>Same as plain:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct">
   </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{},</span><span class="tok-punct">
   </span><span class="tok-key">&quot;book39s&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[]</span><span class="tok-punct">
@@ -105,11 +104,11 @@ Malachi, Lamentations, Ecclesiastes), it is an object:</p>
 </span><span class="tok-punct">}</span><span class="tok-punct">
 </span></pre><h2>Chapter
 structure</h2>
-<p>Same as plain — a dict keyed by Hebrew-letter chapter names — but without the <code>"0"</code>
-(pre-chapter) and <bdi lang="hbo">"תתת"</bdi> (post-chapter) pseudo-verses. A chapter with 22 verses
-has exactly 22 keys (<bdi lang="hbo">א</bdi> through <bdi lang="hbo">כב</bdi>), nothing more.</p>
+<p>A dict keyed by Hebrew-letter chapter names, but without the <code>"0"</code> (pre-chapter) and
+<bdi lang="hbo">"תתת"</bdi> (post-chapter) pseudo-verses. A chapter with 22 verses has exactly 22
+keys (<bdi lang="hbo">א</bdi> through <bdi lang="hbo">כב</bdi>), nothing more.</p>
 <h2>Verse structure</h2>
-<p>Same 3-element array [D, CP, EP], but with differences in each column.</p>
+<p>A 3-element array [D, CP, EP], with column details described below.</p>
 <h3>D column (index 0): Section markers</h3>
 <p>In plus, only the first verse of each chapter has the <bdi lang="hbo">מ:פסוק</bdi> template. All
 other verses have an empty <code>[]</code>:</p>
