@@ -56,10 +56,7 @@ def _do_survey(book39s):
 
 
 def _reformat_survey(survey):
-    records = [
-        {"tmpl_name": k[0], "column_letter": k[1]}
-        for k in survey
-    ]
+    records = [{"tmpl_name": k[0], "column_letter": k[1]} for k in survey]
     return sorted(records, key=_keyfn)
 
 
