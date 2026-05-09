@@ -31,7 +31,7 @@ def _record(survey, wtel, column_letter):
         return
     assert isinstance(wtel, dict) and "tmpl_name" in wtel
     tmpl_name = wtel["tmpl_name"]
-    survey[(tmpl_name, column_letter)] += 1
+    survey.add((tmpl_name, column_letter))
     for val in wtel.get("tmpl_params", {}).values():
         for arg_wtel in _param_val_as_list(val):
             _record(survey, arg_wtel, column_letter)
@@ -43,7 +43,7 @@ def _keyfn(record):
 
 def _do_survey(book39s):
     # chapent: chaptered entity (book or sub-book)
-    survey = collections.defaultdict(int)
+    survey = set()
     for chapent in book39s:
         for chapter in chapent["chapters"].values():
             for psv_contents in chapter.values():
@@ -57,8 +57,8 @@ def _do_survey(book39s):
 
 def _reformat_survey(survey):
     records = [
-        {"tmpl_name": k[0], "column_letter": k[1], "count": v}
-        for k, v in survey.items()
+        {"tmpl_name": k[0], "column_letter": k[1]}
+        for k in survey
     ]
     return sorted(records, key=_keyfn)
 

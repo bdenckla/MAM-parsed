@@ -1,142 +1,114 @@
 [
 {
 "tmpl_name": "כו\"ק",
-"column_letter": "E",
-"count": 95
+"column_letter": "E"
 },
 {
 "tmpl_name": "כתיב ולא קרי",
-"column_letter": "E",
-"count": 2
+"column_letter": "E"
 },
 {
 "tmpl_name": "מ:אות-מיוחדת-במילה",
-"column_letter": "E",
-"count": 1
+"column_letter": "E"
 },
 {
 "tmpl_name": "מ:אות-ק",
-"column_letter": "E",
-"count": 1
+"column_letter": "E"
 },
 {
 "tmpl_name": "מ:אין פרשה בתחילת פרק",
-"column_letter": "C",
-"count": 4
+"column_letter": "C"
 },
 {
 "tmpl_name": "מ:כו\"ק מיוחד",
-"column_letter": "E",
-"count": 6
+"column_letter": "E"
 },
 {
 "tmpl_name": "מ:לגרמיה-2",
-"column_letter": "E",
-"count": 112
+"column_letter": "E"
 },
 {
 "tmpl_name": "מ:ספר חדש",
-"column_letter": "C",
-"count": 1
+"column_letter": "C"
 },
 {
 "tmpl_name": "מ:פסק",
-"column_letter": "E",
-"count": 43
+"column_letter": "E"
 },
 {
 "tmpl_name": "מ:קו\"כ-אם-2",
-"column_letter": "E",
-"count": 26
+"column_letter": "E"
 },
 {
 "tmpl_name": "מ:קמץ",
-"column_letter": "E",
-"count": 16
+"column_letter": "E"
 },
 {
 "tmpl_name": "מ:ששש",
-"column_letter": "C",
-"count": 10
+"column_letter": "C"
 },
 {
 "tmpl_name": "מ:ששש",
-"column_letter": "E",
-"count": 37
+"column_letter": "E"
 },
 {
 "tmpl_name": "נוסח",
-"column_letter": "C",
-"count": 1
+"column_letter": "C"
 },
 {
 "tmpl_name": "נוסח",
-"column_letter": "E",
-"count": 113
+"column_letter": "E"
 },
 {
 "tmpl_name": "סס",
-"column_letter": "C",
-"count": 188
+"column_letter": "C"
 },
 {
 "tmpl_name": "סס",
-"column_letter": "E",
-"count": 15
+"column_letter": "E"
 },
 {
 "tmpl_name": "ססס",
-"column_letter": "C",
-"count": 22
+"column_letter": "C"
 },
 {
 "tmpl_name": "ססס",
-"column_letter": "E",
-"count": 34
+"column_letter": "E"
 },
 {
 "tmpl_name": "פפ",
-"column_letter": "C",
-"count": 100
+"column_letter": "C"
 },
 {
 "tmpl_name": "פפ",
-"column_letter": "E",
-"count": 5
+"column_letter": "E"
 },
 {
 "tmpl_name": "פפפ",
-"column_letter": "C",
-"count": 1
+"column_letter": "C"
 },
 {
 "tmpl_name": "פפפ",
-"column_letter": "E",
-"count": 4
+"column_letter": "E"
 },
 {
 "tmpl_name": "קו\"כ",
-"column_letter": "E",
-"count": 18
+"column_letter": "E"
 },
 {
 "tmpl_name": "קרי ולא כתיב",
-"column_letter": "E",
-"count": 2
+"column_letter": "E"
 },
 {
 "tmpl_name": "ר3",
-"column_letter": "E",
-"count": 7
+"column_letter": "E"
 },
 {
 "tmpl_name": "ר4",
-"column_letter": "C",
-"count": 39
+"column_letter": "C"
 },
 {
 "tmpl_name": "ש",
-"column_letter": "E",
-"count": 63
+"column_letter": "E"
 }
 ]
