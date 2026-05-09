@@ -33,6 +33,7 @@ p.center-and-spaced { text-align: center; word-spacing: 1.5em; }
 img.width10em { width: 10em; }
 img.width5em { width: 5em; }
 th, td { padding-right: 0.4em; padding-left: 0.4em; }
+td.wide-col, th.wide-col { max-width: 20em; overflow-wrap: break-word; }
 img { max-width: 100%; }
 
 code {
