@@ -102,7 +102,7 @@ sub-book, i.e. a book39 that is also a book24.)</td>
 <span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[],</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">{</span><span class="tok-punct"> </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">42</span><span class="tok-punct"> </span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">42</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>Here’s
 the header for Samuel, a book24 that has sub-books:</p>
@@ -110,8 +110,8 @@ the header for Samuel, a book24 that has sub-books:</p>
 <span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר שמואל&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">      </span><span class="tok-punct">{</span><span class="tok-punct"> </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">31</span><span class="tok-punct"> </span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">      </span><span class="tok-punct">{</span><span class="tok-punct"> </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">24</span><span class="tok-punct"> </span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">31</span><span class="tok-punct">},</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">24</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Book39
 structure</h2>
@@ -157,30 +157,32 @@ sub-book, this is its name.</td>
 <p>A 3-element array [C, D, E], with column details described below.</p>
 <h3>C column (index 0): Verse separator</h3>
 <p>The C column usually contains what separates this verse from the previous verse. This is usually
-a space, represented as <code>["__"]</code>, but is sometimes something else, such as a
-<span class="romanized">parashah</span>-break template (for example <code>"פפ"</code>).</p>
+a space, represented as <code>["__"]</code>, but is sometimes something else, such as a פפ
+<span class="romanized">parashah</span>-break template.</p>
 <h3>D column (index 1): Verse label</h3>
-<p>In plus, only the first verse of each chapter has the <bdi lang="hbo">מ:פסוק</bdi> template. All
-other verses have an empty <code>[]</code>:</p>
-<p>Job 1:1 (<bdi lang="hbo">א</bdi> — first verse of the chapter):</p>
+<p>In the first verse of each chapter, this is an array containing a <bdi lang="hbo">מ:פסוק</bdi>
+template call. All other verses have an empty array.</p>
+<p>Job 1:1:</p>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">[{</span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}}],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-punct">{</span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">       </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}}</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">],</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct"></span>
 <span class="tok-punct">]</span><span class="tok-punct"></span></pre><p>Job
-1:2 (<bdi lang="hbo">ב</bdi> — any subsequent verse):</p>
+1:2 (and any subsequent verse of Job 1):</p>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">[],</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct"></span>
 <span class="tok-punct">]</span><span class="tok-punct"></span></pre><h3>E
 column (index 2): Verse text</h3>
-<p>Same mixed array of strings and template objects, but templates use the expanded format (see
-below).</p>
+<p>An array containing a mix of strings and template objects.</p>
 <h2>Template format in plus</h2>
-<p>All templates in the plus format use the expanded representation:</p>
+<p>Templates are represented like this:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;קו\&quot;כ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;קו״כ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;את&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;אַ֠תָּ֠ה&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><table class="center">
 <tr>
@@ -196,15 +198,14 @@ below).</p>
 <tr>
 <td><code>tmpl_params</code></td>
 <td>object</td>
-<td class="wide-col">Parameters — present only when the template has params</td>
+<td class="wide-col">Parameters — present only if needed</td>
 </tr>
 </table>
 <h3><code>tmpl_params</code> keys</h3>
 <p>Numeric string keys <code>"1"</code>, <code>"2"</code>, … correspond to positional arguments,
-with any <code>"2="</code> prefix already interpreted. Non-numeric keys (e.g. <code>"ד"</code>,
-<code>"ס"</code>, <code>"סדר"</code>) represent named parameters like <code>ד=...</code> in the
-wikitext.</p>
-<p>The <code>tmpl_params</code> object is absent only when the template has no parameters (e.g.
+Non-numeric keys (e.g. <code>"ד"</code>, <code>"ס"</code>, <code>"סדר"</code>) represent named
+parameters like <code>ד=...</code> in the Wikitext.</p>
+<p>The <code>tmpl_params</code> object is absent when the template has no parameters (e.g.
 <bdi lang="hbo">פפ</bdi>, <bdi lang="hbo">סס</bdi>, <bdi lang="hbo">מ:פסק</bdi>).</p>
 <h3>Template parameter values can be complex</h3>
 <p>Parameter values can themselves be strings, nested template objects, or arrays of mixed strings
@@ -213,41 +214,41 @@ and template objects. For a visual overview of which templates nest inside which
 graphs</a>.</p>
 <h3>Accessing template parameters</h3>
 <p>Use tmpl_params directly with the string key:</p>
-<pre class="json-block"><span class="tok-punct">d</span><span class="tok-punct">e</span><span class="tok-keyword">f</span><span class="tok-punct"> </span><span class="tok-keyword">t</span><span class="tok-punct">m</span><span class="tok-punct">p</span><span class="tok-punct">l</span><span class="tok-punct">_</span><span class="tok-punct">p</span><span class="tok-punct">a</span><span class="tok-punct">r</span><span class="tok-punct">a</span><span class="tok-punct">m</span><span class="tok-punct">(</span><span class="tok-keyword">t</span><span class="tok-punct">m</span><span class="tok-punct">p</span><span class="tok-punct">l</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">k</span><span class="tok-punct">e</span><span class="tok-punct">y</span><span class="tok-punct">)</span><span class="tok-punct">:</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">\</span><span class="tok-punct heb">&quot;\&quot;\&quot;Get a template parameter by string key (e.g. &#x27;1&#x27;, &#x27;2&#x27;, &#x27;ד&#x27;).\&quot;\&quot;\&quot;</span>
-<span class="tok-punct">    return tmpl[&#x27;tmpl_params&#x27;][key]</span></pre><p>Example
-— a word with a special letter inside a ketiv-<span class="romanized">qere</span> inside a נוסח:</p>
+<pre class="json-block"><span class="tok-keyword">def</span><span class="tok-punct"> </span><span class="tok-punct">tmpl_param</span><span class="tok-punct">(</span><span class="tok-punct">tmpl</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">key</span><span class="tok-punct">)</span><span class="tok-punct">:</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">\</span><span class="tok-string">&quot;</span><span class="tok-string">\&quot;</span><span class="tok-string">\&quot;</span><span class="tok-string">Get a template parameter by string key (e.g. </span><span class="tok-string">&#x27;</span><span class="tok-string">1</span><span class="tok-string">&#x27;</span><span class="tok-string">, </span><span class="tok-string">&#x27;</span><span class="tok-string">2</span><span class="tok-string">&#x27;</span><span class="tok-string">, </span><span class="tok-string">&#x27;</span><span class="tok-string heb">ד</span><span class="tok-string">&#x27;</span><span class="tok-string">).</span><span class="tok-string">\&quot;</span><span class="tok-string">\&quot;</span><span class="tok-string">\&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-keyword">return</span><span class="tok-punct"> </span><span class="tok-punct">tmpl</span><span class="tok-punct">[</span><span class="tok-string">&#x27;</span><span class="tok-string">tmpl_params</span><span class="tok-string">&#x27;</span><span class="tok-punct">]</span><span class="tok-punct">[</span><span class="tok-punct">key</span><span class="tok-punct">]</span><span class="tok-punct"></span></pre><p>Example
+— a word with a special letter inside a <span class="romanized">ketiv/qere</span> inside a נוסח:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">      </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;כו\&quot;ק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;כו״ק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">        </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">          </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:אות-מיוחדת-במילה&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">          </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;ו&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:אות-ק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ג&quot;</span><span class="tok-punct">}},</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;יש&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;וגיש&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;.ג..&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-key">&quot;4&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-key">&quot;5&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ג/ק&quot;</span><span class="tok-punct"></span>
-<span class="tok-punct">          </span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">          </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">},</span><span class="tok-punct"></span>
 <span class="tok-punct">        </span><span class="tok-punct">},</span><span class="tok-punct"></span>
 <span class="tok-punct">        </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;וְג֣וּשׁ&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;=commentary text<span class="ellipsis">...</span>&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;<span class="ellipsis">...</span>&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Common
 templates in the E (verse text) column</h2>
 <p>For authoritative English and Hebrew descriptions of every template, see the
 <a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
-<a href="https://purl.org/mam/google-sheet#gid=920165745">MAM Google Sheet</a>.</p>
-<p>In plus format these templates use <code>tmpl_name</code>/<code>tmpl_params</code> format.</p>
+<a href="https://purl.org/mam/google-sheet#gid=920165745"><abbr class="small-caps">MAM</abbr> Google
+Sheet</a>.</p>
 <h3>Documentation template (נוסח)</h3>
 <p>Its first parameter is the “target” — what is being documented. The second parameter contains the
 documentation (anomalous forms, variant readings, uncertain readings, etc.):</p>
-<pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;נוסח|וּבֵרְﬞכ֥וּ|2=א=וּבֵרֲכ֥וּ (חטף)&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre><h3>Ketiv-<span class="romanized">qere</span>
+<pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">        </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;וּבֵרְﬞכ֥וּ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">        </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;א=וּבֵרֲכ֥וּ (חטף)&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">}</span><span class="tok-punct"></span></pre><h3>Ketiv-<span class="romanized">qere</span>
 templates</h3>
 <table class="center">
 <tr>
@@ -256,38 +257,39 @@ templates</h3>
 </tr>
 <tr>
 <td><bdi lang="hbo">כו״ק</bdi></td>
-<td class="wide-col">Standard ketiv-<span class="romanized">qere</span>. Param 1 = unpointed ketiv,
-param 2 = pointed <span class="romanized">qere</span>.</td>
+<td class="wide-col">Standard <span class="romanized">ketiv/qere</span>. Param 1 = unpointed
+<span class="romanized">ketiv</span>, param 2 = pointed <span class="romanized">qere</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">קו״כ</bdi></td>
 <td class="wide-col">Post-<span class="romanized">maqaf</span>
-ketiv-<span class="romanized">qere</span>. Same parameters as <bdi lang="hbo">כו״ק</bdi> but used
+<span class="romanized">ketiv/qere</span>. Same parameters as <bdi lang="hbo">כו״ק</bdi> but used
 when the pair follows a <span class="romanized">maqaf</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:קו״כ-אם-2</bdi></td>
-<td class="wide-col">Trivial ketiv-<span class="romanized">qere</span>. Param 1 = pointed ketiv,
-param 2 = unpointed ketiv, param 3 = pointed <span class="romanized">qere</span>.</td>
+<td class="wide-col">Trivial <span class="romanized">ketiv/qere</span>. Param 1 = pointed
+<span class="romanized">ketiv</span>, param 2 = unpointed <span class="romanized">ketiv</span>,
+param 3 = pointed <span class="romanized">qere</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">כתיב ולא קרי</bdi></td>
 <td class="wide-col">Ketiv without <span class="romanized">qere</span>. Single parameter = the
-ketiv.</td>
+<span class="romanized">ketiv</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">קרי ולא כתיב</bdi></td>
-<td class="wide-col">Qere without ketiv. Single parameter = the
+<td class="wide-col">Qere without <span class="romanized">ketiv</span>. Single parameter = the
 <span class="romanized">qere</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:כו״ק מיוחד</bdi></td>
-<td class="wide-col">Special ketiv-<span class="romanized">qere</span>. The required
+<td class="wide-col">Special <span class="romanized">ketiv/qere</span>. The required
 <bdi lang="hbo">סוג=</bdi> named parameter identifies the subtype. Nine subtypes.</td>
 </tr>
 </table>
 <p>Current values observed for optional <bdi lang="hbo">סוג=</bdi> in
-<bdi lang="hbo">מ:קו"כ-אם-2</bdi>:</p>
+<bdi lang="hbo">מ:קו״כ-אם-2</bdi>:</p>
 <ul>
 <li><bdi lang="hbo">אל"ף נחה באמצע תיבה ולא נקראת</bdi></li>
 <li><bdi lang="hbo">כתיב ה"א בסיומת של חולם</bdi></li>
@@ -295,8 +297,14 @@ ketiv.</td>
 <li><bdi lang="hbo">כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו</bdi></li>
 <li><bdi lang="hbo">כתיב נער קרי נערה</bdi></li>
 </ul>
-<p>Example of standard ketiv-<span class="romanized">qere</span>:</p>
-<pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;קו\&quot;כ|את|אַ֠תָּ֠ה&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre><h3>Special
+<p>Example of standard <span class="romanized">ketiv/qere</span>:</p>
+<pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;קו״כ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">        </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;את&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">        </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;אַ֠תָּ֠ה&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">}</span><span class="tok-punct"></span></pre><h3>Special
 letter templates</h3>
 <table class="center">
 <tr>
@@ -305,21 +313,16 @@ letter templates</h3>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:אות-ג</bdi></td>
-<td class="wide-col">Large letter. Marks a masoretically large letter. Parameter is the pointed
-letter.</td>
+<td class="wide-col">Large letter. Parameter is the letter along with any diacritical marks.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:אות-ק</bdi></td>
-<td class="wide-col">Small letter. Marks a masoretically small letter. Parameter is the pointed
-letter.</td>
+<td class="wide-col">Small letter. Parameter is the letter along with any diacritical marks.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:אות תלויה</bdi></td>
-<td class="wide-col">Suspended (hung) letter. Appears raised in the text.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:אות מנוקדת</bdi></td>
-<td class="wide-col">Dotted letter/word. Marks words with masoretic dots above/below.</td>
+<td class="wide-col">Suspended (hung) letter. Parameter is the letter along with any diacritical
+marks.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:נו״ן הפוכה</bdi></td>
@@ -455,6 +458,10 @@ within the text itself. Parameter is the footnote text.</td>
 <td class="wide-col">Parashah petuchah / setumah (primarily in D column)</td>
 </tr>
 <tr>
+<td><bdi lang="hbo">מ:אות מנוקדת</bdi></td>
+<td class="wide-col">Dotted letter/word. Marks words with masoretic dots above/below.</td>
+</tr>
+<tr>
 <td><bdi lang="hbo">מ:סיום בטוב</bdi></td>
 <td class="wide-col">Good ending. See <a href="mpplus_good_ending.html">the
 <code>good_ending_plus</code> dedicated page</a>.</td>
@@ -482,8 +489,8 @@ uses). No parameters.</td>
 <ul>
 <li><a href="mpplus_aot.html">Special letter marking —
 <bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi></a></li>
-<li><a href="mpplus_kq_special.html">Special ketiv-qere template — <bdi lang="hbo">מ:כו״ק
-מיוחד</bdi></a></li>
+<li><a href="mpplus_kq_special.html">Special <span class="romanized">ketiv/qere</span> template —
+<bdi lang="hbo">מ:כו״ק מיוחד</bdi></a></li>
 <li><a href="mpplus_haarah_2.html">Targeted scroll-difference note —
 <bdi lang="hbo">מ:הערה-2</bdi></a></li>
 <li><a href="mpplus_kaful.html">Dual-trope text — <bdi lang="hbo">מ:כפול</bdi></a></li>
@@ -546,7 +553,9 @@ uses). No parameters.</td>
 <td>Removed (handled differently in plus)</td>
 </tr>
 </table>
+<p>Template names use Hebrew gershayim <code>״</code> (for example <bdi lang="hbo">כו״ק</bdi>), not
+ASCII double quote <code>"</code>.</p>
 <p>Example of the stringified template format <code>{"stmpl": "..."}</code> (present in plain,
 replaced in plus):</p>
-<pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;קו\&quot;כ|את|אַ֠תָּ֠ה&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre></body>
+<pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;קו״כ|את|אַ֠תָּ֠ה&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre></body>
 </html>

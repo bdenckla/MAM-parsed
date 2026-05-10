@@ -8,20 +8,20 @@
 </head>
 <body>
 <h1><code>good_ending_plus</code></h1>
-<p>← Back to <a href="mpplus.html">Reading MAM-parsed-plus</a></p>
+<p>← Back to <a href="mpplus.html">Reading <abbr class="small-caps">MAM</abbr>-parsed-plus</a></p>
 <p>Four books of the Bible end with a verse of rather negative tone. There is a tradition that
 prevents these verses from being the last verses recited. The tradition is to recite the
 next-to-last verse after reciting the last verse. To facilitate this tradition, some publications
 repeat the next-to-last verse, in unpointed form, after the officially-last verse. The
-<code>good_ending_plus</code> key captures this: it is <code>null</code> for most books (including
-Job). For the 4 books/book-parts that have it (Isaiah, Malachi, Lamentations, Ecclesiastes), it is
-an object (see example below).</p>
+<code>good_ending_plus</code> key captures this: it is <code>null</code> for most books. For the 4
+book39s that have it (Isaiah, Malachi, Lamentations, Ecclesiastes), it is an object (see example
+below).</p>
 <h2>Example — <bdi lang="hbo">מ:סיום בטוב</bdi></h2>
-<p>The <code>good_ending_plus</code> object's <code>wikitext_element</code> is a
-<bdi lang="hbo">נוסח</bdi> template wrapping <bdi lang="hbo">מ:סיום בטוב</bdi>. Example from
-Isaiah:</p>
+<p>The <code>wikitext_element</code> of a <code>good_ending_plus</code> is a
+<bdi lang="hbo">נוסח</bdi> template wrapping a <bdi lang="hbo">מ:סיום בטוב</bdi> template. Example
+from Isaiah:</p>
 <pre class="json-block"><span class="ln"> 1</span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="ln"> 2</span><span class="tok-punct">  </span><span class="tok-key">&quot;last_chapnver&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;סו&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;כד&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="ln"> 2</span><span class="tok-punct">  </span><span class="tok-key">&quot;last_chapnver&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string">&quot;66&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-string">&quot;24&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
 <span class="ln"> 3</span><span class="tok-punct">  </span><span class="tok-key">&quot;wikitext_element&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="ln"> 4</span><span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="ln"> 5</span><span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
@@ -34,5 +34,5 @@ Isaiah:</p>
 <span class="ln">12</span><span class="tok-punct">      </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;=מנהג יפה <span class="ellipsis">...</span> בכתי\&quot;ל).&quot;</span><span class="tok-punct"></span>
 <span class="ln">13</span><span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="ln">14</span><span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
-<span class="ln">15</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre><dl class="json-notes"><dt>Line 9</dt><dd>Unpointed text of Isa 66:23 (the next-to-last verse of Isaiah)</dd><dt>Line 12</dt><dd>Documentation note on the good-ending tradition (&quot;2=&quot; param of the enclosing נוסח template)</dd></dl></body>
+<span class="ln">15</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre><dl class="json-notes"><dt>Line 9</dt><dd>Unpointed text of 66:23 (the next-to-last verse of Isaiah)</dd><dt>Line 12</dt><dd>Documentation note on the good-ending tradition</dd></dl></body>
 </html>
