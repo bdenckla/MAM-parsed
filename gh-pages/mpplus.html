@@ -160,8 +160,10 @@ sub-book, this is its name.</td>
 a space, represented as <code>["__"]</code>, but is sometimes something else, such as a פפ
 <span class="romanized">parashah</span>-break template.</p>
 <h3>D column (index 1): Verse label</h3>
-<p>In the first verse of each chapter, this is an array containing a <bdi lang="hbo">מ:פסוק</bdi>
-template call. All other verses have an empty array.</p>
+<p>This is an array that contains a <bdi lang="hbo">מ:פסוק</bdi> template call when it has something
+interesting to say—typically when it carries extra metadata such as the <code>סדר</code> (Torah
+reading section) or <code>עלייה</code> (Torah <code>aliyah</code>) parameter, or when it is wrapped
+in a <bdi lang="hbo">נוסח</bdi> template. Otherwise, the array is empty.</p>
 <p>Job 1:1:</p>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -525,7 +527,8 @@ uses). No parameters.</td>
 <tr>
 <td>D column (verse label)</td>
 <td>Every verse has <bdi lang="hbo">מ:פסוק</bdi></td>
-<td>Only first verse of chapter</td>
+<td>Only when <bdi lang="hbo">מ:פסוק</bdi> has interesting parameters or is wrapped in
+<bdi lang="hbo">נוסח</bdi></td>
 </tr>
 <tr>
 <td><code>good_ending_plus</code></td>
