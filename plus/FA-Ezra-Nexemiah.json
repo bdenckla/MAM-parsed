@@ -1,8 +1,6 @@
 {
   "header": {
-    "book24_names": [
-      "ספר עזרא"
-    ],
+    "book24_name": "ספר עזרא",
     "sub_book_names": {
       "ספר עזרא": [
         "עזרא",
