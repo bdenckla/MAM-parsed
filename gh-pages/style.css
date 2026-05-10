@@ -1,3 +1,5 @@
+/* Generated file - DO NOT EDIT DIRECTLY.
+     Edit py/mb_misc/styles_mam_parsed.py in MAM-basics and regenerate. */
 :root {
   color-scheme: light dark;
 }
@@ -32,16 +34,20 @@ p.center { text-align: center; }
 p.center-and-spaced { text-align: center; word-spacing: 1.5em; }
 img.width10em { width: 10em; }
 img.width5em { width: 5em; }
-th, td { padding-right: 0.4em; padding-left: 0.4em; }
+th, td {
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+    padding-top: 0.45em;
+    padding-bottom: 0.45em;
+}
+table tbody tr:nth-child(even) td {
+    background-color: light-dark(#f5f5f5, #1f1f1f);
+}
 td.wide-col, th.wide-col { max-width: 20em; overflow-wrap: break-word; }
 img { max-width: 100%; }
 
 code {
     font-family: Consolas, "Courier New", monospace;
-    font-size: 0.85em;
-    background: light-dark(#f0f0f0, #2a2a2a);
-    padding: 0.1em 0.3em;
-    border-radius: 3px;
 }
 pre.json-block {
     font-family: Consolas, "Courier New", monospace;

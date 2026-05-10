@@ -52,9 +52,9 @@ section.</p>
 <td>Daniel, Ezra-Nehemiah, Chronicles</td>
 </tr>
 </table>
-<p>When <code>book24_char</code> is A or C, the file is a composite book24, i.e. a book24 that
-contains sub-books (e.g. BA-Samuel contains both 1 Samuel and 2 Samuel). The letter B is not used in
-order to keep compatibility with a set of codes used for the 39-book system.</p>
+<p>When <code>book24_char</code> is A or C, the file is for a book24 with sub-books (e.g. BA-Samuel
+has sub-books 1 Samuel and 2 Samuel). The letter B is not used in order to keep compatibility with a
+set of codes used for the 39-book system.</p>
 <h2>Top-level structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
@@ -87,7 +87,7 @@ order to keep compatibility with a set of codes used for the 39-book system.</p>
 </tr>
 </table>
 <h3>Composite books</h3>
-<p>For composite books like Samuel, <code>book39s</code> has multiple entries:</p>
+<p>For Samuel, a book24 with sub-books, <code>book39s</code> has multiple elements:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר שמואל&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -102,7 +102,7 @@ order to keep compatibility with a set of codes used for the 39-book system.</p>
 <span class="tok-punct">    </span><span class="tok-punct">{</span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר שמואל&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapters&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{}}</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Book39
-entry</h2>
+structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -513,8 +513,8 @@ within the text itself. Parameter is the footnote text.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:סיום בטוב</bdi></td>
-<td class="wide-col">Good ending. Provides an unpointed version of the next-to-last verse. Used at
-the end of Lamentations, Ecclesiastes, Isaiah, and Malachi.</td>
+<td class="wide-col">Good ending. See <a href="mpplus_good_ending.html">the
+<code>good_ending_plus</code> dedicated page</a>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:טעם ומתג באות אחת</bdi></td>
