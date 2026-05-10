@@ -10,10 +10,10 @@
 <h1>Reading MAM-parsed-plus</h1>
 <p>The <abbr class="small-caps">MAM</abbr>-parsed-plus JSON files are formed by: (a) parsing the
 Wikitext in the <abbr class="small-caps">MAM</abbr> Google Sheet (b) adding some conveniences and
-(c) removing some data not relevant to most applications. This document covers:</p>
+(c) removing some inconveniences. This document covers:</p>
 <ul>
 <li>File naming</li>
-<li>Top-level structure and header metadata</li>
+<li>Structure of the top-level and its header</li>
 <li>Structure of a book39, chapter, and verse</li>
 <li>Template format</li>
 <li>Selected templates presented in detail</li>
@@ -161,9 +161,11 @@ a space, represented as <code>["__"]</code>, but is sometimes something else, su
 <span class="romanized">parashah</span>-break template.</p>
 <h3>D column (index 1): Verse label</h3>
 <p>This is an array that contains a <bdi lang="hbo">מ:פסוק</bdi> template call when it has something
-interesting to say—typically when it carries extra metadata such as the <code>סדר</code> (Torah
-reading section) or <code>עלייה</code> (Torah <code>aliyah</code>) parameter, or when it is wrapped
-in a <bdi lang="hbo">נוסח</bdi> template. Otherwise, the array is empty.</p>
+interesting to say—typically when it carries extra metadata such as the <code>סדר</code> or
+<code>עלייה</code> parameter. Otherwise, the array is empty.</p>
+<p>The <code>עלייה</code> value itself is a <bdi lang="hbo">מ:עלייה</bdi> template; see
+<a href="https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html">notes on
+<span class="romanized">aliyot</span></a>.</p>
 <p>Job 1:1:</p>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -172,16 +174,10 @@ in a <bdi lang="hbo">נוסח</bdi> template. Otherwise, the array is empty.</p>
 <span class="tok-punct">       </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}}</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">],</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct"></span>
-<span class="tok-punct">]</span><span class="tok-punct"></span></pre><p>Job
-1:2 (and any subsequent verse of Job 1):</p>
-<pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">[],</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct"></span>
 <span class="tok-punct">]</span><span class="tok-punct"></span></pre><h3>E
 column (index 2): Verse text</h3>
 <p>An array containing a mix of strings and template objects.</p>
-<h2>Template format in plus</h2>
+<h2>Template format</h2>
 <p>Templates are represented like this:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;קו״כ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -214,12 +210,8 @@ parameters like <code>ד=...</code> in the Wikitext.</p>
 and template objects. For a visual overview of which templates nest inside which, see the
 <a href="https://bdenckla.github.io/MAM-parsed/plus-template-call-graphs.html">plus template call
 graphs</a>.</p>
-<h3>Accessing template parameters</h3>
-<p>Use tmpl_params directly with the string key:</p>
-<pre class="json-block"><span class="tok-keyword">def</span><span class="tok-punct"> </span><span class="tok-punct">tmpl_param</span><span class="tok-punct">(</span><span class="tok-punct">tmpl</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">key</span><span class="tok-punct">)</span><span class="tok-punct">:</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">\</span><span class="tok-string">&quot;</span><span class="tok-string">\&quot;</span><span class="tok-string">\&quot;</span><span class="tok-string">Get a template parameter by string key (e.g. </span><span class="tok-string">&#x27;</span><span class="tok-string">1</span><span class="tok-string">&#x27;</span><span class="tok-string">, </span><span class="tok-string">&#x27;</span><span class="tok-string">2</span><span class="tok-string">&#x27;</span><span class="tok-string">, </span><span class="tok-string">&#x27;</span><span class="tok-string heb">ד</span><span class="tok-string">&#x27;</span><span class="tok-string">).</span><span class="tok-string">\&quot;</span><span class="tok-string">\&quot;</span><span class="tok-string">\&quot;</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-keyword">return</span><span class="tok-punct"> </span><span class="tok-punct">tmpl</span><span class="tok-punct">[</span><span class="tok-string">&#x27;</span><span class="tok-string">tmpl_params</span><span class="tok-string">&#x27;</span><span class="tok-punct">]</span><span class="tok-punct">[</span><span class="tok-punct">key</span><span class="tok-punct">]</span><span class="tok-punct"></span></pre><p>Example
-— a word with a special letter inside a <span class="romanized">ketiv/qere</span> inside a נוסח:</p>
+<p>Example — a word with a special letter inside a <span class="romanized">ketiv/qere</span> inside
+a נוסח:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
@@ -242,7 +234,7 @@ templates in the E (verse text) column</h2>
 <a href="https://purl.org/mam/google-sheet#gid=920165745"><abbr class="small-caps">MAM</abbr> Google
 Sheet</a>.</p>
 <h3>Documentation template (נוסח)</h3>
-<p>Its first parameter is the “target” — what is being documented. The second parameter contains the
+<p>The first parameter is the “target” — what is being documented. The second parameter contains the
 documentation (anomalous forms, variant readings, uncertain readings, etc.):</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -265,8 +257,8 @@ templates</h3>
 <tr>
 <td><bdi lang="hbo">קו״כ</bdi></td>
 <td class="wide-col">Post-<span class="romanized">maqaf</span>
-<span class="romanized">ketiv/qere</span>. Same parameters as <bdi lang="hbo">כו״ק</bdi> but used
-when the pair follows a <span class="romanized">maqaf</span>.</td>
+<span class="romanized">ketiv/qere</span>. Same params as <bdi lang="hbo">כו״ק</bdi> but used when
+the pair follows a <span class="romanized">maqaf</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:קו״כ-אם-2</bdi></td>
@@ -276,12 +268,12 @@ param 3 = pointed <span class="romanized">qere</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">כתיב ולא קרי</bdi></td>
-<td class="wide-col">Ketiv without <span class="romanized">qere</span>. Single parameter = the
+<td class="wide-col">Ketiv without <span class="romanized">qere</span>. Param 1 = the
 <span class="romanized">ketiv</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">קרי ולא כתיב</bdi></td>
-<td class="wide-col">Qere without <span class="romanized">ketiv</span>. Single parameter = the
+<td class="wide-col">Qere without <span class="romanized">ketiv</span>. Param 1 = the
 <span class="romanized">qere</span>.</td>
 </tr>
 <tr>
@@ -328,8 +320,7 @@ marks.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:נו״ן הפוכה</bdi></td>
-<td class="wide-col">Reversed <span class="romanized">nun</span>. The inverted
-<span class="romanized">nun</span> mark (Unicode character).</td>
+<td class="wide-col">Reversed (inverted) <span class="romanized">nun</span>.</td>
 </tr>
 </table>
 <h3>Accent and cantillation templates</h3>
@@ -367,15 +358,6 @@ word.</td>
 of a word.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">גלגל-2</bdi></td>
-<td class="wide-col">Galgal. Distinguishes poetic from prose uses of Unicode YERAH BEN YOMO.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">ירח בן יומו</bdi></td>
-<td class="wide-col">Yeraḥ ben yomo. Distinguishes prose from poetic uses of Unicode YERAH BEN
-YOMO.</td>
-</tr>
-<tr>
 <td><bdi lang="hbo">אתנח הפוך</bdi></td>
 <td class="wide-col">Atnaḥ hafukh. Helps distinguish this accent from galgal/yeraḥ ben yomo.</td>
 </tr>
@@ -383,23 +365,6 @@ YOMO.</td>
 <td><bdi lang="hbo">מ:קמץ</bdi></td>
 <td class="wide-col">Qamats variation. Named params: <bdi lang="hbo">ד=</bdi> (grammatical) and
 <bdi lang="hbo">ס=</bdi> (Sephardic tradition).</td>
-</tr>
-</table>
-<h3>Jerusalem spelling</h3>
-<table class="center">
-<tr>
-<th>Template</th>
-<th class="wide-col">Purpose</th>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:ירושלם</bdi></td>
-<td class="wide-col">Handles the masoretic spelling of Jerusalem without
-<span class="romanized">yod</span>. Two params (vowel and accent of
-<span class="romanized">lamed</span>).</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:ירושלמה</bdi></td>
-<td class="wide-col">Like מ:ירושלם but for the directional form “to Jerusalem” (4 cases).</td>
 </tr>
 </table>
 <h3>Poetic form templates (ספרי אמת)</h3>
@@ -430,11 +395,6 @@ a closed <span class="romanized">parashah</span>.</td>
 <td class="wide-col">Extra division point when a verse has an odd number of stiches, for even-column
 display.</td>
 </tr>
-<tr>
-<td><bdi lang="hbo">פרשה-מרכז</bdi></td>
-<td class="wide-col">Centered title. For “titles” in Job and Proverbs. Parameter is the title
-text.</td>
-</tr>
 </table>
 <p>Many editions will choose to skip poetic formatting by treating פ0–פ4 as simple word spaces.</p>
 <h3>Footnote template</h3>
@@ -456,36 +416,21 @@ within the text itself. Parameter is the footnote text.</td>
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td><bdi lang="hbo">פפ</bdi> / <bdi lang="hbo">סס</bdi></td>
-<td class="wide-col">Parashah petuchah / setumah (primarily in D column)</td>
+<td><bdi lang="hbo">פפ</bdi> / <bdi lang="hbo">פפפ</bdi> / <bdi lang="hbo">סס</bdi> /
+<bdi lang="hbo">ססס</bdi></td>
+<td class="wide-col">Parashah petuḥah / setumah variants.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:אות מנוקדת</bdi></td>
-<td class="wide-col">Dotted letter/word. Marks words with masoretic dots above/below.</td>
+<td><bdi lang="hbo">מ:ששש</bdi></td>
+<td class="wide-col">Shirah space. Like <bdi lang="hbo">ססס</bdi>, but for the 8 shirah (song)
+sections; not an official setumah break.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:סיום בטוב</bdi></td>
 <td class="wide-col">Good ending. See <a href="mpplus_good_ending.html">the
 <code>good_ending_plus</code> dedicated page</a>.</td>
 </tr>
-<tr>
-<td><bdi lang="hbo">מ:טעם ומתג באות אחת</bdi></td>
-<td class="wide-col">Normalization-robust meteg for 10 cases where a below-accent and meteg share
-one letter.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:גרש ותלישא גדולה</bdi></td>
-<td class="wide-col">Combined <span class="romanized">geresh</span> +
-<span class="romanized">telisha</span> gedolah (2 words, 3 uses). No parameters.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:גרשיים ותלישא גדולה</bdi></td>
-<td class="wide-col">Combined gershayim + <span class="romanized">telisha</span> gedolah (3 words, 4
-uses). No parameters.</td>
-</tr>
 </table>
-<p>For the <code>good_ending_plus</code> JSON format and a worked example, see
-<a href="mpplus_good_ending.html">the <code>good_ending_plus</code> dedicated page</a>.</p>
 <h2>Selected templates</h2>
 <p>Each of the following templates has its own dedicated page:</p>
 <ul>
