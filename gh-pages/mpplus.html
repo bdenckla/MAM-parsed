@@ -324,8 +324,11 @@ marks.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi></td>
-<td class="wide-col">Special letter within a word. Marks a letter requiring non-standard treatment
-within its word.</td>
+<td class="wide-col">Marks a whole word containing a special (large, small, or suspended) letter.
+Encodes the word in both interrupted form (arg 1: array decomposed around the special letter) and
+uninterrupted form (args 2–5: plain word string plus dot-mask, type code, and letter/type summary).
+Args 2–5 together are sufficient to recover all special-letter information without arg 1. See
+<a href="mpplus_aot.html">dedicated page for <bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi></a>.</td>
 </tr>
 </table>
 <h3>Accent and cantillation templates</h3>
@@ -508,8 +511,9 @@ sections; not an official setumah break.</td>
 </tr>
 <tr>
 <td>Words with special letters</td>
-<td>interrupted</td>
-<td>uninterrupted provided</td>
+<td>word split/interrupted by inline letter templates</td>
+<td>whole word wrapped by <bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi>; uninterrupted encoding in args
+2–5 (plain word + dot-mask + type metadata)</td>
 </tr>
 <tr>
 <td><code>{"tmpl": [...]}</code> — parsed template trees</td>
