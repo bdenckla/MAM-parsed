@@ -32,28 +32,34 @@ use <bdi lang="hbo">מ:הערה-2</bdi> only to extract the target word and use
 <bdi lang="hbo">מ:הערה</bdi> separately to extract the note text.</p>
 <h2>Example in context</h2>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-string heb pointed">&quot;וַיֹּ֥אמֶר קַ֖יִן אֶל־יְהֹוָ֑ה גָּד֥וֹל עֲוֺנִ֖י &quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-string heb pointed">&quot;וַיֹּ֥אמֶר קַ֖יִן אֶל־יְהֹוָ֑ה גָּד֥וֹל עֲוֺנִ֖י &quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">        </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:הערה-2&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">        </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">          </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;מִנְּשֹֽׂא&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">          </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;בספרי ספרד ואשכנז מִנְּשֽׂוֹא&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">          </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;מִנְּשֹֽׂא&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">          </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;בספרי ספרד ואשכנז מִנְּשֽׂוֹא&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">          </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;אאא*&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">        </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">      </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;=commentary text<span class="ellipsis">...</span>&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">        </span><span class="tok-string heb">&quot;=א(ס,ק,ר),ל,ל1,ק3,ו,ל9 (כתיב חסר וי\&quot;ו) וכך בספרי תימן &lt;א(ס)=מלא ויו? אינו כן אלא חסר&gt;&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">        </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">          </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ש&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">        </span><span class="tok-punct">},</span><span class="tok-punct"></span>
+<span class="tok-punct">        </span><span class="tok-string heb pointed">&quot;רמ\&quot;ה,ה,ש2=מִנְּשֽׂוֹא (כתיב מלא וי\&quot;ו) וכך הוא בספרי ספרד ואשכנז&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">},</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:הערה&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">      </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;בספרי ספרד ואשכנז מִנְּשֽׂוֹא&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">      </span><span class="tok-key heb">&quot;שם&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;בספרי ספרד ואשכנז מִנְּשֽׂוֹא&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;בספרי ספרד ואשכנז מִנְּשֽׂוֹא&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-key heb">&quot;שם&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;בספרי ספרד ואשכנז מִנְּשֽׂוֹא&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-string heb">&quot;ח&quot;</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-string pointed">&quot;׃&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">]</span><span class="tok-punct"></span></pre></body>
 </html>

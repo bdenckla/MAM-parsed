@@ -147,7 +147,7 @@ sub-book, this is its name.</td>
 <td><code>good_ending_plus</code></td>
 <td>object | null</td>
 <td class="wide-col">Non-null only for the 4 book39s with "good endings." See
-<a href="mpplus_good_ending.html">the <code>good_ending_plus</code> dedicated page</a>.</td>
+<a href="mpplus_good_ending.html">its dedicated page</a>.</td>
 </tr>
 </table>
 <h2>Chapter structure</h2>
@@ -278,8 +278,8 @@ param 3 = pointed <span class="romanized">qere</span>.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:כו״ק מיוחד</bdi></td>
-<td class="wide-col">Special <span class="romanized">ketiv/qere</span>. The required
-<bdi lang="hbo">סוג=</bdi> named parameter identifies the subtype. Nine subtypes.</td>
+<td class="wide-col">Special <span class="romanized">ketiv/qere</span>. See
+<a href="mpplus_kq_special.html">its dedicated page</a>.</td>
 </tr>
 </table>
 <p>Current values observed for optional <bdi lang="hbo">סוג=</bdi> in
@@ -324,12 +324,8 @@ marks.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi></td>
-<td class="wide-col">Marks a whole word containing a special (large, small, or suspended) letter.
-Encodes the word in both interrupted form (arg 1: array decomposed around the special letter) and
-uninterrupted form (args 2–4: plain word string, dot-mask, and type code). Args 2–4 together are
-sufficient to recover all special-letter information without arg 1 (arg 5 is a redundant letter/type
-summary, derivable from args 3 and 4). See <a href="mpplus_aot.html">dedicated page for
-<bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi></a>.</td>
+<td class="wide-col">Marks a whole word containing a special letter. (By “special” we mean large,
+small, or suspended.) See <a href="mpplus_aot.html">its dedicated page</a>.</td>
 </tr>
 </table>
 <h3>Accent and cantillation templates</h3>
@@ -387,12 +383,11 @@ accent to be specified on a dummy letter for readability.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:כפול</bdi></td>
-<td class="wide-col">Dual-cantillation span. Encodes a dually-accented text and its two
-singly-accented strands. Named params: כפול= (combined), א= and ב= (individual strands). Used for
-the two Decalogues and the Saga of Reuben.</td>
+<td class="wide-col">Dual-cantillation span. See <a href="mpplus_kaful.html">its dedicated
+page</a>.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">שני טעמים באות אחת קמץ-תחתון-פתח-עליון</bdi></td>
+<td><bdi lang="hbo" title="שני טעמים באות אחת קמץ-תחתון-פתח-עליון">שני טעמים ...</bdi></td>
 <td class="wide-col">Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words
 (panay and mitahat). Parameter is the above-accent (may use מ:טעם).</td>
 </tr>
@@ -435,8 +430,8 @@ display.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:הערה</bdi> / <bdi lang="hbo">מ:הערה-2</bdi></td>
-<td class="wide-col">Scroll-difference notes (Torah and Esther only). Note markers appear within the
-text itself. Parameter is the note text.</td>
+<td class="wide-col">Scroll-difference notes (Torah and Esther only). See
+<a href="mpplus_haarah_2.html">dedicated page for <bdi lang="hbo">מ:הערה-2</bdi></a>.</td>
 </tr>
 </table>
 <h3>Other templates</h3>
@@ -457,8 +452,7 @@ sections; not an official setumah break.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:סיום בטוב</bdi></td>
-<td class="wide-col">Good ending. See <a href="mpplus_good_ending.html">the
-<code>good_ending_plus</code> dedicated page</a>.</td>
+<td class="wide-col">Good ending. See <a href="mpplus_good_ending.html">its dedicated page</a>.</td>
 </tr>
 </table>
 <h2>Selected templates</h2>
@@ -497,7 +491,7 @@ sections; not an official setumah break.</td>
 <tr>
 <td>Named params</td>
 <td>not parsed</td>
-<td>unified with positional</td>
+<td>parsed and unified with positional</td>
 </tr>
 <tr>
 <td>D column (verse label)</td>
@@ -514,7 +508,7 @@ sections; not an official setumah break.</td>
 <td>Words with special letters</td>
 <td>word split/interrupted by inline letter templates</td>
 <td>whole word wrapped by <bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi>; uninterrupted encoding in args
-2–5 (plain word + dot-mask + type metadata)</td>
+2–4</td>
 </tr>
 <tr>
 <td><code>{"tmpl": [...]}</code> — parsed template trees</td>
