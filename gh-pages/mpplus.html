@@ -10,7 +10,10 @@
 <h1>Reading MAM-parsed-plus</h1>
 <p>The <abbr class="small-caps">MAM</abbr>-parsed-plus JSON files are formed by: (a) parsing the
 Wikitext in the <abbr class="small-caps">MAM</abbr> Google Sheet (b) adding some conveniences and
-(c) removing some inconveniences. This document covers:</p>
+(c) removing some inconveniences. Of course, what is considered an inconvenience and what is
+considered a convenience can only be determined relative to a particular application. Nonetheless,
+we believe that for most applications, the plus format is more convenient to work with than the
+plain format. This document covers:</p>
 <ul>
 <li>File naming</li>
 <li>Structure of the top-level and its header</li>
@@ -363,33 +366,14 @@ word.</td>
 of a word.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">ירח בן יומו-2</bdi></td>
-<td class="wide-col">Yeraḥ ben yomo. Distinguishes prose from poetic uses of Unicode
-<abbr class="small-caps" title="Unicode YERAH BEN YOMO">YBY</abbr>.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">אתנח הפוך</bdi></td>
-<td class="wide-col">Atnaḥ hafukh. Helps distinguish this accent from galgal/yeraḥ ben yomo.</td>
-</tr>
-<tr>
 <td><bdi lang="hbo">מ:קמץ</bdi></td>
 <td class="wide-col">Qamats variation. Named params: <bdi lang="hbo">ד=</bdi> (grammatical) and
 <bdi lang="hbo">ס=</bdi> (Sephardic tradition).</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:טעם</bdi></td>
-<td class="wide-col">Accent extractor. Drops the first code point of its argument, allowing an
-accent to be specified on a dummy letter for readability.</td>
-</tr>
-<tr>
 <td><bdi lang="hbo">מ:כפול</bdi></td>
 <td class="wide-col">Dual-cantillation span. See <a href="mpplus_kaful.html">its dedicated
 page</a>.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo" title="שני טעמים באות אחת קמץ-תחתון-פתח-עליון">שני טעמים ...</bdi></td>
-<td class="wide-col">Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words
-(panay and mitahat). Parameter is the above-accent (may use מ:טעם).</td>
 </tr>
 </table>
 <h3>Poetic form templates (ספרי אמת)</h3>
@@ -451,8 +435,17 @@ display.</td>
 sections; not an official setumah break.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:סיום בטוב</bdi></td>
-<td class="wide-col">Good ending. See <a href="mpplus_good_ending.html">its dedicated page</a>.</td>
+<td><bdi lang="hbo">נוסח</bdi></td>
+<td class="wide-col">Documentation template. Param 1 is the target text; param 2 is an editorial
+note.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מודגש</bdi></td>
+<td class="wide-col">Bold text within the Wikisource page.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">ש</bdi></td>
+<td class="wide-col">Paragraph separator within the notes argument (param 2) of נוסח.</td>
 </tr>
 </table>
 <h2>Selected templates</h2>
