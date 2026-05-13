@@ -1,20 +1,16 @@
 {
   "header": {
     "book24_name": "ספר מלכים",
-    "sub_book_names": {
-      "ספר מלכים": [
-        "מל\"א",
-        "מל\"ב"
-      ]
-    },
+    "sub_book_names": [
+      "מל\"א",
+      "מל\"ב"
+    ],
     "chapter_counts": [
       {
-        "book24_name": "ספר מלכים",
         "sub_book_name": "מל\"א",
         "chapter_count": 22
       },
       {
-        "book24_name": "ספר מלכים",
         "sub_book_name": "מל\"ב",
         "chapter_count": 25
       }

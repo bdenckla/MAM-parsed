@@ -1,20 +1,16 @@
 {
   "header": {
     "book24_name": "ספר דברי הימים",
-    "sub_book_names": {
-      "ספר דברי הימים": [
-        "דה\"א",
-        "דה\"ב"
-      ]
-    },
+    "sub_book_names": [
+      "דה\"א",
+      "דה\"ב"
+    ],
     "chapter_counts": [
       {
-        "book24_name": "ספר דברי הימים",
         "sub_book_name": "דה\"א",
         "chapter_count": 29
       },
       {
-        "book24_name": "ספר דברי הימים",
         "sub_book_name": "דה\"ב",
         "chapter_count": 36
       }

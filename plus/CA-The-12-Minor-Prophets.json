@@ -1,80 +1,66 @@
 {
   "header": {
     "book24_name": "ספר תרי עשר",
-    "sub_book_names": {
-      "ספר תרי עשר": [
-        "הושע",
-        "יואל",
-        "עמוס",
-        "עבדיה",
-        "יונה",
-        "מיכה",
-        "נחום",
-        "חבקוק",
-        "צפניה",
-        "חגי",
-        "זכריה",
-        "מלאכי"
-      ]
-    },
+    "sub_book_names": [
+      "הושע",
+      "יואל",
+      "עמוס",
+      "עבדיה",
+      "יונה",
+      "מיכה",
+      "נחום",
+      "חבקוק",
+      "צפניה",
+      "חגי",
+      "זכריה",
+      "מלאכי"
+    ],
     "chapter_counts": [
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "הושע",
         "chapter_count": 14
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "יואל",
         "chapter_count": 4
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "עמוס",
         "chapter_count": 9
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "עבדיה",
         "chapter_count": 1
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "יונה",
         "chapter_count": 4
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "מיכה",
         "chapter_count": 7
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "נחום",
         "chapter_count": 3
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "חבקוק",
         "chapter_count": 3
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "צפניה",
         "chapter_count": 3
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "חגי",
         "chapter_count": 2
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "זכריה",
         "chapter_count": 14
       },
       {
-        "book24_name": "ספר תרי עשר",
         "sub_book_name": "מלאכי",
         "chapter_count": 3
       }
