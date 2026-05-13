@@ -71,55 +71,54 @@ has sub-books 1 Samuel and 2 Samuel). The letter B is not used in order to keep 
 set of codes used for the 39-book system.</p>
 <h2>Top-level structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[],</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">                </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">                </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">42</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-punct">}</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-punct">]</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;book39s&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[]</span><span class="tok-punct"></span>
-<span class="tok-punct">}</span><span class="tok-punct"></span></pre><table class="center">
+<span class="tok-punct">  </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{},</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;book39s&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[]</span><span class="tok-punct"></span>
+<span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Header</h2>
+<table class="center">
 <tr>
 <th>Key</th>
 <th>Type</th>
 <th class="wide-col">Description</th>
 </tr>
 <tr>
-<td><code>header</code></td>
-<td>object</td>
-<td class="wide-col">Metadata: book names, sub-book names, chapter counts.</td>
+<td><code>book24_name</code></td>
+<td>string</td>
+<td class="wide-col">The name of this file’s book24.</td>
 </tr>
 <tr>
-<td><code>book39s</code></td>
+<td><code>sub_book_names</code></td>
 <td>array</td>
-<td class="wide-col">One element per book39 (sub-book).</td>
+<td class="wide-col">Array of sub-book names for this book24. (Empty if this book24 has no
+sub-books.)</td>
+</tr>
+<tr>
+<td><code>chapter_counts</code></td>
+<td>array</td>
+<td class="wide-col">One object per book39, each with <code>sub_book_name</code> and
+<code>chapter_count</code>. (The <code>sub_book_name</code> will be null for a book39 that is not a
+sub-book, i.e. a book39 that is also a book24.)</td>
 </tr>
 </table>
-<p>The plain header now uses the same shared shape as plus for sub-book names and chapter counts.
-This is an intentional simplification aligned with current one-file-per-book24 output.</p>
-<h3>Composite books</h3>
-<p>For Samuel, a book24 with sub-books, <code>book39s</code> has multiple elements:</p>
-<pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר שמואל&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">31</span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">            </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">24</span><span class="tok-punct">}</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-punct">]</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;book39s&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-punct">{</span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר שמואל&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapters&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{}},</span><span class="tok-punct"></span>
-<span class="tok-punct">        </span><span class="tok-punct">{</span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר שמואל&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ\&quot;ב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapters&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{}}</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">]</span><span class="tok-punct"></span>
+<p>Here’s the header for Job, a book24 has no sub-books:</p>
+<pre class="json-block"><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[],</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">42</span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
+<span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>Here’s
+the header for Samuel, a book24 that has sub-books:</p>
+<pre class="json-block"><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר שמואל&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_names&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;שמ&quot;</span><span class="tok-punct heb">א</span><span class="tok-string">&quot;, &quot;</span><span class="tok-punct heb">ש</span><span class="tok-punct heb">מ</span><span class="tok-string heb">&quot;ב&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;chapter_counts&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">      </span><span class="tok-punct">{</span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שמ&quot;</span><span class="tok-punct heb">א</span><span class="tok-string">&quot;, &quot;</span><span class="tok-punct">c</span><span class="tok-punct">h</span><span class="tok-punct">a</span><span class="tok-punct">p</span><span class="tok-keyword">ter</span><span class="tok-punct">_</span><span class="tok-punct">c</span><span class="tok-punct">o</span><span class="tok-punct">u</span><span class="tok-keyword">nt</span><span class="tok-string">&quot;: 31},</span>
+<span class="tok-string">      {&quot;</span><span class="tok-punct">s</span><span class="tok-punct">u</span><span class="tok-punct">b</span><span class="tok-punct">_</span><span class="tok-punct">b</span><span class="tok-punct">o</span><span class="tok-punct">o</span><span class="tok-punct">k</span><span class="tok-punct">_</span><span class="tok-keyword">na</span><span class="tok-punct">m</span><span class="tok-punct">e</span><span class="tok-string">&quot;: &quot;</span><span class="tok-punct heb">ש</span><span class="tok-punct heb">מ</span><span class="tok-string heb">&quot;ב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;chapter_count&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-number">24</span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Book39
 structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר ישעיהו&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;chapters&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><table class="center">
