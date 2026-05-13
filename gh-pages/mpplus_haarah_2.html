@@ -9,9 +9,8 @@
 <body>
 <h1>Targeted scroll-difference note — <bdi lang="hbo">מ:הערה-2</bdi></h1>
 <p>← Back to <a href="mpplus.html">Reading <abbr class="small-caps">MAM</abbr>-parsed-plus</a></p>
-<p><bdi lang="hbo">מ:הערה</bdi> is the standard (non-targeted) scroll-difference note: it carries
-the note text but does not explicitly identify which word the note applies to. “Targeted” version
-<bdi lang="hbo">מ:הערה-2</bdi> wraps the target word:</p>
+<p>In plus output, scroll-difference notes are represented by <bdi lang="hbo">מ:הערה-2</bdi>, which
+wraps the target word and carries the note text:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:הערה-2&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
@@ -26,10 +25,10 @@ the note text but does not explicitly identify which word the note applies to. �
 <li>Mark position: <code>"אאא*"</code> means the note marker (star) comes after the target;
 <code>"*אאא"</code> means it comes before (only Deut 22:6).</li>
 </ol>
-<p>The <bdi lang="hbo">מ:הערה</bdi> template is retained alongside <bdi lang="hbo">מ:הערה-2</bdi>.
-The plus format redundantly keeps both representations. This is by design: some downstream consumers
-use <bdi lang="hbo">מ:הערה-2</bdi> only to extract the target word and use
-<bdi lang="hbo">מ:הערה</bdi> separately to extract the note text.</p>
+<p>The non-targeted template <bdi lang="hbo">מ:הערה</bdi> is no longer retained alongside
+<bdi lang="hbo">מ:הערה-2</bdi> in plus. This intentionally drops one edge-case distinction at Deut
+11:21: the star marker can indicate pre-word or post-word position ("*אאא" or "אאא*"), but not
+post-sof-pasuq position ("אאא׃*").</p>
 <h2>Example in context</h2>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-string heb pointed">&quot;וַיֹּ֥אמֶר קַ֖יִן אֶל־יְהֹוָ֑ה גָּד֥וֹל עֲוֺנִ֖י &quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -47,13 +46,6 @@ use <bdi lang="hbo">מ:הערה-2</bdi> only to extract the target word and use
 <span class="tok-punct">      </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">        </span><span class="tok-string">&quot;<span class="ellipsis">...</span>&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ש&quot;</span><span class="tok-punct">},</span><span class="tok-punct"> </span><span class="tok-string">&quot;<span class="ellipsis">...</span>&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">      </span><span class="tok-punct">]</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:הערה&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">      </span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;בספרי ספרד ואשכנז מִנְּשֽׂוֹא&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">      </span><span class="tok-key heb">&quot;שם&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;בספרי ספרד ואשכנז מִנְּשֽׂוֹא&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">},</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-string pointed">&quot;׃&quot;</span><span class="tok-punct"></span>
