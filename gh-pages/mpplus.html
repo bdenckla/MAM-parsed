@@ -447,73 +447,10 @@ note.</td>
 </tr>
 </table>
 <h2>Differences from plain format</h2>
-<table class="center">
-<tr>
-<th>Feature</th>
-<th>Plain</th>
-<th>Plus</th>
-</tr>
-<tr>
-<td>Pseudo-verses “0” and “תתת”</td>
-<td>Present</td>
-<td>Removed</td>
-</tr>
-<tr>
-<td>Custom XML tags (נוינקלוד etc.)</td>
-<td>Present</td>
-<td>Removed</td>
-</tr>
-<tr>
-<td>Wikitext line breaks (“//”)</td>
-<td>Present in C column</td>
-<td>Removed</td>
-</tr>
-<tr>
-<td>Named params</td>
-<td>not parsed</td>
-<td>parsed and unified with positional</td>
-</tr>
-<tr>
-<td>D column (verse label)</td>
-<td>Every verse has <bdi lang="hbo">מ:פסוק</bdi></td>
-<td>Only when <bdi lang="hbo">מ:פסוק</bdi> has interesting parameters or is wrapped in
-<bdi lang="hbo">נוסח</bdi></td>
-</tr>
-<tr>
-<td><code>good_ending_plus</code></td>
-<td>Not present</td>
-<td>Added (at book39 level)</td>
-</tr>
-<tr>
-<td>Words with special letters</td>
-<td>word interrupted by inline letter templates</td>
-<td>whole word wrapped by <bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi>; uninterrupted encoding in args
-2–4</td>
-</tr>
-<tr>
-<td><code>{"tmpl": [...]}</code> — parsed template trees</td>
-<td>Present</td>
-<td>Removed (replaced by <code>tmpl_name</code>/<code>tmpl_params</code>)</td>
-</tr>
-<tr>
-<td><code>{"stmpl": "..."}</code> — stringified templates</td>
-<td>Present</td>
-<td>Removed (replaced by <code>tmpl_name</code>/<code>tmpl_params</code>)</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">גלגל-2</bdi> — galgal accent annotation</td>
-<td>Present</td>
-<td>Removed (handled differently in plus)</td>
-</tr>
-<tr>
-<td>Scroll-difference note template</td>
-<td><bdi lang="hbo">מ:הערה</bdi> (non-targeted)</td>
-<td><bdi lang="hbo">מ:הערה-2</bdi> (targeted)</td>
-</tr>
-</table>
-<p>Template names use Hebrew gershayim <code>״</code> (for example <bdi lang="hbo">כו״ק</bdi>), not
-ASCII double quote <code>"</code>.</p>
-<p>Example of the stringified template format <code>{"stmpl": "..."}</code> (present in plain,
-replaced in plus):</p>
-<pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;קו״כ|את|אַ֠תָּ֠ה&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre></body>
+<p>The primary differences table has moved to <a href="mpplus_diff_from_plain.html">its dedicated
+page</a>.</p>
+<p>That page is intentionally concise. For an exhaustive list of templates removed from plus,
+grouped as Tagging-only, Pre-evaluated, and Misc. not applicable to plus, see
+<a href="mpplus_plain_only_templates.html">Plain-only Templates</a>.</p>
+</body>
 </html>
