@@ -1,20 +1,16 @@
 {
   "header": {
     "book24_name": "ספר עזרא",
-    "sub_book_names": {
-      "ספר עזרא": [
-        "עזרא",
-        "נחמיה"
-      ]
-    },
+    "sub_book_names": [
+      "עזרא",
+      "נחמיה"
+    ],
     "chapter_counts": [
       {
-        "book24_name": "ספר עזרא",
         "sub_book_name": "עזרא",
         "chapter_count": 10
       },
       {
-        "book24_name": "ספר עזרא",
         "sub_book_name": "נחמיה",
         "chapter_count": 13
       }
