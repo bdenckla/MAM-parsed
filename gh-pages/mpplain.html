@@ -8,6 +8,20 @@
 </head>
 <body>
 <h1>Reading MAM-parsed-plain</h1>
+<p>The <abbr class="small-caps">MAM</abbr>-parsed-plain JSON files are formed by parsing the
+Wikitext in the <abbr class="small-caps">MAM</abbr> Google Sheet with minimal post-processing.</p>
+<p>Use plain when you want a representation that stays close to the
+<abbr class="small-caps">MAM</abbr> Google Sheet. Use plus when you want conveniences intended to
+simplify most application code.</p>
+<p>This document covers:</p>
+<ul>
+<li>File naming</li>
+<li>Structure of the top level</li>
+<li>Structure of a book39, chapter, and verse</li>
+<li>Template and custom-tag objects</li>
+<li>Common templates</li>
+<li>Pseudo-verses</li>
+</ul>
 <h2>File naming</h2>
 <p>File names (e.g. <code>A1-Genesis.json</code>) start with two characters that identify the book
 (in the “24 books” sense) and provide a standard ordering. The first character
