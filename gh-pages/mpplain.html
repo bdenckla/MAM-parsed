@@ -253,6 +253,8 @@ Google Sheet.</p>
 <p>The content at index 1 is empty <code>[]</code> for pseudo-verses. For normal verses, it is a
 list containing exactly one element: the <bdi lang="hbo">מ:פסוק</bdi> template labeling the verse,
 e.g. for Job 1:2:</p>
+<p>Normal verses carry one מ:פסוק call in D with optional named params סדר and עלייה; pseudo-verses
+have empty D.</p>
 <pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct"></span></pre><p>The
 three required parameters are book name (Hebrew alphabet string), chapter number (Hebrew numeral),
 and verse number (Hebrew numeral). Optional named parameters include <bdi lang="hbo">סדר=</bdi>
@@ -261,6 +263,7 @@ identification).</p>
 <h3>E column (index 2): Verse text</h3>
 <p>Contains the actual verse text as a mixed array of strings (Hebrew text with cantillation marks)
 and template objects (inline markup). Example (Job 1:1):</p>
+<p>E-column content is segmented as a sequence of strings and templates.</p>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-string heb pointed">&quot;אִ֛ישׁ הָיָ֥ה בְאֶֽרֶץ־ע֖וּץ אִיּ֣וֹב שְׁמ֑וֹ וְהָיָ֣ה&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:לגרמיה-2&quot;</span><span class="tok-punct">},</span><span class="tok-punct"></span>
@@ -280,11 +283,10 @@ is the template name; remaining segments are positional arguments.</p>
 <span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;#בלי קטע:&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שם הדף המלא&quot;</span><span class="tok-punct">}],</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;סימן&quot;</span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
-<span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>The
-first sub-array is the template name. Subsequent sub-arrays are the arguments, which may contain
-nested template “calls”.</p>
+<span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>A
+template is a recursive parse-tree whose segments contain strings and nested templates.</p>
 <h3>3. Custom XML tag (custom_tag)</h3>
-<p>Wikitext custom XML tags that appear in pseudo-verses:</p>
+<p>Custom-tag objects use the custom_tag key and only the documented tag values.</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;custom_tag&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;noinclude&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">{</span><span class="tok-key">&quot;custom_tag&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;/noinclude&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Common
 templates in the E (verse text) column</h2>

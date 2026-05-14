@@ -14,6 +14,8 @@ the word in two forms: interrupted (arg 1 — array decomposed around the specia
 uninterrupted (args 2–4 — plain word string, dot-mask, and type code). Args 2–4 together are
 sufficient to recover all special-letter information without arg 1 (arg 5 is a redundant letter/type
 summary, derivable from args 3 and 4):</p>
+<p>Every מ:אות-מיוחדת-במילה template carries the required parameter schema for interrupted word,
+uninterrupted word, dot-mask, type code, and summary.</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:אות-מיוחדת-במילה&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
@@ -29,7 +31,7 @@ summary, derivable from args 3 and 4):</p>
 <li>The word as a plain string (uninterrupted)</li>
 <li>A dot-mask showing the position of the special letter(s)</li>
 <li>The size/type code (<bdi lang="hbo">ג</bdi> = large, <bdi lang="hbo">ק</bdi> = small,
-<bdi lang="hbo">ע</bdi> = hung (suspended))</li>
+<bdi lang="hbo">ת</bdi> = hung (suspended))</li>
 <li>Letter/type summary</li>
 </ol>
 <p>When the word is followed by a <span class="romanized">legarmeh</span>, the
