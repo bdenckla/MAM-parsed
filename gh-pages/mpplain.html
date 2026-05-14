@@ -493,6 +493,31 @@ accent to be specified on a dummy letter for readability.</td>
 <td class="wide-col">Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words
 (פני and מתחת). Parameter is the above-accent (may use מ:טעם).</td>
 </tr>
+<tr>
+<td><bdi lang="hbo">מ:אות מנוקדת</bdi></td>
+<td class="wide-col">Dotted letter/word. Marks words with masoretic dots above/below.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:טעם ומתג באות אחת</bdi></td>
+<td class="wide-col">Normalization-robust meteg for 10 cases where a below-accent and meteg share
+one letter.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:גרש ותלישא גדולה</bdi></td>
+<td class="wide-col">Combined <span class="romanized">geresh</span> +
+<span class="romanized">telisha</span> gedolah (2 words, 3 uses). No parameters.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:גרשיים ותלישא גדולה</bdi></td>
+<td class="wide-col">Combined gershayim + <span class="romanized">telisha</span> gedolah (3 words, 4
+uses). No parameters.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:כל קמץ קטן מרכא</bdi></td>
+<td class="wide-col">Font-rendering workaround for the word כל with
+<span class="romanized">qamats</span> qatan and <span class="romanized">merkha</span> in Taamey
+Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).</td>
+</tr>
 </table>
 <h3>Jerusalem spelling</h3>
 <table class="center">
@@ -550,9 +575,9 @@ a closed <span class="romanized">parashah</span>.</td>
 display.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">פרשה-מרכז</bdi></td>
-<td class="wide-col">Centered title. For “titles” in Job and Proverbs. Parameter is the title
-text.</td>
+<td><bdi lang="hbo">רווח בסוף שורה</bdi></td>
+<td class="wide-col">Large end-of-line spacers supporting פפפ; fills remaining line space so the
+next <span class="romanized">parashah</span> can start at the top of the following line.</td>
 </tr>
 </table>
 <p>Many editions will choose to skip poetic formatting by treating ר0–ר4 as simple word spaces.</p>
@@ -588,39 +613,21 @@ page</a>.</td>
 <td><bdi lang="hbo">ש</bdi></td>
 <td class="wide-col">Paragraph separator within the notes argument (param 2) of נוסח.</td>
 </tr>
+</table>
+<h3>Other templates</h3>
+<table class="center">
 <tr>
-<td><bdi lang="hbo">מ:אות מנוקדת</bdi></td>
-<td class="wide-col">Dotted letter/word. Marks words with masoretic dots above/below.</td>
+<th>Template</th>
+<th class="wide-col">Purpose</th>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:סיום בטוב</bdi></td>
 <td class="wide-col">Good ending. See <a href="mpplus_good_ending.html">its dedicated page</a>.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:טעם ומתג באות אחת</bdi></td>
-<td class="wide-col">Normalization-robust meteg for 10 cases where a below-accent and meteg share
-one letter.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:גרש ותלישא גדולה</bdi></td>
-<td class="wide-col">Combined <span class="romanized">geresh</span> +
-<span class="romanized">telisha</span> gedolah (2 words, 3 uses). No parameters.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:גרשיים ותלישא גדולה</bdi></td>
-<td class="wide-col">Combined gershayim + <span class="romanized">telisha</span> gedolah (3 words, 4
-uses). No parameters.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">רווח בסוף שורה</bdi></td>
-<td class="wide-col">Large end-of-line spacers supporting פפפ; fills remaining line space so the
-next <span class="romanized">parashah</span> can start at the top of the following line.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:כל קמץ קטן מרכא</bdi></td>
-<td class="wide-col">Font-rendering workaround for the word כל with
-<span class="romanized">qamats</span> qatan and <span class="romanized">merkha</span> in Taamey
-Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).</td>
+<td><bdi lang="hbo">פרשה-מרכז</bdi></td>
+<td class="wide-col">Centered title. For “titles” in Job and Proverbs. Parameter is the title
+text.</td>
 </tr>
 </table>
 <h2>Pseudo-verses (0 and תתת)</h2>
