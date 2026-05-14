@@ -455,16 +455,6 @@ as distinct from <span class="romanized">legarmeh</span>.</td>
 verses.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:דחי</bdi></td>
-<td class="wide-col">Deḥi variation. Presents both stress-helped and non-stress-helped versions of a
-word.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:צינור</bdi></td>
-<td class="wide-col">Tsinnor variation. Presents both stress-helped and non-stress-helped versions
-of a word.</td>
-</tr>
-<tr>
 <td><bdi lang="hbo">גלגל-2</bdi></td>
 <td class="wide-col">Galgal. Distinguishes poetic from prose uses of Unicode
 <abbr class="small-caps" title="Unicode YERAH BEN YOMO">YBY</abbr>.</td>
@@ -475,27 +465,25 @@ of a word.</td>
 <abbr class="small-caps" title="Unicode YERAH BEN YOMO">YBY</abbr>.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:קמץ</bdi></td>
-<td class="wide-col">Qamats variation. Named params: <bdi lang="hbo">ד=</bdi> (grammatical) and
-<bdi lang="hbo">ס=</bdi> (Sephardic tradition).</td>
-</tr>
-<tr>
 <td><bdi lang="hbo">מ:טעם</bdi></td>
 <td class="wide-col">Accent extractor. Drops the first code point of its argument, allowing an
 accent to be specified on a dummy letter for readability.</td>
 </tr>
 <tr>
-<td><bdi lang="hbo">מ:כפול</bdi></td>
-<td class="wide-col">Dual-trope span. See <a href="mpplus_kaful.html">its dedicated page</a>.</td>
+<td><bdi lang="hbo">מ:אות מנוקדת</bdi></td>
+<td class="wide-col">Dotted letter/word. Marks words with masoretic dots above/below.</td>
+</tr>
+</table>
+<h3>Multimark templates</h3>
+<table class="center">
+<tr>
+<th>Template</th>
+<th class="wide-col">Purpose</th>
 </tr>
 <tr>
 <td><bdi lang="hbo" title="שני טעמים באות אחת קמץ-תחתון-פתח-עליון">שני טעמים ...</bdi></td>
 <td class="wide-col">Formats the two extra marks (above-accent + patah) on the QUPO Decalogue words
 (פני and מתחת). Parameter is the above-accent (may use מ:טעם).</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:אות מנוקדת</bdi></td>
-<td class="wide-col">Dotted letter/word. Marks words with masoretic dots above/below.</td>
 </tr>
 <tr>
 <td><bdi lang="hbo">מ:טעם ומתג באות אחת</bdi></td>
@@ -518,13 +506,6 @@ uses). No parameters.</td>
 <span class="romanized">qamats</span> qatan and <span class="romanized">merkha</span> in Taamey
 Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).</td>
 </tr>
-</table>
-<h3>Jerusalem spelling</h3>
-<table class="center">
-<tr>
-<th>Template</th>
-<th class="wide-col">Purpose</th>
-</tr>
 <tr>
 <td><bdi lang="hbo">מ:ירושלם</bdi></td>
 <td class="wide-col">Handles the masoretic spelling of Jerusalem without
@@ -534,6 +515,34 @@ Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).</td>
 <tr>
 <td><bdi lang="hbo">מ:ירושלמה</bdi></td>
 <td class="wide-col">Like מ:ירושלם but for the directional form “to Jerusalem” (4 cases).</td>
+</tr>
+</table>
+<h3>Choice templates</h3>
+<p>Most applications will need to make a choice between two or three options presented by these
+templates.</p>
+<table class="center">
+<tr>
+<th>Template</th>
+<th class="wide-col">Purpose</th>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:דחי</bdi></td>
+<td class="wide-col">Deḥi variation. Presents both stress-helped and non-stress-helped versions of a
+word.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:צינור</bdi></td>
+<td class="wide-col">Tsinnor variation. Presents both stress-helped and non-stress-helped versions
+of a word.</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:קמץ</bdi></td>
+<td class="wide-col">Qamats variation. Named params: <bdi lang="hbo">ד=</bdi> (grammatical) and
+<bdi lang="hbo">ס=</bdi> (Sephardic tradition).</td>
+</tr>
+<tr>
+<td><bdi lang="hbo">מ:כפול</bdi></td>
+<td class="wide-col">Dual-trope span. See <a href="mpplus_kaful.html">its dedicated page</a>.</td>
 </tr>
 </table>
 <h3>Whitespace templates</h3>
