@@ -16,10 +16,11 @@ repeat the next-to-last verse, in unpointed form, after the officially-last vers
 <code>good_ending_plus</code> key captures this: it is <code>null</code> for most books. For the 4
 book39s that have it (Isaiah, Malachi, Lamentations, Ecclesiastes), it is an object (see example
 below).</p>
-<h2>Example — <bdi lang="hbo">מ:סיום בטוב</bdi></h2>
-<p>The <code>wikitext_element</code> of a <code>good_ending_plus</code> is a
-<bdi lang="hbo">נוסח</bdi> template wrapping a <bdi lang="hbo">מ:סיום בטוב</bdi> template. Example
-from Isaiah:</p>
+<p>The template <bdi lang="hbo">מ:סיום בטוב</bdi> nested in <code>wikitext_element</code> has
+separate documentation on <a href="mpplus_good_ending_tmpl.html">its dedicated page</a>.</p>
+<h2>Example object</h2>
+<p>Example from Isaiah (book39 level). The <code>good_ending_plus</code> object includes
+<code>last_chapnver</code> and <code>wikitext_element</code>.</p>
 <pre class="json-block"><span class="ln"> 1</span><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="ln"> 2</span><span class="tok-punct">  </span><span class="tok-key">&quot;last_chapnver&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-string">&quot;66&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-string">&quot;24&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
 <span class="ln"> 3</span><span class="tok-punct">  </span><span class="tok-key">&quot;wikitext_element&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
