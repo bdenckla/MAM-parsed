@@ -153,28 +153,6 @@ sub-book, this is its name.</td>
 <h2>Chapter structure</h2>
 <p>An object keyed by verse numbers. For example, a chapter with 22 verses has exactly 22 keys,
 <code>"1"</code> through <code>"22"</code>.</p>
-<h2>Verse structure</h2>
-<p>A 3-element array [C, D, E], with column details described below.</p>
-<h3>C column (index 0): Verse separator</h3>
-<p>The C column usually contains what separates this verse from the previous verse. This is usually
-a space, represented as <code>["__"]</code>, but is sometimes something else, such as a פפ
-<span class="romanized">parashah</span>-break template.</p>
-<h3>D column (index 1): Verse label</h3>
-<p>This is an array that contains a <bdi lang="hbo">מ:פסוק</bdi> template call when it has something
-interesting to say—typically when it carries extra metadata such as the <code>סדר</code> or
-<code>עלייה</code> parameter. Otherwise, the array is empty.</p>
-<p>The <code>עלייה</code> value itself is a <bdi lang="hbo">מ:עלייה</bdi> template; see
-<a href="https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html">notes on
-<span class="romanized">aliyot</span></a>.</p>
-<p>Job 1:1:</p>
-<pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
-<span class="tok-punct">]</span><span class="tok-punct"></span></pre><h3>E
-column (index 2): Verse text</h3>
-<p>An array containing a mix of strings and template objects.</p>
 <h2>Template format</h2>
 <p>Templates are represented like this:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
@@ -225,8 +203,30 @@ a נוסח:</p>
 <span class="tok-punct">    </span><span class="tok-punct">},</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="ellipsis">...</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
-<span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Common
-templates in the E (verse text) column</h2>
+<span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Verse
+structure</h2>
+<p>A 3-element array [C, D, E], with column details described below.</p>
+<h3>C column (index 0): Verse separator</h3>
+<p>The C column usually contains what separates this verse from the previous verse. This is usually
+a space, represented as <code>["__"]</code>, but is sometimes something else, such as a פפ
+<span class="romanized">parashah</span>-break template.</p>
+<h3>D column (index 1): Verse label</h3>
+<p>This is an array that contains a <bdi lang="hbo">מ:פסוק</bdi> template call when it has something
+interesting to say—typically when it carries extra metadata such as the <code>סדר</code> or
+<code>עלייה</code> parameter. Otherwise, the array is empty.</p>
+<p>The <code>עלייה</code> value itself is a <bdi lang="hbo">מ:עלייה</bdi> template; see
+<a href="https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html">notes on
+<span class="romanized">aliyot</span></a>.</p>
+<p>Job 1:1:</p>
+<pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">]</span><span class="tok-punct"></span></pre><h3>E
+column (index 2): Verse text</h3>
+<p>An array containing a mix of strings and template objects.</p>
+<h2>Common templates in the E (verse text) column</h2>
 <p>For English and Hebrew descriptions of most templates, see the
 <a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
 <a href="https://purl.org/mam/google-sheet#gid=920165745"><abbr class="small-caps">MAM</abbr> Google
