@@ -278,10 +278,20 @@ represents the Wikitext <code>{{מ:פסוק|איוב|א|ב}}</code>. The first s
 is the template name; remaining segments are positional arguments.</p>
 <h3>2. Parsed template tree (tmpl)</h3>
 <p>Longer and/or more complex templates appear as parse trees:</p>
+<p>Example — a template with string parameters only:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;#בלי קטע:&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;שם הדף המלא&quot;</span><span class="tok-punct">}],</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;סימן&quot;</span><span class="tok-punct">]</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;מ:קישור בהערה&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string">&quot;https://www.nli.org.il/he/manuscripts/NNL_ALEPH990001395350205171/NLI#$FL34539128&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;כת\&quot;י קיימברידג&#x27; Add. 1728&quot;</span><span class="tok-punct">]</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
+<span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>Example
+— a template nested inside another template:</p>
+<pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;tmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb pointed">&quot;עַל־פָּנָֽ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;tmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[[</span><span class="tok-string heb">&quot;שני טעמים באות אחת קמץ-תחתון-פתח-עליון&quot;</span><span class="tok-punct">],</span><span class="tok-punct"> </span><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;מ:טעם|נ֗&quot;</span><span class="tok-punct">}]]},</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;י&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;2==א?,<span class="ellipsis">...</span>&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ש&quot;</span><span class="tok-punct">},</span><span class="tok-punct"> </span><span class="tok-string">&quot;<span class="ellipsis">...</span>&quot;</span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>A
 template is a recursive parse-tree whose segments contain strings and nested templates.</p>
