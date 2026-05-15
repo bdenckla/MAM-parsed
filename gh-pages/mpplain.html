@@ -71,8 +71,8 @@ has sub-books 1 Samuel and 2 Samuel). The letter B is not used in order to keep 
 set of codes used for the 39-book system.</p>
 <h2>Top-level structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">},</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-key">&quot;book39s&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">]</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;header&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="ellipsis">...</span><span class="tok-punct">},</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;book39s&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="ellipsis">...</span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Header</h2>
 <table class="center">
 <tr>
@@ -118,7 +118,7 @@ structure</h2>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;book24_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ספר ישעיהו&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;sub_book_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-keyword">null</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">  </span><span class="tok-key">&quot;chapters&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">.</span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">  </span><span class="tok-key">&quot;chapters&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="ellipsis">...</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><table class="center">
 <tr>
 <th>Key</th>
@@ -277,12 +277,14 @@ objects</h2>
 represents the Wikitext <code>{{מ:פסוק|איוב|א|ב}}</code>. The first segment (before <code>|</code>)
 is the template name; remaining segments are positional arguments.</p>
 <h3>2. Parsed template tree (tmpl)</h3>
-<p>Longer and/or more complex templates appear as parse trees:</p>
-<p>Example — a template with string parameters only:</p>
+<p>A parsed template tree’s segments contain strings and nested templates.</p>
+<p>A parsed template tree is used in cases where a stringified template would be inappropriate, such
+as when the template is long and/or contains nested templates.</p>
+<p>Example — a long template with string parameters only:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;מ:קישור בהערה&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string">&quot;https://www.nli.org.il/he/manuscripts/NNL_ALEPH990001395350205171/NLI#$FL34539128&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string">&quot;https://www.nli.org.il/<span class="ellipsis">...</span>FL34539128&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;כת\&quot;י קיימברידג&#x27; Add. 1728&quot;</span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>Example
@@ -290,12 +292,11 @@ is the template name; remaining segments are positional arguments.</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb pointed">&quot;עַל־פָּנָֽ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;tmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[[</span><span class="tok-string heb">&quot;שני טעמים באות אחת קמץ-תחתון-פתח-עליון&quot;</span><span class="tok-punct">],</span><span class="tok-punct"> </span><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;מ:טעם|נ֗&quot;</span><span class="tok-punct">}]]},</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;י&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb">&quot;2==א?,<span class="ellipsis">...</span>&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;ש&quot;</span><span class="tok-punct">},</span><span class="tok-punct"> </span><span class="tok-string">&quot;<span class="ellipsis">...</span>&quot;</span><span class="tok-punct">]</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="tok-string heb pointed">&quot;עַל־פָּנָֽ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;tmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">[[</span><span class="tok-string heb">&quot;שני טעמים <span class="ellipsis">...</span>&quot;</span><span class="tok-punct">],</span><span class="tok-punct"> </span><span class="tok-punct">[</span><span class="ellipsis">...</span><span class="tok-punct">]]},</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;י&quot;</span><span class="tok-punct">],</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-punct">[</span><span class="ellipsis">...</span><span class="tok-punct">]</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">]</span><span class="tok-punct"></span>
-<span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>A
-template is a recursive parse-tree whose segments contain strings and nested templates.</p>
-<h3>3. Custom XML tag (custom_tag)</h3>
+<span class="tok-punct">}</span><span class="tok-punct"></span></pre><h3>3.
+Custom XML tag (custom_tag)</h3>
 <p>Custom-tag objects use the custom_tag key and only the documented tag values.</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-key">&quot;custom_tag&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;noinclude&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">{</span><span class="tok-key">&quot;custom_tag&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string">&quot;/noinclude&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Common
