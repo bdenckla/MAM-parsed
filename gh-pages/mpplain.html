@@ -234,7 +234,10 @@ have empty D.</p>
 three required parameters are book name (Hebrew alphabet string), chapter number (Hebrew numeral),
 and verse number (Hebrew numeral). Optional named parameters include <bdi lang="hbo">סדר=</bdi>
 (seder number) and <bdi lang="hbo">עלייה=</bdi> (Torah <span class="romanized">aliyah</span>
-identification).</p>
+identification). The <bdi lang="hbo">עלייה=</bdi> value itself is a nested
+<bdi lang="hbo">מ:עלייה</bdi> template (an <code>stmpl</code>); see
+<a href="https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html">notes on
+<span class="romanized">aliyot</span></a>.</p>
 <h3>E column (index 2): Verse text</h3>
 <p>Contains the actual verse text as a mixed array of strings (Hebrew text with cantillation marks)
 and template objects (inline markup). Example (Job 1:1):</p>
