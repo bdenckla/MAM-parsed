@@ -217,68 +217,13 @@ space</td>
 </tr>
 </table>
 <h3>Index 0 (Google column C): Verse separator</h3>
-<p>The contents at index 0 indicate how this verse is separated from the preceding verse.
-<code>"__"</code> is by far the most common value, indicating a plain space. More interesting values
-include:</p>
-<table class="center">
-<tr>
-<th>Template</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><bdi lang="hbo">פפ</bdi></td>
-<td>Parashah petuchah (open paragraph)</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">סס</bdi></td>
-<td>Parashah setumah (closed paragraph)</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:ספר חדש</bdi></td>
-<td>New book marker — marks the start of one of the 24 books with defined spacing. Not used for
-second halves of two-part books or individual Minor Prophets after Hosea.</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:אין פרשה בתחילת פרק</bdi></td>
-<td>No <span class="romanized">parashah</span> at chapter start — tags chapters that don’t begin
-with a visible <span class="romanized">parashah</span>.</td>
-</tr>
-</table>
-<p>Additional <span class="romanized">parashah</span>-related templates that may appear:</p>
-<table class="center">
-<tr>
-<th>Template</th>
-<th>Meaning</th>
-</tr>
-<tr>
-<td><bdi lang="hbo">פפפ</bdi></td>
-<td>Open <span class="romanized">parashah</span> starting immediately on the next line (no blank
-line)</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">ססס</bdi></td>
-<td>Closed <span class="romanized">parashah</span> inline — blank spaces mid-line with text before
-and after</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">סס2</bdi></td>
-<td>Narrow closed <span class="romanized">parashah</span></td>
-</tr>
-<tr>
-<td><bdi lang="hbo">פסקא באמצע פסוק</bdi></td>
-<td>Parashah division within a verse</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:רווח בתרי עשר</bdi></td>
-<td>Spacing between Minor Prophets</td>
-</tr>
-<tr>
-<td><bdi lang="hbo">מ:רווח לספר בתהלים</bdi></td>
-<td>Spacing between the 5 “books” of Psalms (Psalms 1, 42, 73, 90, 107)</td>
-</tr>
-</table>
-<p>The <code>"//"​</code> strings sometimes sprinkled in index 0 are Wikitext line breaks from the
-Google Sheet.</p>
+<p>The list at index 0 indicates how this verse is separated from the preceding verse. Double
+underscore (<code>"__"</code>) is by far the most common value found in the list at index 0. It
+indicates a plain space. Double slash (<code>"//"</code>) is the next most common value, indicating
+a line break in the Wikitext source. (This double slash is not Biblical data and all applications
+should ignore it unless they are doing something like trying to recreate the Wikitext source,
+verbatim.) Other common values are calls to the ר4 template, the פפ template, or the סס template.
+(See the Whitespace templates section below).</p>
 <h3>Index 1 (Google column D): Verse label</h3>
 <p>The content at index 1 is empty <code>[]</code> for pseudo-verses. For normal verses, it is a
 list containing exactly one element: the <bdi lang="hbo">מ:פסוק</bdi> template labeling the verse,
@@ -489,6 +434,37 @@ page</a>.</td>
 <td class="template-col"><bdi lang="hbo">רווח בסוף שורה</bdi></td>
 <td class="wide-col">Large end-of-line spacers supporting פפפ; fills remaining line space so the
 next <span class="romanized">parashah</span> can start at the top of the following line.</td>
+</tr>
+<tr>
+<td class="template-col"><bdi lang="hbo">מ:ספר חדש</bdi></td>
+<td class="wide-col">New-book marker. Placed at the start of each of the 24 books. Parameter is the
+book name.</td>
+</tr>
+<tr>
+<td class="template-col"><bdi lang="hbo" title="מ:אין פרשה בתחילת פרק">מ:אין פרשה
+<span class="ellipsis-title">...</span> פרק</bdi></td>
+<td class="wide-col">No-<span class="romanized">parashah</span> chapter start (21 books). Tags
+chapters that begin without a coinciding <span class="romanized">parashah</span> division, so a
+space can be added before the first verse when presenting sequential text.</td>
+</tr>
+<tr>
+<td class="template-col"><bdi lang="hbo">מ:רווח בתרי עשר</bdi></td>
+<td class="wide-col">Inter-prophet spacing. Marks the precise start of each of the 12
+minor-prophetic book-parts with defined masoretic spacing. Parameter is the prophet name.</td>
+</tr>
+<tr>
+<td class="template-col"><bdi lang="hbo">מ:רווח לספר בתהלים</bdi></td>
+<td class="wide-col">Psalms-book spacing. Marks the precise start of each of the five Psalms
+divisions with defined masoretic spacing. Parameter is the book designation (e.g. ספר שני). Used at
+Ps 1, 42, 73, 90, 107.</td>
+</tr>
+<tr>
+<td class="template-col"><bdi lang="hbo">סס2</bdi></td>
+<td class="wide-col">Narrow closed <span class="romanized">parashah</span></td>
+</tr>
+<tr>
+<td class="template-col"><bdi lang="hbo">פסקא באמצע פסוק</bdi></td>
+<td class="wide-col"><span class="romanized">parashah</span> division within a verse</td>
 </tr>
 </table>
 <p>Many editions will choose to skip poetic formatting by treating ר0–ר4 as simple word spaces.</p>
