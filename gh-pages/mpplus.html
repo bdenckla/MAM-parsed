@@ -222,13 +222,20 @@ Whitespace templates section below.)</li>
 <h3>D column (index 1): Verse label</h3>
 <p>Column D is an array that, if not empty, contains exactly one element: either a
 <bdi lang="hbo">מ:פסוק</bdi> template or <bdi lang="hbo">מ:פסוק</bdi> wrapped in a
-<bdi lang="hbo">נוסח</bdi> template. When Column D contains a direct (unwrapped)
-<bdi lang="hbo">מ:פסוק</bdi>, it always has at least one of the <code>סדר</code> or
-<code>עלייה</code> named params; calls without named params are dropped. When Column D contains a
-<bdi lang="hbo">נוסח</bdi>-wrapped <bdi lang="hbo">מ:פסוק</bdi>, the <bdi lang="hbo">נוסח</bdi>
-wrapper itself makes the entry interesting; the inner <bdi lang="hbo">מ:פסוק</bdi> may lack named
-params. When there is no such extra data, the array is empty. For example, here is the value for the
-D column for Job 1:1:</p>
+<bdi lang="hbo">נוסח</bdi> template. Column D in the plus format is sparse compared to the plain
+format:</p>
+<ul>
+<li>When Column D contains a direct (unwrapped) <bdi lang="hbo">מ:פסוק</bdi>, it always has at least
+one of the <code>סדר</code> or <code>עלייה</code> named params. Direct calls without named params do
+not appear, as they are considered uninteresting.</li>
+<li>When Column D contains a <bdi lang="hbo">נוסח</bdi>-wrapped <bdi lang="hbo">מ:פסוק</bdi>, the
+<bdi lang="hbo">נוסח</bdi> wrapper itself makes the entry interesting even if the inner
+<bdi lang="hbo">מ:פסוק</bdi> lacks named params.</li>
+<li>When there are neither named params nor <bdi lang="hbo">נוסח</bdi> wrapping, the array is
+empty.</li>
+</ul>
+<p>For example, here is the D column value for Job 1:1, kept because of its <code>סדר</code>
+param:</p>
 <pre class="json-block"><span class="tok-punct">[{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>

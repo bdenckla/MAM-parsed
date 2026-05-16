@@ -205,7 +205,7 @@ structure</h2>
 <ul>
 <li>C — Verse separator: usually a plain space or a <span class="romanized">parashah</span>
 break</li>
-<li>D — Verse label: usually just book, chapter, &amp; verse</li>
+<li>D — Verse label: usually just book, chapter, and verse</li>
 <li>E — Verse proper: strings and templates</li>
 </ul>
 <h3>C column (index 0): Verse separator</h3>
@@ -221,8 +221,8 @@ Whitespace templates section below.)</li>
 </ul>
 <h3>D column (index 1): Verse label</h3>
 <p>Column D is an empty array for pseudo-verses. For normal verses, it is an array with exactly one
-element: either the <bdi lang="hbo">מ:פסוק</bdi> template or <bdi lang="hbo">מ:פסוק</bdi> wrapped in
-a <bdi lang="hbo">נוסח</bdi> template. For example, here is the D column value for Job 1:2:</p>
+element: either a <bdi lang="hbo">מ:פסוק</bdi> template or <bdi lang="hbo">מ:פסוק</bdi> wrapped in a
+<bdi lang="hbo">נוסח</bdi> template. For example, here is the D column value for Job 1:2:</p>
 <pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct"></span></pre><h3>E
 column (index 2): Verse proper</h3>
 <p>Column E is an array mixing strings and templates. Example (Job 1:1):</p>
