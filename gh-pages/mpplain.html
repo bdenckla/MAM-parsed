@@ -209,7 +209,7 @@ break</li>
 <li>E — Verse text: strings and templates</li>
 </ul>
 <h3>C column (index 0): Verse separator</h3>
-<p>The list at index 0 indicates how this verse is separated from the preceding verse:</p>
+<p>Column C is an array indicating how this verse is separated from the preceding verse:</p>
 <ul>
 <li>Double underscore (<code>"__"</code>) is by far the most common value. It indicates a plain
 space.</li>
@@ -220,15 +220,14 @@ unless they are doing something like trying to recreate the Wikitext source, ver
 Whitespace templates section below.)</li>
 </ul>
 <h3>D column (index 1): Verse label</h3>
-<p>The content at index 1 is empty <code>[]</code> for pseudo-verses. For normal verses, it is a
-list containing exactly one element: the <bdi lang="hbo">מ:פסוק</bdi> template labeling the verse.
-For example, here is the D column value for Job 1:2:</p>
-<pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct"></span></pre><p>Normal
-verses carry one מ:פסוק call in D with optional named params סדר and עלייה; pseudo-verses have empty
-D.</p>
-<h3>E column (index 2): Verse text</h3>
-<p>Contains the verse proper as an array mixing strings (Hebrew text with cantillation marks) and
-templates. Example (Job 1:1):</p>
+<p>Column D is an empty array for pseudo-verses. For normal verses, it is an array with exactly one
+element: either the <bdi lang="hbo">מ:פסוק</bdi> template directly, or <bdi lang="hbo">מ:פסוק</bdi>
+wrapped in a <bdi lang="hbo">נוסח</bdi> template. For example, here is the D column value for Job
+1:2:</p>
+<pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct"></span></pre><h3>E
+column (index 2): Verse text</h3>
+<p>Column E is an array mixing strings (Hebrew text with cantillation marks) and templates. Example
+(Job 1:1):</p>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-string heb pointed">&quot;אִ֛ישׁ הָיָ֥ה בְאֶֽרֶץ־ע֖וּץ אִיּ֣וֹב שְׁמ֑וֹ וְהָיָ֣ה&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:לגרמיה-2&quot;</span><span class="tok-punct">},</span><span class="tok-punct"></span>

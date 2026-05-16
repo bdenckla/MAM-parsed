@@ -175,7 +175,6 @@ sub-book, this is its name.</td>
 <td class="wide-col">Parameters — present only if needed</td>
 </tr>
 </table>
-<h3><code>tmpl_params</code> keys</h3>
 <p>Numeric string keys <code>"1"</code>, <code>"2"</code>, … correspond to positional arguments,
 Non-numeric keys (e.g. <code>"ד"</code>, <code>"ס"</code>, <code>"סדר"</code>) represent named
 parameters like <code>ד=...</code> in the Wikitext.</p>
@@ -213,7 +212,7 @@ break</li>
 <li>E — Verse text: strings and templates</li>
 </ul>
 <h3>C column (index 0): Verse separator</h3>
-<p>The list at index 0 indicates how this verse is separated from the preceding verse:</p>
+<p>Column C is an array indicating how this verse is separated from the preceding verse:</p>
 <ul>
 <li>Double underscore (<code>"__"</code>) is by far the most common value. It indicates a plain
 space.</li>
@@ -221,16 +220,17 @@ space.</li>
 Whitespace templates section below.)</li>
 </ul>
 <h3>D column (index 1): Verse label</h3>
-<p>This is an array that contains a <bdi lang="hbo">מ:פסוק</bdi> template call when it has something
-interesting to say—typically when it carries extra data such as the <code>סדר</code> or
-<code>עלייה</code> parameter. Otherwise, the array is empty. For example, here is the value for the
-D column for Job 1:1:</p>
+<p>Column D is an array. When non-empty, it contains exactly one element: either a
+<bdi lang="hbo">מ:פסוק</bdi> template call directly, or <bdi lang="hbo">מ:פסוק</bdi> wrapped in a
+<bdi lang="hbo">נוסח</bdi> template—typically carrying extra data such as the <code>סדר</code> or
+<code>עלייה</code> parameter. When there is no such data, the array is empty. For example, here is
+the value for the D column for Job 1:1:</p>
 <pre class="json-block"><span class="tok-punct">[{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}]</span><span class="tok-punct"></span></pre><h3>E
 column (index 2): Verse text</h3>
-<p>An array containing a mix of strings and templates.</p>
+<p>Column E is an array containing a mix of strings and templates.</p>
 <h2>Selected templates</h2>
 <p>For English and Hebrew descriptions of most templates, see the
 <a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
