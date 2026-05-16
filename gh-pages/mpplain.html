@@ -221,18 +221,11 @@ Whitespace templates section below.)</li>
 </ul>
 <h3>D column (index 1): Verse label</h3>
 <p>The content at index 1 is empty <code>[]</code> for pseudo-verses. For normal verses, it is a
-list containing exactly one element: the <bdi lang="hbo">מ:פסוק</bdi> template labeling the verse,
-e.g. for Job 1:2:</p>
-<p>Normal verses carry one מ:פסוק call in D with optional named params סדר and עלייה; pseudo-verses
-have empty D.</p>
-<pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct"></span></pre><p>The
-three required parameters are book name (Hebrew alphabet string), chapter number (Hebrew numeral),
-and verse number (Hebrew numeral). Optional named parameters include <bdi lang="hbo">סדר=</bdi>
-(seder number) and <bdi lang="hbo">עלייה=</bdi> (Torah <span class="romanized">aliyah</span>
-identification). The <bdi lang="hbo">עלייה=</bdi> value itself is a nested
-<bdi lang="hbo">מ:עלייה</bdi> template (an <code>stmpl</code>); see
-<a href="https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html">notes on
-<span class="romanized">aliyot</span></a>.</p>
+list containing exactly one element: the <bdi lang="hbo">מ:פסוק</bdi> template labeling the verse.
+For example, here is the D column value for Job 1:2:</p>
+<pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct"></span></pre><p>Normal
+verses carry one מ:פסוק call in D with optional named params סדר and עלייה; pseudo-verses have empty
+D.</p>
 <h3>E column (index 2): Verse text</h3>
 <p>Contains the verse proper as an array mixing strings (Hebrew text with cantillation marks) and
 templates. Example (Job 1:1):</p>
@@ -246,6 +239,26 @@ templates</h2>
 <a href="https://purl.org/mam/google-sheet#gid=1670945398">Templates tab</a> of the
 <a href="https://purl.org/mam/google-sheet#gid=920165745"><abbr class="small-caps">MAM</abbr> Google
 Sheet</a>.</p>
+<h3>Verse label templates</h3>
+<table class="center">
+<tr>
+<th class="template-col">Template</th>
+<th class="wide-col">Purpose</th>
+</tr>
+<tr>
+<td class="template-col"><bdi lang="hbo">מ:פסוק</bdi></td>
+<td class="wide-col">Verse label. Takes book name, chapter, and verse as positional params. Optional
+named params include <bdi lang="hbo">סדר=</bdi> (seder number) and <bdi lang="hbo">עלייה=</bdi>
+(<span class="romanized">aliyah</span> identification; value is a <bdi lang="hbo">מ:עלייה</bdi>
+template).</td>
+</tr>
+<tr>
+<td class="template-col"><bdi lang="hbo">מ:עלייה</bdi></td>
+<td class="wide-col">Torah <span class="romanized">aliyah</span> identifier. See
+<a href="https://bdenckla.github.io/MAM-with-doc/misc/notes_on_aliyot.html">notes on
+<span class="romanized">aliyot</span></a>.</td>
+</tr>
+</table>
 <h3><span class="romanized">Ketiv/qere</span> templates</h3>
 <table class="center">
 <tr>
