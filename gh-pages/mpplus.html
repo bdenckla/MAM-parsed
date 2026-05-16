@@ -222,9 +222,13 @@ Whitespace templates section below.)</li>
 <h3>D column (index 1): Verse label</h3>
 <p>Column D is an array that, if not empty, contains exactly one element: either a
 <bdi lang="hbo">מ:פסוק</bdi> template or <bdi lang="hbo">מ:פסוק</bdi> wrapped in a
-<bdi lang="hbo">נוסח</bdi> template.When Column D is not empty, its מ:פסוק call always has the
-<code>סדר</code> and/or <code>עלייה</code> parameter. When there is no such extra data, the array is
-empty. For example, here is the value for the D column for Job 1:1:</p>
+<bdi lang="hbo">נוסח</bdi> template. When Column D contains a direct (unwrapped)
+<bdi lang="hbo">מ:פסוק</bdi>, it always has at least one of the <code>סדר</code> or
+<code>עלייה</code> named params; calls without named params are dropped. When Column D contains a
+<bdi lang="hbo">נוסח</bdi>-wrapped <bdi lang="hbo">מ:פסוק</bdi>, the <bdi lang="hbo">נוסח</bdi>
+wrapper itself makes the entry interesting; the inner <bdi lang="hbo">מ:פסוק</bdi> may lack named
+params. When there is no such extra data, the array is empty. For example, here is the value for the
+D column for Job 1:1:</p>
 <pre class="json-block"><span class="tok-punct">[{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
@@ -252,7 +256,10 @@ Sheet</a>.</p>
 <td class="wide-col">Verse label. Takes book name, chapter, and verse as positional params. Optional
 named params include <bdi lang="hbo">סדר=</bdi> (seder number) and <bdi lang="hbo">עלייה=</bdi>
 (<span class="romanized">aliyah</span> identification; value is a <bdi lang="hbo">מ:עלייה</bdi>
-template).</td>
+template). (Those params are, broadly speaking, optional, e.g. in the
+<abbr class="small-caps">MAM</abbr> Google Sheet they are optional. But in the “plus” format, when
+<bdi lang="hbo">מ:פסוק</bdi> appears directly (unwrapped) in column D, they are always present
+because calls without them are deemed uninteresting and dropped.)</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מ:עלייה</bdi></td>
