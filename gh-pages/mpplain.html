@@ -202,20 +202,12 @@ Custom XML tag (custom_tag)</h3>
 structure</h2>
 <p>(This section documents both normal verses and pseudo-verses.)</p>
 <p>Each verse is a 3-element array corresponding to the C, D, and E columns of the Google Sheet.</p>
-<table class="center">
-<tr>
-<td>C</td>
-<td>Verse separator: usually a plain space or a <span class="romanized">parashah</span> break</td>
-</tr>
-<tr>
-<td>D</td>
-<td>Verse label: usually just book, chapter, &amp; verse</td>
-</tr>
-<tr>
-<td>E</td>
-<td>Verse text: strings and templates</td>
-</tr>
-</table>
+<ul>
+<li>C — Verse separator: usually a plain space or a <span class="romanized">parashah</span>
+break</li>
+<li>D — Verse label: usually just book, chapter, &amp; verse</li>
+<li>E — Verse text: strings and templates</li>
+</ul>
 <h3>Index 0 (Google column C): Verse separator</h3>
 <p>The list at index 0 indicates how this verse is separated from the preceding verse. Double
 underscore (<code>"__"</code>) is by far the most common value found in the list at index 0. It

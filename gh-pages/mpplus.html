@@ -206,20 +206,12 @@ a נוסח:</p>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h2>Verse
 structure</h2>
 <p>Each verse is a 3-element array corresponding to the C, D, and E columns of the Google Sheet.</p>
-<table class="center">
-<tr>
-<td>C</td>
-<td>Verse separator: usually a plain space or a <span class="romanized">parashah</span> break</td>
-</tr>
-<tr>
-<td>D</td>
-<td>Verse label: empty unless the verse carries extra metadata</td>
-</tr>
-<tr>
-<td>E</td>
-<td>Verse text: strings and template objects</td>
-</tr>
-</table>
+<ul>
+<li>C — Verse separator: usually a plain space or a <span class="romanized">parashah</span>
+break</li>
+<li>D — Verse label: empty unless the verse carries extra metadata</li>
+<li>E — Verse text: strings and template objects</li>
+</ul>
 <h3>C column (index 0): Verse separator</h3>
 <p>The C column usually contains what separates this verse from the previous verse. This is usually
 a space, represented as <code>["__"]</code>, but is sometimes something else, such as a פפ
