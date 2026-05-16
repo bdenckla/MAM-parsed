@@ -213,9 +213,10 @@ break</li>
 <li>E — Verse text: strings and templates</li>
 </ul>
 <h3>C column (index 0): Verse separator</h3>
-<p>The C column usually contains what separates this verse from the previous verse. This is usually
-a space, represented as <code>["__"]</code>, but is sometimes something else, such as a פפ
-<span class="romanized">parashah</span>-break template.</p>
+<p>The list at index 0 indicates how this verse is separated from the preceding verse. Double
+underscore (<code>"__"</code>) is by far the most common value found in the list at index 0. It
+indicates a plain space. Other common values are calls to the ר4 template, the פפ template, or the
+סס template. (See the Whitespace templates section below).</p>
 <h3>D column (index 1): Verse label</h3>
 <p>This is an array that contains a <bdi lang="hbo">מ:פסוק</bdi> template call when it has something
 interesting to say—typically when it carries extra metadata such as the <code>סדר</code> or
