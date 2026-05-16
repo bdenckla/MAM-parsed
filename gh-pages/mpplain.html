@@ -206,7 +206,7 @@ structure</h2>
 <li>C — Verse separator: usually a plain space or a <span class="romanized">parashah</span>
 break</li>
 <li>D — Verse label: usually just book, chapter, &amp; verse</li>
-<li>E — Verse text: strings and templates</li>
+<li>E — Verse proper: strings and templates</li>
 </ul>
 <h3>C column (index 0): Verse separator</h3>
 <p>Column C is an array indicating how this verse is separated from the preceding verse:</p>
@@ -221,13 +221,11 @@ Whitespace templates section below.)</li>
 </ul>
 <h3>D column (index 1): Verse label</h3>
 <p>Column D is an empty array for pseudo-verses. For normal verses, it is an array with exactly one
-element: either the <bdi lang="hbo">מ:פסוק</bdi> template directly, or <bdi lang="hbo">מ:פסוק</bdi>
-wrapped in a <bdi lang="hbo">נוסח</bdi> template. For example, here is the D column value for Job
-1:2:</p>
+element: either the <bdi lang="hbo">מ:פסוק</bdi> template or <bdi lang="hbo">מ:פסוק</bdi> wrapped in
+a <bdi lang="hbo">נוסח</bdi> template. For example, here is the D column value for Job 1:2:</p>
 <pre class="json-block"><span class="tok-punct">[{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק|איוב|א|ב&quot;</span><span class="tok-punct">}]</span><span class="tok-punct"></span></pre><h3>E
-column (index 2): Verse text</h3>
-<p>Column E is an array mixing strings (Hebrew text with cantillation marks) and templates. Example
-(Job 1:1):</p>
+column (index 2): Verse proper</h3>
+<p>Column E is an array mixing strings and templates. Example (Job 1:1):</p>
 <pre class="json-block"><span class="tok-punct">[</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-string heb pointed">&quot;אִ֛ישׁ הָיָ֥ה בְאֶֽרֶץ־ע֖וּץ אִיּ֣וֹב שְׁמ֑וֹ וְהָיָ֣ה&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">{</span><span class="tok-key">&quot;stmpl&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:לגרמיה-2&quot;</span><span class="tok-punct">},</span><span class="tok-punct"></span>
@@ -503,7 +501,7 @@ page</a>.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מודגש</bdi></td>
-<td class="wide-col">Bold text within the notes argument (param 2) of נוסח.</td>
+<td class="wide-col">Bold styling within the notes argument (param 2) of נוסח.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">ש</bdi></td>
@@ -543,7 +541,7 @@ text.</td>
 </table>
 <h2>Pseudo-verses (0 and תתת)</h2>
 <p>The <code>"0"</code> and <bdi lang="hbo">"תתת"</bdi> keys are pseudo-verses that contain
-Wiki-specific navigation and formatting markup, not biblical text. They can generally be skipped
+Wiki-specific navigation and formatting markup, not biblical content. They can generally be skipped
 when extracting verse content.</p>
 <ul>
 <li><code>"0"</code>: Contains <code>noinclude</code> tags, navigation templates, margin

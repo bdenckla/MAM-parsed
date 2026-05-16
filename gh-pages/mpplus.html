@@ -209,7 +209,7 @@ structure</h2>
 <li>C — Verse separator: usually a plain space or a <span class="romanized">parashah</span>
 break</li>
 <li>D — Verse label: empty unless more than book, chapter, and verse</li>
-<li>E — Verse text: strings and templates</li>
+<li>E — Verse proper: strings and templates</li>
 </ul>
 <h3>C column (index 0): Verse separator</h3>
 <p>Column C is an array indicating how this verse is separated from the preceding verse:</p>
@@ -220,16 +220,16 @@ space.</li>
 Whitespace templates section below.)</li>
 </ul>
 <h3>D column (index 1): Verse label</h3>
-<p>Column D is an array. When non-empty, it contains exactly one element: either a
-<bdi lang="hbo">מ:פסוק</bdi> template call directly, or <bdi lang="hbo">מ:פסוק</bdi> wrapped in a
-<bdi lang="hbo">נוסח</bdi> template—typically carrying extra data such as the <code>סדר</code> or
-<code>עלייה</code> parameter. When there is no such data, the array is empty. For example, here is
-the value for the D column for Job 1:1:</p>
+<p>Column D is an array that, if not empty, contains exactly one element: either a
+<bdi lang="hbo">מ:פסוק</bdi> template or <bdi lang="hbo">מ:פסוק</bdi> wrapped in a
+<bdi lang="hbo">נוסח</bdi> template.When Column D is not empty, its מ:פסוק call always has the
+<code>סדר</code> and/or <code>עלייה</code> parameter. When there is no such extra data, the array is
+empty. For example, here is the value for the D column for Job 1:1:</p>
 <pre class="json-block"><span class="tok-punct">[{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:פסוק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;איוב&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;3&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key heb">&quot;סדר&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;א&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}]</span><span class="tok-punct"></span></pre><h3>E
-column (index 2): Verse text</h3>
+column (index 2): Verse proper</h3>
 <p>Column E is an array containing a mix of strings and templates.</p>
 <h2>Selected templates</h2>
 <p>For English and Hebrew descriptions of most templates, see the
@@ -448,11 +448,11 @@ book name.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מ:קישור בהערה</bdi></td>
-<td class="wide-col">Hyperlink inside note text (within arg 2 of מ:הערה-2).</td>
+<td class="wide-col">Hyperlink inside note content (within arg 2 of מ:הערה-2).</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מ:קישור פנימי בהערה</bdi></td>
-<td class="wide-col">Same-page link inside note text (within arg 2 of מ:הערה-2).</td>
+<td class="wide-col">Same-page link inside note content (within arg 2 of מ:הערה-2).</td>
 </tr>
 </table>
 <h3>Note template</h3>
@@ -480,7 +480,7 @@ page</a>.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מודגש</bdi></td>
-<td class="wide-col">Bold text within the notes argument (param 2) of נוסח.</td>
+<td class="wide-col">Bold styling within the notes argument (param 2) of נוסח.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">ש</bdi></td>
