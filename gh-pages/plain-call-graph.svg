@@ -9,7 +9,7 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1162.75)">
 <title>template_call_graph</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-1162.75 658.5,-1162.75 658.5,4 -4,4"/>
-<text xml:space="preserve" text-anchor="middle" x="327.25" y="-5.75" font-family="Times New Roman,serif" font-size="10.00">מ:כפול, נוסח, ש have been discarded</text>
+<text xml:space="preserve" text-anchor="middle" x="327.25" y="-5.75" font-family="Times New Roman,serif" font-size="10.00">מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, נוסח, ש have been discarded</text>
 <!-- C -->
 <g id="node1" class="node">
 <title>C</title>
@@ -32,21 +32,21 @@
 <polygon fill="black" stroke="black" points="137.05,-111.9 146.19,-106.54 135.7,-105.03 137.05,-111.9"/>
 <text xml:space="preserve" text-anchor="middle" x="85.12" y="-132.7" font-family="Helvetica,sans-Serif" font-size="9.00">13315</text>
 </g>
-<!-- מ:קישור בהערה, … -->
+<!-- מ:ששש, … -->
 <g id="node7" class="node">
-<title>מ:קישור בהערה, …</title>
-<g id="a_node7"><a xlink:title="מ:קישור בהערה&#10;מ:ששש&#10;סס&#10;ססס&#10;פפ&#10;פפפ&#10;ר1">
-<polygon fill="none" stroke="black" points="238.38,-312.25 136.12,-312.25 136.12,-276.25 238.38,-276.25 238.38,-312.25"/>
-<text xml:space="preserve" text-anchor="middle" x="187.25" y="-289.23" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:קישור בהערה, …</text>
+<title>מ:ששש, …</title>
+<g id="a_node7"><a xlink:title="מ:ששש&#10;סס&#10;ססס&#10;פפ&#10;פפפ&#10;ר1">
+<polygon fill="none" stroke="black" points="219.62,-312.25 154.88,-312.25 154.88,-276.25 219.62,-276.25 219.62,-312.25"/>
+<text xml:space="preserve" text-anchor="middle" x="187.25" y="-289.23" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:ששש, …</text>
 </a>
 </g>
 </g>
-<!-- C&#45;&gt;מ:קישור בהערה, … -->
+<!-- C&#45;&gt;מ:ששש, … -->
 <g id="edge4" class="edge">
-<title>C&#45;&gt;מ:קישור בהערה, …</title>
-<path fill="none" stroke="black" d="M32.44,-190.47C38.23,-210.43 50.28,-242.02 72,-260.25 86.9,-272.76 106.27,-280.66 124.81,-285.66"/>
-<polygon fill="black" stroke="black" points="123.88,-289.04 134.43,-287.99 125.53,-282.23 123.88,-289.04"/>
-<text xml:space="preserve" text-anchor="middle" x="85.12" y="-277.47" font-family="Helvetica,sans-Serif" font-size="9.00">3523</text>
+<title>C&#45;&gt;מ:ששש, …</title>
+<path fill="none" stroke="black" d="M32.44,-190.47C38.23,-210.43 50.28,-242.02 72,-260.25 91.93,-276.98 119.85,-285.48 143.1,-289.79"/>
+<polygon fill="black" stroke="black" points="142.5,-293.24 152.93,-291.4 143.63,-286.33 142.5,-293.24"/>
+<text xml:space="preserve" text-anchor="middle" x="85.12" y="-277.47" font-family="Helvetica,sans-Serif" font-size="9.00">3522</text>
 </g>
 <!-- מ:הערה -->
 <g id="node9" class="node">
@@ -122,7 +122,7 @@
 <!-- ירח … יומו&#45;2, … -->
 <g id="node5" class="node">
 <title>ירח … יומו&#45;2, …</title>
-<g id="a_node5"><a xlink:title="ירח בן יומו&#45;2&#10;כתיב ולא קרי&#10;מ:אות מנוקדת&#10;מ:אות תלויה&#10;מ:גרש ותלישא גדולה&#10;מ:גרשיים ותלישא גדולה&#10;מ:טעם ומתג באות אחת&#10;מ:ירושלמה&#10;מ:נו״ן הפוכה&#10;מ:צינור&#10;מ:קישור פנימי בהערה&#10;קרי ולא כתיב&#10;ר0&#10;ר2&#10;ר3&#10;רווח בסוף שורה">
+<g id="a_node5"><a xlink:title="ירח בן יומו&#45;2&#10;כתיב ולא קרי&#10;מ:אות מנוקדת&#10;מ:אות תלויה&#10;מ:גרש ותלישא גדולה&#10;מ:גרשיים ותלישא גדולה&#10;מ:טעם ומתג באות אחת&#10;מ:ירושלמה&#10;מ:נו״ן הפוכה&#10;מ:צינור&#10;קרי ולא כתיב&#10;ר0&#10;ר2&#10;ר3&#10;רווח בסוף שורה">
 <polygon fill="none" stroke="black" points="230.88,-420.25 143.62,-420.25 143.62,-384.25 230.88,-384.25 230.88,-420.25"/>
 <text xml:space="preserve" text-anchor="middle" x="187.25" y="-397.23" font-family="SBL Hebrew,Helvetica" font-size="12.00">ירח … יומו&#45;2, …</text>
 </a>
@@ -133,14 +133,14 @@
 <title>E&#45;&gt;ירח … יומו&#45;2, …</title>
 <path fill="none" stroke="black" d="M28.74,-646.09C31.19,-595.59 40.71,-455.19 72,-423.75 87.57,-408.1 110.68,-401.9 132.05,-399.93"/>
 <polygon fill="black" stroke="black" points="132.07,-403.44 141.84,-399.34 131.65,-396.45 132.07,-403.44"/>
-<text xml:space="preserve" text-anchor="middle" x="85.12" y="-425.7" font-family="Helvetica,sans-Serif" font-size="9.00">1419</text>
+<text xml:space="preserve" text-anchor="middle" x="85.12" y="-425.7" font-family="Helvetica,sans-Serif" font-size="9.00">1416</text>
 </g>
-<!-- E&#45;&gt;מ:קישור בהערה, … -->
-<g id="edge21" class="edge">
-<title>E&#45;&gt;מ:קישור בהערה, …</title>
-<path fill="none" stroke="black" d="M28.91,-645.85C32.06,-587.54 43.89,-407.78 72,-357.75 83.5,-337.27 104.38,-322.97 125.18,-313.2"/>
-<polygon fill="black" stroke="black" points="126.51,-316.44 134.28,-309.23 123.71,-310.02 126.51,-316.44"/>
-<text xml:space="preserve" text-anchor="middle" x="85.12" y="-359.7" font-family="Helvetica,sans-Serif" font-size="9.00">5058</text>
+<!-- E&#45;&gt;מ:ששש, … -->
+<g id="edge22" class="edge">
+<title>E&#45;&gt;מ:ששש, …</title>
+<path fill="none" stroke="black" d="M28.91,-645.85C32.06,-587.54 43.89,-407.78 72,-357.75 86.98,-331.09 117.84,-314.9 143.72,-305.55"/>
+<polygon fill="black" stroke="black" points="144.64,-308.93 153.01,-302.43 142.41,-302.3 144.64,-308.93"/>
+<text xml:space="preserve" text-anchor="middle" x="85.12" y="-359.7" font-family="Helvetica,sans-Serif" font-size="9.00">5031</text>
 </g>
 <!-- שני טעמים באות אחת קמץ&#45;תחתון&#45;פתח&#45;עליון -->
 <g id="node8" class="node">
@@ -322,7 +322,7 @@
 <text xml:space="preserve" text-anchor="middle" x="397.38" y="-627.23" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:קמץ</text>
 </g>
 <!-- E&#45;&gt;מ:קמץ -->
-<g id="edge22" class="edge">
+<g id="edge21" class="edge">
 <title>E&#45;&gt;מ:קמץ</title>
 <path fill="none" stroke="black" d="M37.6,-645.87C45.36,-632.53 57.37,-614.86 72,-603.25 88.7,-590 95.35,-588.94 116.25,-584.75 216.44,-564.65 250.06,-565.74 345.5,-602.25 350.45,-604.14 355.47,-606.49 360.33,-609.04"/>
 <polygon fill="black" stroke="black" points="358.27,-611.89 368.71,-613.72 361.68,-605.78 358.27,-611.89"/>
