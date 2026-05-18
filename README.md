@@ -32,15 +32,15 @@ from the Google Sheet in the following ways:
     * custom XML tags
     * 0 (zero) and תתת (triple-tav) pseudo-verses
 
-For detailed documentation of the JSON file structures, see:
+For detailed documentation of the file structures, see:
 
-* [Reading MAM-parsed plain JSON](https://bdenckla.github.io/MAM-parsed/mpplain.html) — structure reference for the "plain" format
-* [Reading MAM-parsed plus JSON](https://bdenckla.github.io/MAM-parsed/mpplus.html) — structure reference for the "plus" format (differences from plain)
+* [Reading MAM-parsed plain](https://bdenckla.github.io/MAM-parsed/mpplain.html) — structure reference for the "plain" format
+* [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-parsed/mpplus.html) — structure reference for the "plus" format
 
 This Git repository also contains a toy sample application
 [`main_tmpl_survey_toy.py`](py-examples/main_tmpl_survey_toy.py),
 giving some sense of how the JSON files might be used.
-It writes its output to [`out/tmpl_survey_toy.json`](out/tmpl_survey_toy.json).
+It writes its output to [`py-examples-out/tmpl_survey_toy.json`](py-examples-out/tmpl_survey_toy.json).
 
 The format of these JSON files is not yet stable. I.e. if you write an application
 based on their format, be aware that their format is still subject to change at this time.
