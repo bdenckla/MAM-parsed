@@ -20,14 +20,14 @@
 <!-- כו״ק -->
 <g id="node2" class="node">
 <title>כו״ק</title>
-<polygon fill="none" stroke="black" points="168,-163.25 114,-163.25 114,-127.25 168,-127.25 168,-163.25"/>
+<polygon fill="#ffec8b" stroke="black" stroke-width="2.5" points="168,-163.25 114,-163.25 114,-127.25 168,-127.25 168,-163.25"/>
 <text xml:space="preserve" text-anchor="middle" x="141" y="-140.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">כו״ק</text>
 </g>
 <!-- E&#45;&gt;כו״ק -->
 <g id="edge1" class="edge">
 <title>E&#45;&gt;כו״ק</title>
-<path fill="none" stroke="black" d="M62.7,-145.25C74.77,-145.25 89.29,-145.25 102.46,-145.25"/>
-<polygon fill="black" stroke="black" points="102.09,-148.75 112.09,-145.25 102.09,-141.75 102.09,-148.75"/>
+<path fill="none" stroke="black" d="M62.7,-145.25C74.47,-145.25 88.55,-145.25 101.46,-145.25"/>
+<polygon fill="black" stroke="black" points="101.36,-148.75 111.36,-145.25 101.36,-141.75 101.36,-148.75"/>
 <text xml:space="preserve" text-anchor="middle" x="88.12" y="-147.2" font-family="Helvetica,sans-Serif" font-size="9.00">912</text>
 </g>
 <!-- גלגל&#45;2 -->
@@ -39,7 +39,7 @@
 <!-- כו״ק&#45;&gt;גלגל&#45;2 -->
 <g id="edge2" class="edge">
 <title>כו״ק&#45;&gt;גלגל&#45;2</title>
-<path fill="none" stroke="black" d="M157.09,-163.67C171.26,-180.58 193.38,-206.01 214.5,-226.25 214.87,-226.61 215.25,-226.97 215.63,-227.32"/>
+<path fill="none" stroke="black" d="M157.64,-164.33C171.83,-181.24 193.65,-206.27 214.5,-226.25 214.87,-226.61 215.25,-226.97 215.63,-227.32"/>
 <polygon fill="black" stroke="black" points="213.08,-229.74 222.87,-233.79 217.75,-224.52 213.08,-229.74"/>
 <text xml:space="preserve" text-anchor="middle" x="191.25" y="-209.13" font-family="Helvetica,sans-Serif" font-size="9.00">1</text>
 </g>
@@ -52,8 +52,8 @@
 <!-- כו״ק&#45;&gt;מ:אות&#45;ק -->
 <g id="edge3" class="edge">
 <title>כו״ק&#45;&gt;מ:אות&#45;ק</title>
-<path fill="none" stroke="black" d="M168.32,-158.74C181.27,-165.37 197.08,-173.48 211.15,-180.69"/>
-<polygon fill="black" stroke="black" points="209.18,-183.61 219.68,-185.06 212.38,-177.38 209.18,-183.61"/>
+<path fill="none" stroke="black" d="M169.14,-159.16C181.87,-165.68 197.23,-173.55 210.95,-180.58"/>
+<polygon fill="black" stroke="black" points="209.22,-183.63 219.71,-185.07 212.41,-177.4 209.22,-183.63"/>
 <text xml:space="preserve" text-anchor="middle" x="191.25" y="-174.2" font-family="Helvetica,sans-Serif" font-size="9.00">1</text>
 </g>
 <!-- מ:דחי -->
@@ -65,8 +65,8 @@
 <!-- כו״ק&#45;&gt;מ:דחי -->
 <g id="edge4" class="edge">
 <title>כו״ק&#45;&gt;מ:דחי</title>
-<path fill="none" stroke="black" d="M168.32,-145.25C180.89,-145.25 196.16,-145.25 209.92,-145.25"/>
-<polygon fill="black" stroke="black" points="209.51,-148.75 219.51,-145.25 209.51,-141.75 209.51,-148.75"/>
+<path fill="none" stroke="black" d="M169.14,-145.25C181.49,-145.25 196.32,-145.25 209.74,-145.25"/>
+<polygon fill="black" stroke="black" points="209.54,-148.75 219.54,-145.25 209.54,-141.75 209.54,-148.75"/>
 <text xml:space="preserve" text-anchor="middle" x="191.25" y="-147.2" font-family="Helvetica,sans-Serif" font-size="9.00">7</text>
 </g>
 <!-- מ:לגרמיה&#45;2 -->
@@ -78,8 +78,8 @@
 <!-- כו״ק&#45;&gt;מ:לגרמיה&#45;2 -->
 <g id="edge5" class="edge">
 <title>כו״ק&#45;&gt;מ:לגרמיה&#45;2</title>
-<path fill="none" stroke="black" d="M168.32,-131.76C179.18,-126.2 192.05,-119.6 204.22,-113.37"/>
-<polygon fill="black" stroke="black" points="205.57,-116.61 212.87,-108.93 202.37,-110.38 205.57,-116.61"/>
+<path fill="none" stroke="black" d="M169.14,-131.34C179.8,-125.88 192.3,-119.48 204.14,-113.41"/>
+<polygon fill="black" stroke="black" points="205.66,-116.56 212.96,-108.88 202.47,-110.33 205.66,-116.56"/>
 <text xml:space="preserve" text-anchor="middle" x="191.25" y="-123.43" font-family="Helvetica,sans-Serif" font-size="9.00">9</text>
 </g>
 <!-- מ:קמץ -->
@@ -91,7 +91,7 @@
 <!-- כו״ק&#45;&gt;מ:קמץ -->
 <g id="edge6" class="edge">
 <title>כו״ק&#45;&gt;מ:קמץ</title>
-<path fill="none" stroke="black" d="M157.09,-126.83C171.26,-109.92 193.38,-84.49 214.5,-64.25 214.87,-63.89 215.25,-63.53 215.63,-63.18"/>
+<path fill="none" stroke="black" d="M157.64,-126.17C171.83,-109.26 193.65,-84.23 214.5,-64.25 214.87,-63.89 215.25,-63.53 215.63,-63.18"/>
 <polygon fill="black" stroke="black" points="217.75,-65.98 222.87,-56.71 213.08,-60.76 217.75,-65.98"/>
 <text xml:space="preserve" text-anchor="middle" x="191.25" y="-94.06" font-family="Helvetica,sans-Serif" font-size="9.00">10</text>
 </g>

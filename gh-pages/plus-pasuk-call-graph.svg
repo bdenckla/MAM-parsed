@@ -19,14 +19,14 @@
 <!-- מ:פסוק -->
 <g id="node2" class="node">
 <title>מ:פסוק</title>
-<polygon fill="none" stroke="black" points="255,-63 201,-63 201,-27 255,-27 255,-63"/>
+<polygon fill="#ffec8b" stroke="black" stroke-width="2.5" points="255,-63 201,-63 201,-27 255,-27 255,-63"/>
 <text xml:space="preserve" text-anchor="middle" x="228" y="-39.98" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:פסוק</text>
 </g>
 <!-- D&#45;&gt;מ:פסוק -->
 <g id="edge1" class="edge">
 <title>D&#45;&gt;מ:פסוק</title>
-<path fill="none" stroke="black" d="M54.05,-46.38C59.95,-46.64 66.19,-46.87 72,-47 121.32,-48.12 133.68,-48.12 183,-47 185.18,-46.95 187.42,-46.89 189.68,-46.81"/>
-<polygon fill="black" stroke="black" points="189.58,-50.32 199.44,-46.44 189.31,-43.33 189.58,-50.32"/>
+<path fill="none" stroke="black" d="M54.05,-46.38C59.95,-46.64 66.19,-46.87 72,-47 121.32,-48.12 133.68,-48.12 183,-47 184.81,-46.96 186.65,-46.91 188.52,-46.85"/>
+<polygon fill="black" stroke="black" points="188.64,-50.35 198.5,-46.48 188.38,-43.35 188.64,-50.35"/>
 <text xml:space="preserve" text-anchor="middle" x="127.5" y="-49.79" font-family="Helvetica,sans-Serif" font-size="9.00">1381</text>
 </g>
 <!-- נוסח -->
@@ -51,15 +51,15 @@
 <!-- מ:פסוק&#45;&gt;מ:עלייה -->
 <g id="edge3" class="edge">
 <title>מ:פסוק&#45;&gt;מ:עלייה</title>
-<path fill="none" stroke="black" d="M255.45,-45C267.52,-45 282.04,-45 295.21,-45"/>
-<polygon fill="black" stroke="black" points="294.84,-48.5 304.84,-45 294.84,-41.5 294.84,-48.5"/>
+<path fill="none" stroke="black" d="M255.99,-45C267.85,-45 281.98,-45 294.87,-45"/>
+<polygon fill="black" stroke="black" points="294.74,-48.5 304.74,-45 294.74,-41.5 294.74,-48.5"/>
 <text xml:space="preserve" text-anchor="middle" x="280.88" y="-46.95" font-family="Helvetica,sans-Serif" font-size="9.00">532</text>
 </g>
 <!-- נוסח&#45;&gt;מ:פסוק -->
 <g id="edge4" class="edge">
 <title>נוסח&#45;&gt;מ:פסוק</title>
-<path fill="none" stroke="black" d="M154.9,-25.24C165.61,-28.17 178.17,-31.61 189.78,-34.8"/>
-<polygon fill="black" stroke="black" points="188.5,-38.08 199.07,-37.34 190.35,-31.33 188.5,-38.08"/>
+<path fill="none" stroke="black" d="M154.9,-25.24C165.32,-28.09 177.51,-31.43 188.86,-34.55"/>
+<polygon fill="black" stroke="black" points="187.81,-37.89 198.38,-37.16 189.67,-31.14 187.81,-37.89"/>
 <text xml:space="preserve" text-anchor="middle" x="177.75" y="-34.26" font-family="Helvetica,sans-Serif" font-size="9.00">46</text>
 </g>
 </g>

@@ -19,14 +19,14 @@
 <!-- מ:פסוק -->
 <g id="node3" class="node">
 <title>מ:פסוק</title>
-<polygon fill="none" stroke="black" points="255,-90 201,-90 201,-54 255,-54 255,-90"/>
+<polygon fill="#ffec8b" stroke="black" stroke-width="2.5" points="255,-90 201,-90 201,-54 255,-54 255,-90"/>
 <text xml:space="preserve" text-anchor="middle" x="228" y="-66.97" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:פסוק</text>
 </g>
 <!-- C&#45;&gt;מ:פסוק -->
 <g id="edge1" class="edge">
 <title>C&#45;&gt;מ:פסוק</title>
-<path fill="none" stroke="black" d="M154.9,-106.4C165.83,-101.19 178.69,-95.05 190.5,-89.42"/>
-<polygon fill="black" stroke="black" points="191.65,-92.75 199.16,-85.28 188.63,-86.43 191.65,-92.75"/>
+<path fill="none" stroke="black" d="M154.9,-106.4C165.54,-101.33 178.02,-95.37 189.57,-89.86"/>
+<polygon fill="black" stroke="black" points="190.96,-93.07 198.48,-85.61 187.95,-86.76 190.96,-93.07"/>
 <text xml:space="preserve" text-anchor="middle" x="177.75" y="-98.86" font-family="Helvetica,sans-Serif" font-size="9.00">81</text>
 </g>
 <!-- D -->
@@ -38,8 +38,8 @@
 <!-- D&#45;&gt;מ:פסוק -->
 <g id="edge2" class="edge">
 <title>D&#45;&gt;מ:פסוק</title>
-<path fill="none" stroke="black" d="M54.43,-48.59C89.09,-53.29 150.12,-61.57 189.54,-66.92"/>
-<polygon fill="black" stroke="black" points="188.9,-70.36 199.28,-68.24 189.84,-63.43 188.9,-70.36"/>
+<path fill="none" stroke="black" d="M54.43,-48.59C88.8,-53.25 149.11,-61.43 188.55,-66.78"/>
+<polygon fill="black" stroke="black" points="187.95,-70.23 198.33,-68.11 188.89,-63.3 187.95,-70.23"/>
 <text xml:space="preserve" text-anchor="middle" x="127.5" y="-64.01" font-family="Helvetica,sans-Serif" font-size="9.00">23688</text>
 </g>
 <!-- נוסח -->
@@ -64,15 +64,15 @@
 <!-- מ:פסוק&#45;&gt;מ:עלייה -->
 <g id="edge4" class="edge">
 <title>מ:פסוק&#45;&gt;מ:עלייה</title>
-<path fill="none" stroke="black" d="M255.45,-72C267.52,-72 282.04,-72 295.21,-72"/>
-<polygon fill="black" stroke="black" points="294.84,-75.5 304.84,-72 294.84,-68.5 294.84,-75.5"/>
+<path fill="none" stroke="black" d="M255.99,-72C267.85,-72 281.98,-72 294.87,-72"/>
+<polygon fill="black" stroke="black" points="294.74,-75.5 304.74,-72 294.74,-68.5 294.74,-75.5"/>
 <text xml:space="preserve" text-anchor="middle" x="280.88" y="-73.95" font-family="Helvetica,sans-Serif" font-size="9.00">532</text>
 </g>
 <!-- נוסח&#45;&gt;מ:פסוק -->
 <g id="edge5" class="edge">
 <title>נוסח&#45;&gt;מ:פסוק</title>
-<path fill="none" stroke="black" d="M154.87,-32.19C163.81,-37.03 173.85,-42.48 183,-47.5 185.48,-48.86 188.04,-50.27 190.61,-51.69"/>
-<polygon fill="black" stroke="black" points="188.74,-54.66 199.18,-56.45 192.13,-48.53 188.74,-54.66"/>
+<path fill="none" stroke="black" d="M154.87,-32.19C163.81,-37.03 173.85,-42.48 183,-47.5 185.33,-48.78 187.72,-50.1 190.14,-51.43"/>
+<polygon fill="black" stroke="black" points="188.27,-54.4 198.71,-56.19 191.66,-48.28 188.27,-54.4"/>
 <text xml:space="preserve" text-anchor="middle" x="177.75" y="-49.45" font-family="Helvetica,sans-Serif" font-size="9.00">46</text>
 </g>
 </g>

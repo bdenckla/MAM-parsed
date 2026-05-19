@@ -19,14 +19,14 @@
 <!-- מ:כפול -->
 <g id="node2" class="node">
 <title>מ:כפול</title>
-<polygon fill="none" stroke="black" points="159.75,-142.22 105.75,-142.22 105.75,-106.22 159.75,-106.22 159.75,-142.22"/>
+<polygon fill="#ffec8b" stroke="black" stroke-width="2.5" points="159.75,-142.22 105.75,-142.22 105.75,-106.22 159.75,-106.22 159.75,-142.22"/>
 <text xml:space="preserve" text-anchor="middle" x="132.75" y="-119.2" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:כפול</text>
 </g>
 <!-- E&#45;&gt;מ:כפול -->
 <g id="edge1" class="edge">
 <title>E&#45;&gt;מ:כפול</title>
-<path fill="none" stroke="black" d="M54.45,-124.22C66.52,-124.22 81.04,-124.22 94.21,-124.22"/>
-<polygon fill="black" stroke="black" points="93.84,-127.72 103.84,-124.22 93.84,-120.72 93.84,-127.72"/>
+<path fill="none" stroke="black" d="M54.45,-124.22C66.22,-124.22 80.3,-124.22 93.21,-124.22"/>
+<polygon fill="black" stroke="black" points="93.11,-127.72 103.11,-124.22 93.11,-120.72 93.11,-127.72"/>
 <text xml:space="preserve" text-anchor="middle" x="79.88" y="-126.17" font-family="Helvetica,sans-Serif" font-size="9.00">183</text>
 </g>
 <!-- מ:לגרמיה&#45;2 -->
@@ -38,7 +38,7 @@
 <!-- מ:כפול&#45;&gt;מ:לגרמיה&#45;2 -->
 <g id="edge2" class="edge">
 <title>מ:כפול&#45;&gt;מ:לגרמיה&#45;2</title>
-<path fill="none" stroke="black" d="M134.88,-142.55C137.59,-171.91 146.78,-229.88 177.75,-266.22 184.01,-273.57 192.29,-279.44 200.88,-284.07"/>
+<path fill="none" stroke="black" d="M134.92,-143.02C137.69,-172.53 146.95,-230.08 177.75,-266.22 184.01,-273.57 192.29,-279.44 200.88,-284.07"/>
 <polygon fill="black" stroke="black" points="199.12,-287.1 209.65,-288.29 202.16,-280.79 199.12,-287.1"/>
 <text xml:space="preserve" text-anchor="middle" x="185.62" y="-281.26" font-family="Helvetica,sans-Serif" font-size="9.00">14</text>
 </g>
@@ -51,7 +51,7 @@
 <!-- מ:כפול&#45;&gt;מ:פסק -->
 <g id="edge3" class="edge">
 <title>מ:כפול&#45;&gt;מ:פסק</title>
-<path fill="none" stroke="black" d="M154.21,-142.48C169.35,-155.42 190.83,-172.65 211.5,-185.22 244.95,-205.58 285.98,-223.57 314.99,-235.25"/>
+<path fill="none" stroke="black" d="M155.19,-143.31C170.26,-156.15 191.27,-172.92 211.5,-185.22 244.95,-205.58 285.98,-223.57 314.99,-235.25"/>
 <polygon fill="black" stroke="black" points="313.49,-238.42 324.08,-238.86 316.07,-231.92 313.49,-238.42"/>
 <text xml:space="preserve" text-anchor="middle" x="245.38" y="-221.47" font-family="Helvetica,sans-Serif" font-size="9.00">7</text>
 </g>
@@ -64,7 +64,7 @@
 <!-- מ:כפול&#45;&gt;מ:קמץ -->
 <g id="edge4" class="edge">
 <title>מ:כפול&#45;&gt;מ:קמץ</title>
-<path fill="none" stroke="black" d="M160.11,-116.89C194.3,-108.39 255.74,-96.6 307.75,-105.22 310.05,-105.61 312.39,-106.09 314.74,-106.65"/>
+<path fill="none" stroke="black" d="M160.7,-116.74C195.01,-108.26 256.04,-96.65 307.75,-105.22 310.05,-105.61 312.39,-106.09 314.74,-106.65"/>
 <polygon fill="black" stroke="black" points="313.56,-109.96 324.13,-109.33 315.47,-103.22 313.56,-109.96"/>
 <text xml:space="preserve" text-anchor="middle" x="245.38" y="-108.37" font-family="Helvetica,sans-Serif" font-size="9.00">4</text>
 </g>
@@ -77,8 +77,8 @@
 <!-- מ:כפול&#45;&gt;נוסח -->
 <g id="edge5" class="edge">
 <title>מ:כפול&#45;&gt;נוסח</title>
-<path fill="none" stroke="black" d="M160.25,-132.37C174.34,-136.7 191.9,-142.09 207.32,-146.84"/>
-<polygon fill="black" stroke="black" points="206.06,-150.11 216.65,-149.7 208.12,-143.42 206.06,-150.11"/>
+<path fill="none" stroke="black" d="M160.81,-132.54C174.81,-136.84 192.11,-142.16 207.34,-146.84"/>
+<polygon fill="black" stroke="black" points="205.94,-150.07 216.53,-149.66 208,-143.38 205.94,-150.07"/>
 <text xml:space="preserve" text-anchor="middle" x="185.62" y="-144.19" font-family="Helvetica,sans-Serif" font-size="9.00">104</text>
 </g>
 <!-- סס -->
@@ -90,7 +90,7 @@
 <!-- מ:כפול&#45;&gt;סס -->
 <g id="edge6" class="edge">
 <title>מ:כפול&#45;&gt;סס</title>
-<path fill="none" stroke="black" d="M147.73,-105.82C155.73,-96.22 166.41,-84.83 177.75,-76.72 186.75,-70.3 197.36,-64.82 207.45,-60.4"/>
+<path fill="none" stroke="black" d="M148.12,-105.36C156.07,-95.86 166.59,-84.69 177.75,-76.72 186.75,-70.3 197.36,-64.82 207.45,-60.4"/>
 <polygon fill="black" stroke="black" points="208.77,-63.64 216.68,-56.59 206.1,-57.17 208.77,-63.64"/>
 <text xml:space="preserve" text-anchor="middle" x="185.62" y="-78.67" font-family="Helvetica,sans-Serif" font-size="9.00">18</text>
 </g>
@@ -103,7 +103,7 @@
 <!-- מ:כפול&#45;&gt;פפ -->
 <g id="edge7" class="edge">
 <title>מ:כפול&#45;&gt;פפ</title>
-<path fill="none" stroke="black" d="M139.96,-105.74C150.11,-78.89 173.07,-30.08 211.5,-9.72 243.48,7.21 285.05,-1.77 314.61,-12.47"/>
+<path fill="none" stroke="black" d="M140.13,-105.29C150.37,-78.35 173.28,-29.97 211.5,-9.72 243.48,7.21 285.05,-1.77 314.61,-12.47"/>
 <polygon fill="black" stroke="black" points="313.31,-15.72 323.89,-16.06 315.83,-9.19 313.31,-15.72"/>
 <text xml:space="preserve" text-anchor="middle" x="245.38" y="-11.67" font-family="Helvetica,sans-Serif" font-size="9.00">2</text>
 </g>
