@@ -34,8 +34,8 @@ from the Google Sheet in the following ways:
 
 For detailed documentation of the file structures, see:
 
-* [Reading MAM-parsed plain](https://bdenckla.github.io/MAM-parsed/mpplain.html) — structure reference for the "plain" format
-* [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-parsed/mpplus.html) — structure reference for the "plus" format
+* [Reading MAM-parsed plain](https://bdenckla.github.io/MAM-parsed/plain/html/mpplain.html) — structure reference for the "plain" format
+* [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
 
 This Git repository also contains a toy sample application
 [`main_tmpl_survey_toy.py`](py-examples/main_tmpl_survey_toy.py),
