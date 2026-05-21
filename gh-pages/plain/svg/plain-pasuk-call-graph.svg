@@ -42,15 +42,15 @@
 <polygon fill="black" stroke="black" points="187.95,-70.23 198.33,-68.11 188.89,-63.3 187.95,-70.23"/>
 <text xml:space="preserve" text-anchor="middle" x="127.5" y="-64.01" font-family="Helvetica,sans-Serif" font-size="9.00">23688</text>
 </g>
-<!-- נוסח -->
+<!-- נוסח@1 -->
 <g id="node4" class="node">
-<title>נוסח</title>
+<title>נוסח@1</title>
 <polygon fill="none" stroke="black" points="154.5,-36 100.5,-36 100.5,0 154.5,0 154.5,-36"/>
-<text xml:space="preserve" text-anchor="middle" x="127.5" y="-12.97" font-family="SBL Hebrew,Helvetica" font-size="12.00">נוסח</text>
+<text xml:space="preserve" text-anchor="middle" x="127.5" y="-12.97" font-family="SBL Hebrew,Helvetica" font-size="12.00">נוסח@1</text>
 </g>
-<!-- D&#45;&gt;נוסח -->
+<!-- D&#45;&gt;נוסח@1 -->
 <g id="edge3" class="edge">
-<title>D&#45;&gt;נוסח</title>
+<title>D&#45;&gt;נוסח@1</title>
 <path fill="none" stroke="black" d="M54.4,-37.76C65.11,-34.83 77.67,-31.39 89.28,-28.2"/>
 <polygon fill="black" stroke="black" points="89.85,-31.67 98.57,-25.66 88,-24.92 89.85,-31.67"/>
 <text xml:space="preserve" text-anchor="middle" x="77.25" y="-34.26" font-family="Helvetica,sans-Serif" font-size="9.00">46</text>
@@ -68,9 +68,9 @@
 <polygon fill="black" stroke="black" points="294.74,-75.5 304.74,-72 294.74,-68.5 294.74,-75.5"/>
 <text xml:space="preserve" text-anchor="middle" x="280.88" y="-73.95" font-family="Helvetica,sans-Serif" font-size="9.00">532</text>
 </g>
-<!-- נוסח&#45;&gt;מ:פסוק -->
+<!-- נוסח@1&#45;&gt;מ:פסוק -->
 <g id="edge5" class="edge">
-<title>נוסח&#45;&gt;מ:פסוק</title>
+<title>נוסח@1&#45;&gt;מ:פסוק</title>
 <path fill="none" stroke="black" d="M154.87,-32.19C163.81,-37.03 173.85,-42.48 183,-47.5 185.33,-48.78 187.72,-50.1 190.14,-51.43"/>
 <polygon fill="black" stroke="black" points="188.27,-54.4 198.71,-56.19 191.66,-48.28 188.27,-54.4"/>
 <text xml:space="preserve" text-anchor="middle" x="177.75" y="-49.45" font-family="Helvetica,sans-Serif" font-size="9.00">46</text>
