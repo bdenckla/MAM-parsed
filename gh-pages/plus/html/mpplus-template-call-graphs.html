@@ -3,11 +3,63 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Plus template call graphs</title>
+<title>Plus template nesting</title>
 <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<h1>Plus template call graphs</h1>
+<h1>Plus template nesting</h1>
+<h2>Normal order</h2>
+<p>MAM-parsed-plus imposes a somewhat arbitrary order on the nesting of templates.</p>
+<p>Although the order is somewhat arbitrary, it is important that there be such an order, to make
+the data easier to use. As with many standards, the existence of the standard is more important than
+the details of the standard.</p>
+<p>The order is a partial order on templates. In other words, templates are ordered by equivalence
+classes.</p>
+<p>These equivalence classes can also be thought of as ranks. Templates within an equivalence class
+are exclusive of each other, i.e. can never be nested within each other, so there is no need to
+define an ordering amongst them.</p>
+<p>Here are the ranks for column E, with symbolic categories that align with sections in the
+<a href="mpplus.html">main mpplus document</a>.</p>
+<table class="center">
+<tr>
+<th>Symbolic category</th>
+<th>Templates</th>
+</tr>
+<tr>
+<td>choice</td>
+<td><bdi lang="hbo">מ:כפול</bdi></td>
+</tr>
+<tr>
+<td>doc-note</td>
+<td><bdi lang="hbo">נוסח</bdi></td>
+</tr>
+<tr>
+<td>scrdff-note</td>
+<td><bdi lang="hbo">מ:הערה-2</bdi></td>
+</tr>
+<tr>
+<td><span class="romanized">ketiv/qere</span></td>
+<td><bdi lang="hbo">כו״ק, כתיב ולא קרי, מ:כו״ק מיוחד, מ:קו״כ-אם-2, קו״כ, קרי ולא כתיב</bdi></td>
+</tr>
+<tr>
+<td>choice</td>
+<td><bdi lang="hbo">מ:קמץ</bdi></td>
+</tr>
+<tr>
+<td>choice</td>
+<td><bdi lang="hbo">מ:דחי, מ:צינור</bdi></td>
+</tr>
+<tr>
+<td>word-with-special-letter</td>
+<td><bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi></td>
+</tr>
+<tr>
+<td>misc. terminal</td>
+<td><bdi lang="hbo">מ:אות תלויה, מ:אות-ג, מ:אות-ק, מ:לגרמיה-2, מ:מקף אפור, מ:נו״ן הפוכה, מ:פסק,
+מ:קישור בהערה, מ:קישור פנימי בהערה, מודגש, סס, ססס, פפ, פפפ, ר0, ר1, ר2, ר3, ר4, ש</bdi></td>
+</tr>
+</table>
+<h2>Call graphs</h2>
 <p>These call graphs show which plus templates can appear inside other templates.</p>
 <p>Each directed edge A → B means template B appears in an argument to template A.</p>
 <p>The full graph omits some templates to keep it more readable. The templates omitted include נוסח
