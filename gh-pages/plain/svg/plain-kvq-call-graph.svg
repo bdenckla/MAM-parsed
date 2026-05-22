@@ -11,89 +11,76 @@
 <title>template_call_graph</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-275.25 294.5,-275.25 294.5,4 -4,4"/>
 <text xml:space="preserve" text-anchor="middle" x="145.25" y="-5.75" font-family="Times New Roman,serif" font-size="10.00">מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, נוסח, ש have been discarded</text>
-<!-- E -->
-<g id="node1" class="node">
-<title>E</title>
-<polygon fill="none" stroke="black" stroke-width="2" points="64.88,-163.25 10.88,-163.25 10.88,-127.25 64.88,-127.25 64.88,-163.25"/>
-<text xml:space="preserve" text-anchor="middle" x="37.88" y="-140.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">E</text>
-</g>
 <!-- כו״ק -->
-<g id="node2" class="node">
+<g id="node1" class="node">
 <title>כו״ק</title>
-<polygon fill="#ffec8b" stroke="black" stroke-width="2.5" points="165.38,-163.25 111.38,-163.25 111.38,-127.25 165.38,-127.25 165.38,-163.25"/>
-<text xml:space="preserve" text-anchor="middle" x="138.38" y="-140.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">כו״ק</text>
-</g>
-<!-- E&#45;&gt;כו״ק -->
-<g id="edge1" class="edge">
-<title>E&#45;&gt;כו״ק</title>
-<path fill="none" stroke="black" d="M65.27,-145.25C75.59,-145.25 87.63,-145.25 98.88,-145.25"/>
-<polygon fill="black" stroke="black" points="98.71,-148.75 108.71,-145.25 98.71,-141.75 98.71,-148.75"/>
-<text xml:space="preserve" text-anchor="middle" x="88.12" y="-147.2" font-family="Helvetica,sans-Serif" font-size="9.00">28</text>
+<polygon fill="#ffec8b" stroke="black" stroke-width="2.5" points="115.12,-163.25 61.12,-163.25 61.12,-127.25 115.12,-127.25 115.12,-163.25"/>
+<text xml:space="preserve" text-anchor="middle" x="88.12" y="-140.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">כו״ק</text>
 </g>
 <!-- גלגל&#45;2 -->
-<g id="node3" class="node">
+<g id="node2" class="node">
 <title>גלגל&#45;2</title>
-<polygon fill="none" stroke="black" points="272.75,-271.25 218.75,-271.25 218.75,-235.25 272.75,-235.25 272.75,-271.25"/>
-<text xml:space="preserve" text-anchor="middle" x="245.75" y="-248.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">גלגל&#45;2</text>
+<polygon fill="none" stroke="black" points="222.5,-271.25 168.5,-271.25 168.5,-235.25 222.5,-235.25 222.5,-271.25"/>
+<text xml:space="preserve" text-anchor="middle" x="195.5" y="-248.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">גלגל&#45;2</text>
 </g>
 <!-- כו״ק&#45;&gt;גלגל&#45;2 -->
-<g id="edge2" class="edge">
+<g id="edge1" class="edge">
 <title>כו״ק&#45;&gt;גלגל&#45;2</title>
-<path fill="none" stroke="black" d="M155.02,-164.33C169.2,-181.24 191.03,-206.27 211.88,-226.25 212.25,-226.61 212.63,-226.97 213.01,-227.32"/>
-<polygon fill="black" stroke="black" points="210.46,-229.74 220.25,-233.79 215.12,-224.52 210.46,-229.74"/>
-<text xml:space="preserve" text-anchor="middle" x="188.62" y="-209.13" font-family="Helvetica,sans-Serif" font-size="9.00">1</text>
+<path fill="none" stroke="black" d="M104.77,-164.33C118.95,-181.24 140.78,-206.27 161.62,-226.25 162,-226.61 162.38,-226.97 162.76,-227.32"/>
+<polygon fill="black" stroke="black" points="160.21,-229.74 170,-233.79 164.87,-224.52 160.21,-229.74"/>
+<text xml:space="preserve" text-anchor="middle" x="138.38" y="-209.13" font-family="Helvetica,sans-Serif" font-size="9.00">1</text>
 </g>
 <!-- מ:אות&#45;ק -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>מ:אות&#45;ק</title>
-<polygon fill="none" stroke="black" points="272.75,-217.25 218.75,-217.25 218.75,-181.25 272.75,-181.25 272.75,-217.25"/>
-<text xml:space="preserve" text-anchor="middle" x="245.75" y="-194.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:אות&#45;ק</text>
+<polygon fill="none" stroke="black" points="222.5,-217.25 168.5,-217.25 168.5,-181.25 222.5,-181.25 222.5,-217.25"/>
+<text xml:space="preserve" text-anchor="middle" x="195.5" y="-194.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:אות&#45;ק</text>
 </g>
 <!-- כו״ק&#45;&gt;מ:אות&#45;ק -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>כו״ק&#45;&gt;מ:אות&#45;ק</title>
-<path fill="none" stroke="black" d="M166.51,-159.16C179.24,-165.68 194.6,-173.55 208.33,-180.58"/>
-<polygon fill="black" stroke="black" points="206.59,-183.63 217.09,-185.07 209.78,-177.4 206.59,-183.63"/>
-<text xml:space="preserve" text-anchor="middle" x="188.62" y="-174.2" font-family="Helvetica,sans-Serif" font-size="9.00">1</text>
+<path fill="none" stroke="black" d="M116.26,-159.16C128.99,-165.68 144.35,-173.55 158.08,-180.58"/>
+<polygon fill="black" stroke="black" points="156.34,-183.63 166.84,-185.07 159.53,-177.4 156.34,-183.63"/>
+<text xml:space="preserve" text-anchor="middle" x="138.38" y="-174.2" font-family="Helvetica,sans-Serif" font-size="9.00">1</text>
 </g>
 <!-- מ:דחי -->
-<g id="node5" class="node">
+<g id="node4" class="node">
 <title>מ:דחי</title>
-<polygon fill="none" stroke="black" points="272.75,-163.25 218.75,-163.25 218.75,-127.25 272.75,-127.25 272.75,-163.25"/>
-<text xml:space="preserve" text-anchor="middle" x="245.75" y="-140.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:דחי</text>
+<polygon fill="none" stroke="black" points="222.5,-163.25 168.5,-163.25 168.5,-127.25 222.5,-127.25 222.5,-163.25"/>
+<text xml:space="preserve" text-anchor="middle" x="195.5" y="-140.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:דחי</text>
 </g>
 <!-- כו״ק&#45;&gt;מ:דחי -->
-<g id="edge4" class="edge">
+<g id="edge3" class="edge">
 <title>כו״ק&#45;&gt;מ:דחי</title>
-<path fill="none" stroke="black" d="M166.51,-145.25C178.87,-145.25 193.7,-145.25 207.11,-145.25"/>
-<polygon fill="black" stroke="black" points="206.92,-148.75 216.92,-145.25 206.92,-141.75 206.92,-148.75"/>
-<text xml:space="preserve" text-anchor="middle" x="188.62" y="-147.2" font-family="Helvetica,sans-Serif" font-size="9.00">7</text>
+<path fill="none" stroke="black" d="M116.26,-145.25C128.62,-145.25 143.45,-145.25 156.86,-145.25"/>
+<polygon fill="black" stroke="black" points="156.67,-148.75 166.67,-145.25 156.67,-141.75 156.67,-148.75"/>
+<text xml:space="preserve" text-anchor="middle" x="138.38" y="-147.2" font-family="Helvetica,sans-Serif" font-size="9.00">7</text>
 </g>
 <!-- מ:לגרמיה&#45;2 -->
-<g id="node6" class="node">
+<g id="node5" class="node">
 <title>מ:לגרמיה&#45;2</title>
-<polygon fill="none" stroke="black" points="279.62,-109.25 211.88,-109.25 211.88,-73.25 279.62,-73.25 279.62,-109.25"/>
-<text xml:space="preserve" text-anchor="middle" x="245.75" y="-86.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:לגרמיה&#45;2</text>
+<polygon fill="none" stroke="black" points="229.38,-109.25 161.62,-109.25 161.62,-73.25 229.38,-73.25 229.38,-109.25"/>
+<text xml:space="preserve" text-anchor="middle" x="195.5" y="-86.22" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:לגרמיה&#45;2</text>
 </g>
 <!-- כו״ק&#45;&gt;מ:לגרמיה&#45;2 -->
-<g id="edge5" class="edge">
+<g id="edge4" class="edge">
 <title>כו״ק&#45;&gt;מ:לגרמיה&#45;2</title>
-<path fill="none" stroke="black" d="M166.51,-131.34C177.17,-125.88 189.67,-119.48 201.51,-113.41"/>
-<polygon fill="black" stroke="black" points="203.04,-116.56 210.34,-108.88 199.84,-110.33 203.04,-116.56"/>
-<text xml:space="preserve" text-anchor="middle" x="188.62" y="-123.43" font-family="Helvetica,sans-Serif" font-size="9.00">9</text>
+<path fill="none" stroke="black" d="M116.26,-131.34C126.92,-125.88 139.42,-119.48 151.26,-113.41"/>
+<polygon fill="black" stroke="black" points="152.79,-116.56 160.09,-108.88 149.59,-110.33 152.79,-116.56"/>
+<text xml:space="preserve" text-anchor="middle" x="138.38" y="-123.43" font-family="Helvetica,sans-Serif" font-size="9.00">9</text>
 </g>
 <!-- מ:קמץ -->
-<g id="node7" class="node">
+<g id="node6" class="node">
 <title>מ:קמץ</title>
-<polygon fill="none" stroke="black" points="272.75,-55.25 218.75,-55.25 218.75,-19.25 272.75,-19.25 272.75,-55.25"/>
-<text xml:space="preserve" text-anchor="middle" x="245.75" y="-32.23" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:קמץ</text>
+<polygon fill="none" stroke="black" points="222.5,-55.25 168.5,-55.25 168.5,-19.25 222.5,-19.25 222.5,-55.25"/>
+<text xml:space="preserve" text-anchor="middle" x="195.5" y="-32.23" font-family="SBL Hebrew,Helvetica" font-size="12.00">מ:קמץ</text>
 </g>
 <!-- כו״ק&#45;&gt;מ:קמץ -->
-<g id="edge6" class="edge">
+<g id="edge5" class="edge">
 <title>כו״ק&#45;&gt;מ:קמץ</title>
-<path fill="none" stroke="black" d="M155.02,-126.17C169.2,-109.26 191.03,-84.23 211.88,-64.25 212.25,-63.89 212.63,-63.53 213.01,-63.18"/>
-<polygon fill="black" stroke="black" points="215.12,-65.98 220.25,-56.71 210.46,-60.76 215.12,-65.98"/>
-<text xml:space="preserve" text-anchor="middle" x="188.62" y="-94.06" font-family="Helvetica,sans-Serif" font-size="9.00">10</text>
+<path fill="none" stroke="black" d="M104.77,-126.17C118.95,-109.26 140.78,-84.23 161.62,-64.25 162,-63.89 162.38,-63.53 162.76,-63.18"/>
+<polygon fill="black" stroke="black" points="164.87,-65.98 170,-56.71 160.21,-60.76 164.87,-65.98"/>
+<text xml:space="preserve" text-anchor="middle" x="138.38" y="-94.06" font-family="Helvetica,sans-Serif" font-size="9.00">10</text>
 </g>
 </g>
 </svg>
