@@ -20,6 +20,7 @@ body.wide {
 em { font-style: normal; font-weight: bold; }
 span.romanized { font-style: italic; }
 *[lang="he"] span.book-title { font-weight: bold; font-style: normal; }
+*[lang="hbo"] { direction: rtl; }
 span.book-title { font-style: italic; }
 abbr[title] {
     text-decoration: none;
