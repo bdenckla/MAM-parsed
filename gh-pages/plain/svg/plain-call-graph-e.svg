@@ -10,7 +10,7 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 493.25)">
 <title>template_call_graph</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-493.25 500,-493.25 500,4 -4,4"/>
-<text xml:space="preserve" text-anchor="middle" x="248" y="-5.75" font-family="Times New Roman,serif" font-size="10.00">מ:כפול, מ:קישור בהערה, מ:קישור פנימי בהערה, נוסח, ש have been discarded</text>
+<text xml:space="preserve" text-anchor="middle" x="248" y="-5.75" font-family="Times New Roman,serif" font-size="10.00">מ:כפול, נוסח have been discarded</text>
 <!-- מ:כל … מרכא, … -->
 <g id="node1" class="node">
 <title>מ:כל … מרכא, …</title>
