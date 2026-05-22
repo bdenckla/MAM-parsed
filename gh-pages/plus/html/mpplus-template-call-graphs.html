@@ -9,7 +9,7 @@
 <body>
 <h1>Plus template nesting</h1>
 <h2>Normal order</h2>
-<p>MAM-parsed-plus imposes a somewhat arbitrary order on the nesting of templates.</p>
+<p>MAM-parsed-plus imposes an order on the nesting of templates.</p>
 <p>Although the order is somewhat arbitrary, it is important that there be such an order, to make
 the data easier to use. As with many standards, the existence of the standard is more important than
 the details of the standard.</p>
@@ -63,7 +63,9 @@ define an ordering amongst them.</p>
 </tr>
 </table>
 <h2>Call graphs</h2>
-<p>These call graphs show which plus templates can appear inside other templates.</p>
+<p>The rest of this document shows call graphs. These graphs show which templates appear inside
+other templates. Whereas the normal order shown above constrains the possible template nestings, the
+call graphs show the actual nestings that occur in practice.</p>
 <p>Each directed edge A → B means template B appears in an argument to template A.</p>
 <p>The full graph omits some templates to keep it more readable. The templates omitted include נוסח
 and מ:כפול. A full list of templates omitted appears on the diagram itself.</p>
