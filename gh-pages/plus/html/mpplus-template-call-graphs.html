@@ -71,16 +71,32 @@ graphs show the actual nestings that occur in practice.</p>
 The edge is labeled with the number of times this nesting occurs.</p>
 <h2>Full call graph (E)</h2>
 <p>The full graph omits the נוסח and מ:כפול templates. This is to keep it more readable.</p>
-<object type="image/svg+xml" data="../svg/plus-call-graph-e.svg">Full call graph E (SVG not supported)</object><p>Let’s
-look at the edge from “<bdi lang="hbo">כו״ק, …</bdi>” to <bdi lang="hbo">מ:קמץ</bdi> above.</p>
-<ul>
-<li>The notation “<bdi lang="hbo">כו״ק, …</bdi>” is a shorthand for a group of three
+<object type="image/svg+xml" data="../svg/plus-call-graph-e.svg">Full call graph E (SVG not supported)</object><p>To
+better understand the graph above, let’s look at one particular edge in the graph. Let’s look at the
+edge from “<bdi lang="hbo">כו״ק, …</bdi>” to <bdi lang="hbo">מ:קמץ</bdi>.</p>
+<p>The notation “<bdi lang="hbo">כו״ק, …</bdi>” is a shorthand for a group of three
 <span class="romanized">ketiv/qere</span> templates. You can see the list of all three by hovering
-over the node in the SVG graph.</li>
-<li>The “12” edge from “<bdi lang="hbo">כו״ק, …</bdi>” to <bdi lang="hbo">מ:קמץ</bdi> indicates that
-12 times in <abbr class="small-caps">MAM</abbr>-parsed-plus, a call to one of those three templates
-contains a call to <bdi lang="hbo">מ:קמץ</bdi>.</li>
+over the node in the SVG graph:<ul>
+<li>כו״ק</li>
+<li>מ:קו״כ-אם-2</li>
+<li>קו״כ</li>
 </ul>
+</p>
+<p>The “12” edge from “<bdi lang="hbo">כו״ק, …</bdi>” to <bdi lang="hbo">מ:קמץ</bdi> indicates that
+12 times in <abbr class="small-caps">MAM</abbr>-parsed-plus, a call to one of those three templates
+contains a call to <bdi lang="hbo">מ:קמץ</bdi>.</p>
+<p>Not shown on the graph is how many times each those three templates contains a call to
+<bdi lang="hbo">מ:קמץ</bdi>. It happens to break down like this:<ul>
+<li>10 cases where <bdi lang="hbo">כו״ק</bdi> contains <bdi lang="hbo">מ:קמץ</bdi></li>
+<li>2 cases where <bdi lang="hbo">מ:קו״כ-אם-2</bdi> contains <bdi lang="hbo">מ:קמץ</bdi></li>
+<li>0 cases where <bdi lang="hbo">קו״כ</bdi> contains <bdi lang="hbo">מ:קמץ</bdi></li>
+</ul>
+</p>
+<p>Here are two concrete Wikitext examples:<ul>
+<li>1 Sam 28:8 <bdi lang="hbo">{{כו״ק|קסומי|{{מ:קמץ|...}}}}</bdi></li>
+<li>Gen 13:3 <bdi lang="hbo">{{מ:קו״כ-אם-2|{{מ:קמץ|...}}|אהלה|{{מ:קמץ|...}}|...}}</bdi></li>
+</ul>
+</p>
 <h2>Focused call graph: dualcant</h2>
 <object type="image/svg+xml" data="../svg/plus-dualcant-call-graph.svg">Dualcant call graph (SVG not supported)</object><h2>Focused
 call graph: docnote (E)</h2>
