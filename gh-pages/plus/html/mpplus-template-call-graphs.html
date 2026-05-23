@@ -67,8 +67,8 @@ define an ordering amongst them.</p>
 templates. Whereas the normal order shown above constrains the possible template nestings, the call
 graphs show the actual nestings that occur in practice.</p>
 <p>The presence of a directed edge A → B indicates that, somewhere in
-<abbr class="small-caps">MAM</abbr>-parsed-plus, a call to template A contains a call to template B.
-The edge is labeled with the number of times this nesting occurs.</p>
+<abbr class="small-caps">MAM</abbr>-parsed-plus, a call to template B nests within a call to
+template A. The edge is labeled with the number of times this nesting occurs.</p>
 <h2>Full call graph (E)</h2>
 <p>The full graph omits the נוסח and מ:כפול templates. This is to keep it more readable.</p>
 <object type="image/svg+xml" data="../svg/plus-call-graph-e.svg">Full call graph E (SVG not supported)</object><p>To
@@ -83,13 +83,13 @@ over the node in the SVG graph:<ul>
 </ul>
 </p>
 <p>The “12” edge from “<bdi lang="hbo">כו״ק, …</bdi>” to <bdi lang="hbo">מ:קמץ</bdi> indicates that
-12 times in <abbr class="small-caps">MAM</abbr>-parsed-plus, a call to one of those three templates
-contains a call to <bdi lang="hbo">מ:קמץ</bdi>.</p>
-<p>Not shown on the graph is how many times each those three templates contains a call to
-<bdi lang="hbo">מ:קמץ</bdi>. It happens to break down like this:<ul>
-<li>10 cases where <bdi lang="hbo">כו״ק</bdi> contains <bdi lang="hbo">מ:קמץ</bdi></li>
-<li>2 cases where <bdi lang="hbo">מ:קו״כ-אם-2</bdi> contains <bdi lang="hbo">מ:קמץ</bdi></li>
-<li>0 cases where <bdi lang="hbo">קו״כ</bdi> contains <bdi lang="hbo">מ:קמץ</bdi></li>
+12 times in <abbr class="small-caps">MAM</abbr>-parsed-plus, a call to <bdi lang="hbo">מ:קמץ</bdi>
+nests within a call to one of those three templates.</p>
+<p>Not shown on the graph is how many times <bdi lang="hbo">מ:קמץ</bdi> nests within a call to each
+of those three templates. It happens to break down like this:<ul>
+<li>10 cases where <bdi lang="hbo">מ:קמץ</bdi> nests within <bdi lang="hbo">כו״ק</bdi></li>
+<li>2 cases where <bdi lang="hbo">מ:קמץ</bdi> nests within <bdi lang="hbo">מ:קו״כ-אם-2</bdi></li>
+<li>0 cases where <bdi lang="hbo">מ:קמץ</bdi> nests within <bdi lang="hbo">קו״כ</bdi></li>
 </ul>
 </p>
 <p>Here are two concrete Wikitext examples:<ul>
@@ -97,6 +97,9 @@ contains a call to <bdi lang="hbo">מ:קמץ</bdi>.</p>
 <li>Gen 13:3 <bdi lang="hbo">{{מ:קו״כ-אם-2|{{מ:קמץ|...}}|אהלה|{{מ:קמץ|...}}|...}}</bdi></li>
 </ul>
 </p>
+<p>Note that the Gen 13:3 example contains both of the 2 cases where <bdi lang="hbo">מ:קמץ</bdi>
+nests within <bdi lang="hbo">מ:קו״כ-אם-2</bdi>: two calls to <bdi lang="hbo">מ:קמץ</bdi> nest within
+a single call to <bdi lang="hbo">מ:קו״כ-אם-2</bdi>.</p>
 <h2>Focused call graph: dualcant</h2>
 <object type="image/svg+xml" data="../svg/plus-dualcant-call-graph.svg">Dualcant call graph (SVG not supported)</object><h2>Focused
 call graph: docnote (E)</h2>
