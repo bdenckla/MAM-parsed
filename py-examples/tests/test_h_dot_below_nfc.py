@@ -116,6 +116,59 @@ def _tracked_files_in_scope():
     return in_scope
 
 
+# --- General NFC-Latin-diacritic enforcement (generalizes the het NFC rule to
+# --- every Latin base letter carrying a combining diacritic that has a
+# --- precomposed form). Composes conceptually only Latin-script clusters; every
+# --- Hebrew codepoint (U+0590-05FF, U+FB1D-FB4F) is left untouched. Self-
+# --- contained (stdlib unicodedata only), no literal combining mark is typed.
+_HEBREW_RANGES_NFC = ((0x0590, 0x05FF), (0xFB1D, 0xFB4F))
+
+
+def _is_hebrew_cp(ch):
+    o = ord(ch)
+    return any(lo <= o <= hi for lo, hi in _HEBREW_RANGES_NFC)
+
+
+def _is_latin_base(ch):
+    if unicodedata.combining(ch) != 0:
+        return False
+    try:
+        return unicodedata.name(ch).startswith("LATIN")
+    except ValueError:
+        return False
+
+
+def _find_decomposed_latin_clusters(text):
+    """Return sorted 1-indexed line numbers where a Latin base + combining
+    mark(s) has a strictly-shorter NFC (precomposed) form -- hand-authored
+    source that should be composed. Hebrew clusters are never flagged."""
+    line_nos = set()
+    i = 0
+    n = len(text)
+    while i < n:
+        ch = text[i]
+        if (
+            _is_latin_base(ch)
+            and i + 1 < n
+            and unicodedata.combining(text[i + 1]) != 0
+        ):
+            j = i + 1
+            while (
+                j < n
+                and unicodedata.combining(text[j]) != 0
+                and not _is_hebrew_cp(text[j])
+            ):
+                j += 1
+            cluster = text[i:j]
+            nfc = unicodedata.normalize("NFC", cluster)
+            if len(nfc) < len(cluster) and not any(_is_hebrew_cp(c) for c in nfc):
+                line_nos.add(text.count("\n", 0, i) + 1)
+            i = j
+            continue
+        i += 1
+    return sorted(line_nos)
+
+
 class TestHDotBelowNfc(unittest.TestCase):
     """Hand-authored source must use precomposed h-with-dot-below, never
     the decomposed sequence, and must never use either Unicode form in a
@@ -173,6 +226,27 @@ class TestHDotBelowNfc(unittest.TestCase):
             ):
                 return True
         return False
+
+    def test_no_decomposed_latin_diacritic_cluster(self):
+        """General NFC rule (supersedes the het-only file check above): no
+        hand-authored file may contain a decomposed Latin base+diacritic that
+        has a precomposed NFC form (e.g. t/s + dot-below, a + breve, i +
+        acute, a + diaeresis). Applies to literals AND comments alike -- this
+        is pure NFC precomposition and never ASCII-fies anything; the
+        het->ASCII 'x' comment rule is a separate assertion below."""
+        offenders = []
+        for posix_rel in self.in_scope_files:
+            full = REPO_ROOT / posix_rel
+            text = full.read_text(encoding="utf-8")
+            for line_no in _find_decomposed_latin_clusters(text):
+                offenders.append(f"{posix_rel}:{line_no}")
+        self.assertEqual(
+            offenders,
+            [],
+            "Found decomposed Latin base+diacritic clusters that have a "
+            "precomposed NFC form; run the NFC-Latin migration: "
+            f"{offenders}",
+        )
 
     def test_comments_use_ascii_not_h_dot_below(self):
         offenders = []
