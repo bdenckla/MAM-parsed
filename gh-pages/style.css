@@ -1,5 +1,7 @@
-/* Generated file - DO NOT EDIT DIRECTLY.
-     Edit py/mb_misc/styles_mam_parsed.py in MAM-basics and regenerate. */
+/* Styles for the MAM-parsed authored docs.
+   Source of truth: py/mb_misc/styles_mam_parsed.css in MAM-basics; copied verbatim
+   into the docs tree by styles_mam_parsed.make_css_file_for_mam_parsed(). Edit this
+   source and regenerate; do not edit deployed copies. */
 :root {
   color-scheme: light dark;
 }
