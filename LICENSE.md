@@ -12,7 +12,7 @@ from materials that he originally developed at Hebrew Wikisource,
 with major technical assistance from Erel Segal-Halevi and Benjamin Denckla.
 All of the material is available under the CC-BY-SA 4.0 license, which is found at the following link:
 
-[CC-BY-SA 4.0 Unported](https://creativecommons.org/licenses/by-sa/4.0/)
+[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Attribution:
 
@@ -25,9 +25,9 @@ Attribution in English and all languages other than Hebrew shall be to "Hebrew W
 ----
 רשיון:
 
-"מקרא על פי המסורה" שבגליון הנתונים הזה הוכן ע"י אבי קדיש, על בסיס חומר קיים מהפרויקט שכבר הכין באתר ויקיטקסט, ובעזרת תמיכה טכנית מכרעת מאת אראל סגל-הלוי ובנימין דנקלה. כל החומר מוגש תחת הרשיון Creative Commons ייחוס-שיתוף זהה 3.0, שנמצא בקישור הבא:
+"מקרא על פי המסורה" שבגליון הנתונים הזה הוכן ע"י אבי קדיש, על בסיס חומר קיים מהפרויקט שכבר הכין באתר ויקיטקסט, ובעזרת תמיכה טכנית מכרעת מאת אראל סגל-הלוי ובנימין דנקלה. כל החומר מוגש תחת הרשיון Creative Commons ייחוס-שיתוף זהה 4.0, שנמצא בקישור הבא:
 
-[ייחוס-שיתוף זהה 3.0 לא מותאם](https://creativecommons.org/licenses/by-sa/4.0/deed.he)
+[ייחוס-שיתוף זהה 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.he)
 
 ייחוס:
 
