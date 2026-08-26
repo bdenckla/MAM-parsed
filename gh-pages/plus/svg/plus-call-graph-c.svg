@@ -49,14 +49,14 @@
 <title>נוסח&#45;&gt;סס, …</title>
 <path fill="none" stroke="black" d="M54.29,-61.66C69.05,-68.77 87.69,-77.75 103.83,-85.52"/>
 <polygon fill="black" stroke="black" points="102.11,-88.58 112.64,-89.76 105.15,-82.27 102.11,-88.58"/>
-<text xml:space="preserve" text-anchor="middle" x="79.88" y="-79.57" font-family="Helvetica,sans-Serif" font-size="9.00">141</text>
+<text xml:space="preserve" text-anchor="middle" x="79.88" y="-79.57" font-family="Helvetica,sans-Serif" font-size="9.00">143</text>
 </g>
 <!-- נוסח&#45;&gt;מ:הערה&#45;2 -->
 <g id="edge2" class="edge">
 <title>נוסח&#45;&gt;מ:הערה&#45;2</title>
 <path fill="none" stroke="black" d="M54.29,-49C66.22,-49 80.69,-49 94.32,-49"/>
 <polygon fill="black" stroke="black" points="93.99,-52.5 103.99,-49 93.99,-45.5 93.99,-52.5"/>
-<text xml:space="preserve" text-anchor="middle" x="79.88" y="-50.95" font-family="Helvetica,sans-Serif" font-size="9.00">7</text>
+<text xml:space="preserve" text-anchor="middle" x="79.88" y="-50.95" font-family="Helvetica,sans-Serif" font-size="9.00">8</text>
 </g>
 <!-- נוסח&#45;&gt;פפ -->
 <g id="edge4" class="edge">
