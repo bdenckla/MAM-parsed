@@ -10,7 +10,7 @@ _MINIROW = collections.namedtuple("Minirow", "C, D, E")
 
 def _openw(path, **kwargs):
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    return open(path, "w", encoding="utf-8", **kwargs)
+    return open(path, "w", encoding="utf-8", newline="", **kwargs)
 
 
 def _param_val_as_list(val):
